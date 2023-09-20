@@ -1,0 +1,15 @@
+/********************************
+*******
+** NAV BAR MAIN STYLE
+*******
+**********************************/
+nav {
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}

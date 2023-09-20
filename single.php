@@ -4,6 +4,6 @@
 
 get_header(); ?>
 
-<h1>Page SINGLE.PHP</h1>
+<h1>Un article</h1>
 
 <?php get_footer(); ?>

@@ -1,0 +1,48 @@
+/*
+Theme Name: Page 28
+Theme URI: https://page28.fr
+Author: Omowumi OLABISI
+Author URI: https://page28.fr
+Description: Thème WordPress pour le site de partages cinématographiques
+Requires at least: WordPress 6.3
+Version: 1.0
+*/
+/*
+body,
+html {
+    padding: 0;
+    margin: 0;
+}
+*/
+/********************************
+*******
+** FONT STYLES
+*******
+**********************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/********************************
+*******
+** BUTTON STYLES
+*******
+**********************************/
+.p28-btn {
+    width: 157px;
+    height: 34px;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.p28-btn-primary {
+    background-color: #cbbdff;
+    color: #15071d;
+}
+
+.p28-btn-secondary {
+    background-color: #15071d;
+    color: #fec32e;
+}
