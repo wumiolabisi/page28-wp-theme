@@ -12,6 +12,14 @@ function page28_register_assets()
     // Déclarer jQuery
     wp_enqueue_script('jquery');
 
+    // Déclarer le JS
+    wp_enqueue_script(
+        'header',
+        get_template_directory_uri() . '/assets/header.js',
+        array('jquery'),
+        '1.0',
+        true
+    );
 
 
 

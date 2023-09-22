@@ -7,13 +7,21 @@ Description: Thème WordPress pour le site de partages cinématographiques
 Requires at least: WordPress 6.3
 Version: 1.0
 */
-/*
+
 body,
 html {
     padding: 0;
     margin: 0;
+    text-decoration: none
 }
-*/
+
+ul,
+li,
+ol {
+    margin: 0;
+    padding: 0
+}
+
 /********************************
 *******
 ** FONT STYLES

@@ -3,13 +3,76 @@
 ** NAV BAR MAIN STYLE
 *******
 **********************************/
-nav {
-    width: 100%;
+nav.p28-navbar {
+    width: 98%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    padding: 1%;
 }
 
-nav ul {
+.p28-logo {
+    width: 30px;
+    height: auto;
+}
+
+
+nav.p28-navbar ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 50px;
+}
+
+nav.p28-navbar>ul li {
+    padding: 0 10px;
+}
+
+nav.p28-navbar>ul li:nth-child(3) {
+    flex-grow: 2;
+}
+
+
+nav.p28-navbar>ul>li>ol:not(:first-child) {
+    /* display: none;*/
+    position: relative;
+    left: -250px;
+    transition: left 0.5s ease;
+    -webkit-transition: left 0.5s ease;
+    -o-transition: left 0.5s ease;
+    -moz-transition: left 0.5s ease;
+
+}
+
+
+/* Modifier */
+.p28-burger--is-opened {
+    background-color: #15071d;
+    width: 300px;
+    position: fixed;
+    left: 0;
+
+}
+
+.p28-burger--is-opened ol {
+    color: #cbbdff;
+    margin: 10px 0;
+    left: 5% !important;
+
+}
+
+@media screen and (max-width:800px) {
+    /*
+    nav.p28-navbar>ul>li>ol:not(:first-child) {
+        display: flex;
+    }
+
+
+    nav.p28/-navbar>ul>li:not(:first-child, img.p28-logo) {
+        display: none;
+    }*/
+
 }
