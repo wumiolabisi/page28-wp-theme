@@ -43,6 +43,7 @@ nav.p28-navbar>ul>li>div#p28-sidemenu {
     padding: 2% 0;
     left: -300px;
     width: 300px;
+    height: 100vh;
     background-color: #15071d;
     transition: left 0.5s ease;
     -webkit-transition: left 0.5s ease;
@@ -61,7 +62,7 @@ div#p28-sidemenu span.p28-sidemenu-item {
 .p28-burger--is-opened {
 
     padding: 2% !important;
-    left: 2% !important;
+    left: 0 !important;
 
 }
 

@@ -24,7 +24,7 @@
     <nav class="p28-navbar">
         <ul class="p28-navbar-items">
             <li class="p28-navbar-item">
-                <svg fill="none" id="p28-menu-icon" class="p28-50 p28-fill-cbbdff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg id="p28-menu-icon" class="p28-50 p28-fill-cbbdff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 4H8V8H4V4Z" />
                     <path d="M4 10H8V14H4V10Z" />
                     <path d="M8 16H4V20H8V16Z" />

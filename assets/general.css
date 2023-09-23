@@ -16,17 +16,151 @@
 **********************************/
 .p28-btn {
     width: 157px;
-    height: 34px;
     padding: 5px 15px;
     border-radius: 10px;
+    text-align: center;
 }
 
 .p28-btn-primary {
     background-color: #cbbdff;
     color: #15071d;
+    padding: 2% 4% !important;
 }
 
 .p28-btn-secondary {
     background-color: #15071d;
     color: #fec32e;
+}
+
+/********************************
+*******
+** BLOCS STYLES
+*******
+**********************************/
+.p28-container {
+    width: 100%;
+}
+
+.p28-flexrowend {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.p28-angled-right {
+    transform: skewX(-15deg);
+    width: 20%;
+    left: 5%;
+    position: relative;
+}
+
+/* PINNED POSTS */
+.p28-pinnedpost {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    height: 80vh;
+}
+
+.p28-pinnedpost-left,
+.p28-pinnedpost-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+
+}
+
+.p28-pinnedpost-left {
+    width: 40%;
+}
+
+.p28-pinnedpost-right {
+    width: 60%;
+}
+
+/********************************
+*******
+** TEXT COLORS
+*******
+**********************************/
+
+.p28-txt-cbbdff {
+    color: #cbbdff;
+}
+
+.p28-txt-15071d {
+    color: #15071d;
+}
+
+/********************************
+*******
+** BACKGROUND COLORS
+*******
+**********************************/
+
+.p28-bg-cbbdff {
+    background-color: #cbbdff;
+}
+
+.p28-bg-15071d {
+    background-color: #15071d;
+}
+
+.p28-bg-fec32e {
+    background-color: #fec32e;
+}
+
+/********************************
+*******
+** SVG STYLES
+*******
+**********************************/
+svg.p28-fill-cbbdff {
+    fill: #cbbdff;
+}
+
+.p28-bar {
+    width: 22px;
+    height: 100%;
+    margin: 0 1%;
+}
+
+/********************************
+*******
+** IMAGES WIDTH AND HEIGHT
+*******
+**********************************/
+.p28-50 {
+    width: 50px;
+    height: auto;
+}
+
+.p28-34-34 {
+    width: 34px;
+    height: 34px;
+}
+
+.p28-30 {
+    width: 30px;
+    height: auto;
+
+}
+
+.p28-imgfull {
+    object-fit: cover;
+    height: 100%;
+}
+
+/********************************
+*******
+** MARGINS AND PADDINGS
+*******
+**********************************/
+.p28-pad-2 {
+    padding: 2%;
+}
+
+.p28-pad2025 {
+    padding: 2% 0% 2% 5%;
 }
