@@ -1,6 +1,6 @@
 <?php
 
-/* Afficher la page d'acceuil du blog */
+/* Afficher la page d'acceuil du site */
 
 get_header(); ?>
 <?php
@@ -10,7 +10,7 @@ $args  = array(
     'ignore_sticky_posts' => 1,
 );
 $query = new WP_Query($args); ?>
-<h1>Test - page front-page.php</h1>
+
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -32,6 +32,6 @@ $query = new WP_Query($args); ?>
         </article>
 
 <?php endwhile;
-endif; ?>
+endif;  ?>
 
 <?php get_footer(); ?>
