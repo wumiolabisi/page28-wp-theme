@@ -3,7 +3,13 @@
 /* Afficher la page d'acceuil du blog */
 
 get_header(); ?>
-
+<?php
+$args  = array(
+    'posts_per_page'      => 1,
+    'post__in'            => get_option('sticky_posts'),
+    'ignore_sticky_posts' => 1,
+);
+$query = new WP_Query($args); ?>
 <h1>Test - page front-page.php</h1>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
