@@ -6,7 +6,7 @@ get_header(); ?>
 
 <div class="p28-container">
     <div class="p28-pinnedpost p28-bg-15071d">
-        <div class="p28-pinnedpost-left p28-pad2025">
+        <div class="p28-pinnedpost-left">
             <h1 class="p28-txt-cbbdff">LE TITRE</h1>
             <p class="p28-txt-cbbdff">Blablabla</p>
             <a class="p28-btn p28-btn-primary">TEST BOUTON</a>
