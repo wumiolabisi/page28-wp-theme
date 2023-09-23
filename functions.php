@@ -25,6 +25,12 @@ function page28_register_assets()
 
     // Déclarer le fichier CSS à un autre emplacement
     wp_enqueue_style(
+        'style',
+        get_template_directory_uri() . '/style.css',
+        array(),
+        '1.0'
+    );
+    wp_enqueue_style(
         'general',
         get_template_directory_uri() . '/assets/general.css',
         array(),
