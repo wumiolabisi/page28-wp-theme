@@ -20,8 +20,8 @@ get_header(); ?>
             <div class="p28-pinnedpost p28-bg-15071d">
                 <div class="p28-pinnedpost-left">
                     <h1 class="p28-txt-cbbdff"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-                    <div class="p28-txt-cbbdff"><?php the_excerpt(); ?></div>
-                    <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">VOIR LA FICHE</a>
+                    <div class="p28-bannerexcerpt p28-txt-cbbdff"><?php the_excerpt(); ?></div>
+                    <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">VOIR LA FICHE</a></span>
 
                 </div>
                 <div class="p28-flexrowend p28-angled-right p28-bg-15071d">

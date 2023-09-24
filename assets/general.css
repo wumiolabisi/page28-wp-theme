@@ -39,6 +39,7 @@
 .p28-btn-secondary {
     background-color: #15071d;
     color: #fec32e;
+    border: 1px solid #fec32e;
 }
 
 .p28-btn-secondary:hover {
@@ -46,7 +47,7 @@
     background-color: #fec32e;
     color: #15071d;
     font-weight: bold;
-    border: 1px solid #15071d;
+    border-color: #15071d;
 }
 
 /********************************
@@ -99,7 +100,7 @@
 
 /********************************
 *******
-** TEXT COLORS
+** TEXT STYLES
 *******
 **********************************/
 
@@ -109,6 +110,11 @@
 
 .p28-txt-15071d {
     color: #15071d;
+}
+
+span.p28-bannerexcerpt {
+    height: 200px;
+
 }
 
 /********************************
@@ -168,6 +174,7 @@ svg.p28-fill-cbbdff {
 .p28-imgfull {
     object-fit: cover;
     height: 100%;
+    width: 100%;
 }
 
 /********************************
