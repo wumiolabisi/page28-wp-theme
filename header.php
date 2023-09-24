@@ -8,7 +8,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('p28-bg-15071d'); ?>>
     <?php
     // Get the ID of BOOM BOOM PAN PAN
     $category_id1 = get_cat_ID('BOOM BOOM PAN PAN');

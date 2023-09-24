@@ -42,6 +42,12 @@ function page28_register_assets()
         array(),
         '1.0'
     );
+    wp_enqueue_style(
+        'front-page',
+        get_template_directory_uri() . '/assets/front-page.css',
+        array(),
+        '1.0'
+    );
 }
 add_action('wp_enqueue_scripts', 'page28_register_assets');
 function p28_register_post_types()
