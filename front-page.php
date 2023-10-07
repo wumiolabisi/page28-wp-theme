@@ -7,43 +7,55 @@ get_header(); ?>
 
 <div class="p28-container">
     <?php
+
+    $p28_sticky_post = [];
     $args  = array(
-        'post_type'           => 'oeuvres',
-        'posts_per_page'      => 2
+        'post_type'           => 'oeuvre',
+        'posts_per_page'      => 2,
+        'orderby'             => 'date',
+        'order'               => 'DESC',
+        'meta_key'            => 'sticky_custom_post',
+        'meta_value'          => 1,
     );
     $query = new WP_Query($args);
 
-    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 
 
+            if ($query->current_post == 0) { ?>
+                <div class="p28-pinnedpost p28-bg-15071d">
+                    <div class="p28-pinnedpost-left">
+                        <h1 class="p28-txt-cbbdff p28-h1"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+                        <div class="p28-bannerexcerpt p28-txt-cbbdff"><?php the_excerpt(); ?></div>
+                        <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">VOIR LA FICHE</a>
 
-            <div class="p28-pinnedpost p28-bg-15071d">
-                <div class="p28-pinnedpost-left">
-                    <h1 class="p28-txt-cbbdff p28-h1"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-                    <div class="p28-bannerexcerpt p28-txt-cbbdff"><?php the_excerpt(); ?></div>
-                    <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">VOIR LA FICHE</a>
-
+                    </div>
+                    <div class="p28-flexrowend p28-angled-right p28-bg-15071d">
+                        <div class="p28-bar p28-bg-fec32e"></div>
+                        <div class="p28-bar p28-bg-cbbdff"></div>
+                    </div>
+                    <div class="p28-pinnedpost-right">
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('post-thumbnail', ['class' => 'p28-imgfull']); ?></a>
+                    </div>
                 </div>
-                <div class="p28-flexrowend p28-angled-right p28-bg-15071d">
-                    <div class="p28-bar p28-bg-fec32e"></div>
-                    <div class="p28-bar p28-bg-cbbdff"></div>
-                </div>
-                <div class="p28-pinnedpost-right">
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('post-thumbnail', ['class' => 'p28-imgfull']); ?></a>
-                </div>
-            </div>
-
-
-
-
 
 
 
     <?php
+            } else if ($query->current_post == 1) {
+
+                $p28_sticky_post = [
+                    'p28_permalink' => get_the_permalink(),
+                    'p28_excerpt'   => get_the_excerpt(),
+                    'p28_title'     => get_the_title(),
+                    'p28_thumbnail' => get_the_post_thumbnail(the_ID(), 'post-thumbnail', ['class' => 'p28-imgfull'])
+                ];
+            }
         endwhile;
     endif;
 
     wp_reset_postdata();
+
     ?>
     <!-- BLOC SEO -->
     <div class="p28-txtbloc p28-txtcenter">
@@ -88,7 +100,23 @@ get_header(); ?>
             </div>
         </div>
     </div>
+    <!-- SECOND STICKY POST -->
 
+    <div class="p28-pinnedpost p28-bg-15071d">
+        <div class="p28-pinnedpost-left">
+            <h1 class="p28-txt-cbbdff p28-h1"><a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" title="<?php echo $p28_sticky_post['p28_title']; ?>"><?php echo $p28_sticky_post['p28_title']; ?></a></h1>
+            <div class="p28-bannerexcerpt p28-txt-cbbdff"><?php echo $p28_sticky_post['p28_excerpt']; ?></div>
+            <a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" class="p28-btn p28-btn-primary">VOIR LA FICHE</a>
+
+        </div>
+        <div class="p28-flexrowend p28-angled-right p28-bg-15071d">
+            <div class="p28-bar p28-bg-fec32e"></div>
+            <div class="p28-bar p28-bg-cbbdff"></div>
+        </div>
+        <div class="p28-pinnedpost-right">
+            <a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" title="<?php echo $p28_sticky_post['p28_title']; ?>"><?php echo $p28_sticky_post['p28_thumbnail']; ?></a>
+        </div>
+    </div>
 
 
 
