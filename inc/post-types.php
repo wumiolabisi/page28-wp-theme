@@ -1,7 +1,11 @@
 <?php
 function p28_register_post_types()
 {
-    // CPT Fiche oeuvre
+    /**
+     * Déclaration du CPT Fiche OEUVRE
+     * Déclaration de la taxonomie associée TYPE OEUVRE
+     * 
+     */
     $labels = array(
         'name' => 'Fiche Œuvre',
         'all_items' => 'Toutes les œuvres',  // affiché dans le sous menu
@@ -25,9 +29,13 @@ function p28_register_post_types()
 
     //Déclaration de la taxonomie : film ou série
     $labels = array(
-        'name' => 'Type œuvre',
-        'new_item_name' => 'Nom du nouveau Type',
-        'parent_item' => 'Type œuvre parent',
+        'name' => 'Format œuvre',
+        'new_item_name' => 'Nom du nouveau format',
+        'parent_item' => 'Format parent',
+        'update_item' => 'Mettre à jour le format',
+        'add_new_item' => 'Ajouter un format',
+        'edit_item' => 'Modifier le format',
+        'back_to_items' => 'Retour aux formats',
     );
 
     $args = array(
@@ -37,6 +45,64 @@ function p28_register_post_types()
         'hierarchical' => true,
     );
 
-    register_taxonomy('type-oeuvre', 'oeuvre', $args);
+    register_taxonomy('format', 'oeuvre', $args);
+
+    //Déclaration de la taxonomie : réalisation
+    $labels = array(
+        'name' => 'Réalisation',
+        'new_item_name' => 'Réalisateurice',
+        'parent_item' => 'Type réalisateurice parent',
+        'update_item' => 'Mettre à jour',
+        'add_new_item' => 'Ajouter une réalisateurice',
+        'edit_item' => 'Modifier la réalisateurice',
+        'back_to_items' => 'Retour aux réalisateurices',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'hierarchical' => false,
+    );
+
+    register_taxonomy('realisation', 'oeuvre', $args);
+
+    //Déclaration de la taxonomie : production
+    $labels = array(
+        'name' => 'Production',
+        'new_item_name' => 'Producteurices',
+        'update_item' => 'Mettre à jour',
+        'add_new_item' => 'Ajouter une producteurice',
+        'edit_item' => 'Modifier la producteurice',
+        'back_to_items' => 'Retour aux producteurice',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'hierarchical' => false,
+    );
+
+    register_taxonomy('production', 'oeuvre', $args);
+
+    //Déclaration de la taxonomie : scénaristes
+    $labels = array(
+        'name' => 'Scénario',
+        'new_item_name' => 'Scénaristes',
+        'update_item' => 'Mettre à jour',
+        'add_new_item' => 'Ajouter une scénariste',
+        'edit_item' => 'Modifier la scénariste',
+        'back_to_items' => 'Retour aux scénaristes',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'hierarchical' => false,
+    );
+
+    register_taxonomy('scenario', 'oeuvre', $args);
 }
 add_action('init', 'p28_register_post_types');
