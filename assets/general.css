@@ -66,6 +66,12 @@
     justify-content: end;
 }
 
+.p28-flexrowstart {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
 .p28-alginselfcenter {
     align-self: center;
 }
@@ -112,6 +118,10 @@
 
 .p28-bg-fec32e {
     background-color: #fec32e;
+}
+
+.p28-bg-29ade6 {
+    background-color: #29ade6;
 }
 
 /********************************
@@ -163,6 +173,10 @@ svg.p28-fill-cbbdff {
 
 .p28-pad2025 {
     padding: 2% 0% 2% 5%;
+}
+
+.p28-pad2520 {
+    padding: 2% 5% 2% 0%;
 }
 
 .p28-mar-20 {

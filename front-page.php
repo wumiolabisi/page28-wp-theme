@@ -24,7 +24,7 @@ get_header(); ?>
 
             if ($query->current_post == 0) { ?>
                 <div class="p28-pinnedpost p28-bg-15071d">
-                    <div class="p28-pinnedpost-left">
+                    <div class="p28-pinnedpost-left p28-pad2025">
                         <h1 class="p28-txt-cbbdff p28-h1"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
                         <div class="p28-bannerexcerpt p28-txt-cbbdff"><?php the_excerpt(); ?></div>
                         <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">VOIR LA FICHE</a>
@@ -102,20 +102,22 @@ get_header(); ?>
     </div>
     <!-- SECOND STICKY POST -->
 
-    <div class="p28-pinnedpost p28-bg-15071d">
-        <div class="p28-pinnedpost-left">
+    <div class="p28-secondpinnedpost p28-bg-15071d">
+        <div class="p28-pinnedpost-right">
+            <a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" title="<?php echo $p28_sticky_post['p28_title']; ?>"><?php echo $p28_sticky_post['p28_thumbnail']; ?></a>
+        </div>
+        <div class="p28-flexrowstart p28-angled-left p28-bg-15071d">
+            <div class="p28-bar p28-bg-fec32e"></div>
+            <div class="p28-bar p28-bg-29ade6"></div>
+        </div>
+        <div class="p28-pinnedpost-left p28-pad2520">
             <h1 class="p28-txt-cbbdff p28-h1"><a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" title="<?php echo $p28_sticky_post['p28_title']; ?>"><?php echo $p28_sticky_post['p28_title']; ?></a></h1>
             <div class="p28-bannerexcerpt p28-txt-cbbdff"><?php echo $p28_sticky_post['p28_excerpt']; ?></div>
             <a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" class="p28-btn p28-btn-primary">VOIR LA FICHE</a>
 
         </div>
-        <div class="p28-flexrowend p28-angled-right p28-bg-15071d">
-            <div class="p28-bar p28-bg-fec32e"></div>
-            <div class="p28-bar p28-bg-cbbdff"></div>
-        </div>
-        <div class="p28-pinnedpost-right">
-            <a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" title="<?php echo $p28_sticky_post['p28_title']; ?>"><?php echo $p28_sticky_post['p28_thumbnail']; ?></a>
-        </div>
+
+
     </div>
 
 
