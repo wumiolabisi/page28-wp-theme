@@ -151,9 +151,9 @@ img.p28-filmsreal-img {
         width: 90%;
     }
 
-    .p28-catalogue {
+    /*  .p28-catalogue {
         flex-direction: column;
-    }
+    }*/
 
     .p28-focusreal h2 {
         font-size: 5.5vw !important;
