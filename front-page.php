@@ -80,31 +80,75 @@ get_header(); ?>
                 ?>
                         <div class="p28-catalogue-item"><a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-catalogue-img" /></a></div>
                 <?php endwhile;
-                endif; ?>
+                endif;
+                wp_reset_postdata(); ?>
                 <div class="p28-alginselfcenter"><a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-btn p28-btn-primary">VOIR LA SÉLECTION</a></div>
             </div>
 
             <!-- DIV ZOOM REAL -->
             <div class="p28-focusreal">
+                <?php
+                $p28_taxonomy;
+                $check_sticky_taxonomy;
+                $p28_taxonomies = get_taxonomies(array(
+                    '_builtin' => false
+                ));
+                /* 
+                * S'il existe des taxonomies personnalisée alors on fait une recherche
+                * Dans chaque taxonomie existante, on va chercher les terms
+                * Si on trouve le champ personnalisé ACF et qu'il vaut 1, alors on arrête la boucle 
+                * et la taxonomie est trouvée
+                */
+                if ($p28_taxonomies) :
+                    foreach ($p28_taxonomies as $taxonomy) :
+                        $p28_search_terms = get_terms($taxonomy);
+                        $check_sticky_taxonomy = get_field('sticky_taxonomy', $taxonomy . '_' . $p28_search_terms[0]->term_id);
+
+                        if ($check_sticky_taxonomy == 1) :
+                            $p28_taxonomy = $taxonomy;
+                            break;
+                        endif;
+
+
+                    endforeach;
+                endif;
+                $terms = get_terms($p28_taxonomy);
+                $args = array(
+                    'post_type'     => 'oeuvre',
+                    'post_status'   => 'publish',
+                    'post_per_page' => 3,
+                    'tax_query'     => array(
+                        array(
+                            'taxonomy' => $p28_taxonomy,
+                            'field' => 'term_id',
+                            'terms' => $terms[0]->term_id,
+                        )
+                    )
+                );
+
+                $query = new WP_Query($args);
+
+
+                ?>
                 <h2 class="p28-h2 p28-txt-15071d">
-                    Focus sur Céline Schiamma
+                    Focus sur <?php echo $terms[0]->name; ?>
                 </h2>
 
                 <div class="p28-focusreal-item p28-bg-15071d">
 
                     <p class="p28-txt-cbbdff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
                     <div class="p28-filmsreal">
-                        <div class="p28-filmsreal-item"><img src="http://localhost/page28-local/wp-content/uploads/2023/09/portrait-de-la-jeune-fille-en-feu-ou-comment-regarder-autrement1-759x500-1.jpg" class="p28-filmsreal-img" />
-                            <div class="p28-mar-20 p28-txtcenter"><a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">VOIR LA SÉLECTION</a></div>
-                        </div>
-                        <div class="p28-filmsreal-item"><img src="http://localhost/page28-local/wp-content/uploads/2023/09/portrait-de-la-jeune-fille-en-feu-ou-comment-regarder-autrement1-759x500-1.jpg" class="p28-filmsreal-img" />
-                            <div class="p28-mar-20 p28-txtcenter"><a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">VOIR LA SÉLECTION</a></div>
-                        </div>
-                        <div class="p28-filmsreal-item"><img src="http://localhost/page28-local/wp-content/uploads/2023/09/portrait-de-la-jeune-fille-en-feu-ou-comment-regarder-autrement1-759x500-1.jpg" class="p28-filmsreal-img" />
-                            <div class="p28-mar-20 p28-txtcenter"><a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">VOIR LA SÉLECTION</a></div>
-                        </div>
+                        <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+                                <div class="p28-filmsreal-item"><img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-catalogue-img" alt="affiche du film : <?php the_title(); ?>" />
+                                    <div class="p28-mar-20 p28-txtcenter"><a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary"><?php the_title(); ?></a></div>
+                                </div>
+                        <?php endwhile;
+                        endif; ?>
                     </div>
+
+                    <?php wp_reset_postdata(); ?>
                 </div>
+
             </div>
             <!-- SECOND STICKY POST -->
 
