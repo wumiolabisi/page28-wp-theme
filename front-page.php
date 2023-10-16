@@ -86,57 +86,60 @@ get_header(); ?>
             </div>
 
             <!-- DIV ZOOM REAL -->
-            <div class="p28-focusreal">
-                <?php
-                $p28_taxonomy;
-                $check_sticky_taxonomy;
-                $p28_taxonomies = get_taxonomies(array(
-                    '_builtin' => false
-                ));
-                /* 
+
+            <?php
+            $p28_taxonomy;
+            $check_sticky_taxonomy;
+            $taxonomy_thumbnail;
+            $p28_taxonomies = get_taxonomies(array(
+                '_builtin' => false
+            ));
+            /* 
                 * S'il existe des taxonomies personnalisée alors on fait une recherche
                 * Dans chaque taxonomie existante, on va chercher les terms
                 * Si on trouve le champ personnalisé ACF et qu'il vaut 1, alors on arrête la boucle 
                 * et la taxonomie est trouvée
                 */
-                if ($p28_taxonomies) :
-                    foreach ($p28_taxonomies as $taxonomy) :
-                        $p28_search_terms = get_terms($taxonomy);
-                        $check_sticky_taxonomy = get_field('sticky_taxonomy', $taxonomy . '_' . $p28_search_terms[0]->term_id);
+            if ($p28_taxonomies) :
+                foreach ($p28_taxonomies as $taxonomy) :
+                    $p28_search_terms = get_terms($taxonomy);
+                    $check_sticky_taxonomy = get_field('sticky_taxonomy', $taxonomy . '_' . $p28_search_terms[0]->term_id);
+                    $taxonomy_thumbnail = get_field('taxonomy_thumbnail', $taxonomy . '_' . $p28_search_terms[0]->term_id);
 
-                        if ($check_sticky_taxonomy == 1) :
-                            $p28_taxonomy = $taxonomy;
-                            break;
-                        endif;
+                    if ($check_sticky_taxonomy == 1) :
+                        $p28_taxonomy = $taxonomy;
+                        break;
+                    endif;
 
 
-                    endforeach;
-                endif;
-                $terms = get_terms($p28_taxonomy);
-                $args = array(
-                    'post_type'     => 'oeuvre',
-                    'post_status'   => 'publish',
-                    'post_per_page' => 3,
-                    'tax_query'     => array(
-                        array(
-                            'taxonomy' => $p28_taxonomy,
-                            'field' => 'term_id',
-                            'terms' => $terms[0]->term_id,
-                        )
+                endforeach;
+            endif;
+            $terms = get_terms($p28_taxonomy);
+            $args = array(
+                'post_type'     => 'oeuvre',
+                'post_status'   => 'publish',
+                'post_per_page' => 3,
+                'tax_query'     => array(
+                    array(
+                        'taxonomy' => $p28_taxonomy,
+                        'field' => 'term_id',
+                        'terms' => $terms[0]->term_id,
                     )
-                );
+                )
+            );
 
-                $query = new WP_Query($args);
+            $query = new WP_Query($args);
 
 
-                ?>
+            ?>
+            <div class="p28-focusreal" style="background-image: url(<?php echo esc_url($taxonomy_thumbnail['url']); ?>);">
                 <h2 class="p28-h2 p28-txt-15071d">
                     Focus sur <?php echo $terms[0]->name; ?>
                 </h2>
 
                 <div class="p28-focusreal-item p28-bg-15071d">
 
-                    <p class="p28-txt-cbbdff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                    <p class="p28-txt-cbbdff"><?php echo $terms[0]->description; ?></p>
                     <div class="p28-filmsreal">
                         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                 <div class="p28-filmsreal-item"><img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-catalogue-img" alt="affiche du film : <?php the_title(); ?>" />
