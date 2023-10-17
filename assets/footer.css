@@ -1,0 +1,35 @@
+.p28-footer {
+    position: relative;
+    bottom: 0;
+    height: 150px;
+    background: linear-gradient(#15071d, #3b183e);
+    width: 100%;
+}
+
+footer ul.p28-footer-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+footer ul.p28-footer-item li {
+    margin: 0 2%;
+    color: #96709c;
+    font-size: 13px;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+.p28-bloginfo {
+    color: #96709c;
+    font-size: 11px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: inline-block;
+}

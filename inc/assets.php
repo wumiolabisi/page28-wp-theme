@@ -36,6 +36,12 @@ function page28_register_assets()
         '1.0'
     );
     wp_enqueue_style(
+        'footer',
+        get_template_directory_uri() . '/assets/footer.css',
+        array(),
+        '1.0'
+    );
+    wp_enqueue_style(
         'front-page',
         get_template_directory_uri() . '/assets/front-page.css',
         array(),
