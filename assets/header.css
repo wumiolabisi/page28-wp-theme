@@ -36,7 +36,8 @@ nav.p28-navbar>ul li:nth-child(2) {
     flex-grow: 2;
 }
 
-.p28-navlink {
+.p28-navlink,
+.p28-navbar-item {
     color: #cbbdff;
 }
 
@@ -44,11 +45,8 @@ nav.p28-navbar>ul li:nth-child(2) {
     font-weight: bold;
 }
 
-.p28-overlay {
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    position: fixed;
+.p28-nav--color {
+    background-color: #15071d;
 }
 
 nav.p28-navbar>ul>li>div#p28-sidemenu {

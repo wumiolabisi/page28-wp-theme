@@ -8,9 +8,9 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('p28-bg-15071d'); ?>>
+<body <?php body_class('p28-bg-15071d'); ?> onscroll="stickyNav()">
 
-    <nav class="p28-navbar">
+    <nav class="p28-navbar" id="p28_nav_sticky">
         <ul class="p28-navbar-items">
             <li class="p28-navbar-item">
                 <svg id="p28-menu-icon" class="p28-50 p28-fill-cbbdff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

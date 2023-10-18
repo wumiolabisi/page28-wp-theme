@@ -7,7 +7,19 @@ function openCloseMenu() {
 
     sideNav.classList.toggle("p28-burger--is-opened");
 
+}
 
+var header = document.getElementById("p28_nav_sticky");
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
 
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function stickyNav() {
+    if (window.pageYOffset > sticky) {
+        console.log('oui');
+        header.classList.add("p28-nav--color");
 
+    } else {
+        header.classList.remove("p28-nav--color");
+    }
 }
