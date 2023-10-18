@@ -1,9 +1,13 @@
 .p28-footer {
     position: relative;
     bottom: 0;
-    height: 150px;
+    height: 250px;
     background: linear-gradient(#15071d, #3b183e);
     width: 100%;
+}
+
+footer {
+    height: 100%;
 }
 
 footer ul.p28-footer-item {
@@ -32,4 +36,14 @@ footer ul {
     margin-right: auto;
     width: 100%;
     display: inline-block;
+}
+
+.p28-iconlist {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.p28-iconlist-item {
+    margin: 10px;
 }

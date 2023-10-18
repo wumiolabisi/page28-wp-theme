@@ -29,12 +29,26 @@
     padding: 10px 20px !important;
 }
 
+.p28-btn-primary-fec32e {
+    background-color: #fec32e;
+    color: #15071d;
+    padding: 10px 20px !important;
+}
+
 .p28-btn-primary:hover {
     cursor: pointer;
     background-color: #15071d;
     color: #cbbdff;
     font-weight: bold;
     border: 1px solid #cbbdff;
+}
+
+.p28-btn-primary-fec32e:hover {
+    cursor: pointer;
+    background-color: #15071d;
+    color: #fec32e;
+    font-weight: bold;
+    border: 1px solid #fec32e;
 }
 
 .p28-btn-secondary {
@@ -76,6 +90,12 @@
     align-self: center;
 }
 
+.p28-section-fec32e {
+    margin: 2%;
+    border-radius: 10px;
+    width: 90%;
+}
+
 /********************************
 *******
 ** TEXT STYLES
@@ -88,6 +108,10 @@
 
 .p28-txt-15071d {
     color: #15071d;
+}
+
+.p28-txt-fec32e {
+    color: #fec32e;
 }
 
 .p28-h1 {
@@ -129,7 +153,8 @@
 ** SVG STYLES
 *******
 **********************************/
-svg.p28-fill-cbbdff {
+svg.p28-fill-cbbdff,
+.p28-fill-cbbdff {
     fill: #cbbdff;
 }
 
