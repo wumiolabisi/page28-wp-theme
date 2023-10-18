@@ -9,18 +9,7 @@
 </head>
 
 <body <?php body_class('p28-bg-15071d'); ?>>
-    <?php
-    // Get the ID of BOOM BOOM PAN PAN
-    $category_id1 = get_cat_ID('BOOM BOOM PAN PAN');
-    // Get the URL of this category
-    $category_link1 = get_category_link($category_id1);
 
-    // Get the ID of FILM FEEL GOOD
-    $category_id2 = get_cat_ID('FILMS FEEL GOOD');
-    // Get the URL of this category
-    $category_link2 = get_category_link($category_id2);
-
-    ?>
     <nav class="p28-navbar">
         <ul class="p28-navbar-items">
             <li class="p28-navbar-item">
@@ -39,22 +28,16 @@
 
                 <div id="p28-sidemenu">
 
-                    <span class="p28-sidemenu-item">
-                        <a href="#" class="p28-navlink">PAGE</a>
-                    </span>
-                    <span class="p28-sidemenu-item">
-                        <a href="#" class="p28-navlink">PAGE</a>
-                    </span>
-                    <span class="p28-sidemenu-item">
-                        <a href="#" class="p28-navlink">PAGE</a>
-                    </span>
-                    <span class="p28-sidemenu-item">
-                        <a href="#" class="p28-navlink">PAGE</a>
-                    </span>
+
+
+                    <?php wp_nav_menu(array(
+                        'menu'         => 'header_menu',
+                        'menu_class'   => 'p28-sideheader-menu'
+                    ));
+                    ?>
                 </div>
             </li>
-            <li class="p28-navbar-item"><a href="<?php echo esc_url($category_link2); ?>" class="p28-navlink">FILMS FEEL GOOD</a></li>
-            <li class="p28-navbar-item"><a href="<?php echo esc_url($category_link1); ?>" class="p28-navlink">BOOM BOOM PAN PAN</a></li>
+            <li class="p28-navbar-item"><a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-navlink">D&Eacute;COUVREZ TOUTES LES OEUVRES</a></li>
             <li class="p28-navbar-item p28-logo-item"><a href="<?php echo home_url('/'); ?>">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/logo-page-28.png" alt="Logo Page 28" class="p28-30">
                 </a></li>

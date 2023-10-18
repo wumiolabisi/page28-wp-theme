@@ -104,5 +104,23 @@ function p28_register_post_types()
     );
 
     register_taxonomy('scenario', 'oeuvre', $args);
+    //Déclaration de la taxonomie : genre
+    $labels = array(
+        'name' => 'Genre',
+        'new_item_name' => 'Genre',
+        'update_item' => 'Mettre à jour',
+        'add_new_item' => 'Ajouter un genre',
+        'edit_item' => 'Modifier le genre',
+        'back_to_items' => 'Retour aux genres',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'hierarchical' => false,
+    );
+
+    register_taxonomy('genre', 'oeuvre', $args);
 }
 add_action('init', 'p28_register_post_types');
