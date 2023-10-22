@@ -42,8 +42,8 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/img/logo-page-28.png" alt="Logo Page 28" class="p28-30">
                 </a></li>
             <li class="p28-navbar-item">A PROPOS</li>
-            <li class="p28-navbar-item"><a class="p28-btn p28-btn-secondary">APPEL A PROJET</a></li>
-
+            <!--<li class="p28-navbar-item"><a class="p28-btn p28-btn-secondary">APPEL A PROJET</a></li>
+                -->
         </ul>
     </nav>
     <?php wp_body_open(); ?>
