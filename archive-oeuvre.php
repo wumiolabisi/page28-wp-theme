@@ -4,28 +4,26 @@
 
 get_header(); ?>
 
-<h1>Page Archives OEUVRES</h1>
+<div class="p28-container">
+    <div class="p28-archive-banner">
+        <h1 class="p28-h1 p28-txt-cbbdff p28-txtcenter">&OElig;uvres cinématographiques réalisées par des femmes</h1>
+        <p class="p28-txt-cbbdff p28-txtcenter">
+            Découvrez notre sélection de films et séries réalisées par des femmes.
+        </p>
+    </div>
+    <div class="p28-catalogue">
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <article class="post">
-            <h2><?php the_title(); ?></h2>
 
-            <?php the_post_thumbnail(); ?>
+                <div class="p28-catalogue-item"><a href="<?php the_permalink(); ?>">
+                        <img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-catalogue-img" />
+                    </a>
+                </div>
 
-            <p class="post__meta">
-                Publié le <?php the_time(get_option('date_format')); ?>
-                par <?php the_author(); ?> • <?php comments_number(); ?>
-            </p>
 
-            <?php the_excerpt(); ?>
-
-            <p>
-                <a href="<?php the_permalink(); ?>" class="post__link">Lire la suite</a>
-            </p>
-        </article>
-
-<?php endwhile;
-endif; ?>
-
+        <?php endwhile;
+        endif; ?>
+    </div>
+</div>
 <?php get_footer(); ?>

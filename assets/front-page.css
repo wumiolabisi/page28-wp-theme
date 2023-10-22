@@ -6,7 +6,7 @@
 .p28-catalogue {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-content: center;
     flex-wrap: wrap;
     margin: auto;
