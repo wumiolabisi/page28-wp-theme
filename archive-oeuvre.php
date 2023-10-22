@@ -1,6 +1,6 @@
 <?php
 
-/* Afficher la page d'acceuil du blog */
+/* Afficher la page d'archive des oeuvres */
 
 get_header(); ?>
 
@@ -24,6 +24,6 @@ get_header(); ?>
 
         <?php endwhile;
         endif; ?>
-    </div>
+    </div><?php the_posts_pagination(); ?>
 </div>
 <?php get_footer(); ?>

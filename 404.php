@@ -4,6 +4,6 @@
 
 get_header(); ?>
 
-<h1>Page 404.PHP</h1>
+<h1 class="p28-h1">Page non trouvée</h1>
 
 <?php get_footer(); ?>

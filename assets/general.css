@@ -99,7 +99,35 @@
 .p28-archive-banner {
     width: 96%;
     padding: 4% 2%;
-    height: 200px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.p28-bannerbg-img {
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.p28-bannerbg-item {
+    position: relative;
+}
+
+.p28-block {
+    width: 100%;
+    padding: 5% 2%;
+}
+
+.p28-content {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /********************************
@@ -131,6 +159,12 @@
 .p28-txtcenter {
     text-align: center;
 }
+
+.p28-txtjustify-left {
+    text-align: justify;
+    text-align-last: left;
+}
+
 
 /********************************
 *******
@@ -212,4 +246,26 @@ svg.p28-fill-cbbdff,
 
 .p28-mar-20 {
     margin: 20px 0;
+}
+
+
+@media screen and (max-width:800px) {
+
+    .p28-catalogue-item,
+    .p28-filmsreal-item,
+    .p28-content {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:640px) {
+
+    img.p28-catalogue-img,
+    img.p28-filmsreal-img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
 }
