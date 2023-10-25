@@ -84,11 +84,16 @@ $post_producteurice = array();
     endif;
 
     ?>
-    <div class="p28-comments">
+    <div class="p28-block">
+        <h2 class="p28-txt-cbbdff p28-h2 p28-txtcenter">Découvrez les avis des internautes sur cette &oelig;uvre</h2>
         <?php
-        if (have_comments()) :
-            comments_template();
-        endif;
+        if (comments_open() || get_comments_number()) :
+            comments_template('/comments.php');
+        endif; ?>
+    </div>
+    <div class="p28-comments">
+
+        <?php
 
         comment_form(); ?>
     </div>
