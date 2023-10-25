@@ -3,7 +3,13 @@
 /* Afficher une fiche oeuvre type.
 */
 
-get_header(); ?>
+get_header();
+$post_genre = array();
+$post_realisateurice = array();
+$post_scenariste = array();
+$post_producteurice = array();
+
+?>
 
 <div class="p28-container">
 
@@ -12,9 +18,30 @@ get_header(); ?>
             <?php
             if (get_field('date_de_sortie')) : $date_sortie = get_field('date_de_sortie');
             endif;
-            $terms = wp_get_post_terms($post->ID);
-            var_dump($terms);
+            /* POUR RECUPERER LES INFOS DE LA FICHE OEUVRE :
+            *  Il faut d'abord récupérer les taxonomies du post avec get_post_taxonomies()
+            *  Il faut ensuite récupérer les terms de chaque taxonomie avec wp_get_post_terms()
+            */
+            $p28_post_taxonomies = get_post_taxonomies($post->ID);
+            $p28_terms  = wp_get_post_terms($post->ID, $p28_post_taxonomies);
+            /*
+            *  Pour récupérer les infos dans les variables qu'on a créé
+            *  On boucle sur les terms et on vérifie si le term correspond à ce qu'on recherche
+            *  On range chaque term dans le tableau associé
+            */
 
+            foreach ($p28_terms as $terms) :
+                $current_taxonomy = $terms->taxonomy;
+                $current_name = $terms->name;
+
+                if ($current_taxonomy == 'scenario') : array_push($post_scenariste, $current_name);
+                elseif ($current_taxonomy == 'realisation') : array_push($post_realisateurice, $current_name);
+                elseif ($current_taxonomy == 'genre') : array_push($post_genre, $current_name);
+                elseif ($current_taxonomy == 'production') : array_push($post_producteurice, $current_name);
+                endif;
+
+
+            endforeach;
 
             ?>
             <div class="p28-archive-banner">
@@ -22,30 +49,31 @@ get_header(); ?>
                 <?php the_post_thumbnail('post-thumbnail', ['class' => 'p28-bannerbg-img']); ?>
                 <div class="p28-bannerbg-item">
                     <h1 class="p28-h1 p28-txt-cbbdff p28-txtcenter"><?php the_title(); ?></h1>
-                    <?php if (the_excerpt()) : ?>
+                    <?php if (has_excerpt()) : ?>
                         <div class="p28-block">
-                            <p class="p28-txt-cbbdff p28-txtcenter"><?php get_the_excerpt(); ?></p>
+                            <p class="p28-txt-cbbdff p28-txtcenter"><?php echo get_the_excerpt(); ?></p>
                         </div>
                     <?php endif; ?>
                 </div>
             </div>
             <div class="p28-content">
+                <p class="p28-smalltxt p28-txtcenter"><?php echo implode(", ", $post_genre); ?></p>
                 <div class="p28-infos">
                     <div class="p28-infos-item p28-bg-cbbdff">
-                        <p class="p28-h2">DATE DE SORTIE :</p>
+                        <p>DATE DE SORTIE :</p>
                         <p><?php echo $date_sortie; ?></p>
                     </div>
                     <div class="p28-infos-item p28-bg-cbbdff">
-                        <p class="p28-h2">R&Eacute;ALISATRICE(S) :</p>
-                        <p></p>
+                        <p>R&Eacute;ALISATRICE(S) :</p>
+                        <p><?php echo implode(", ", $post_realisateurice); ?></p>
                     </div>
                     <div class="p28-infos-item p28-bg-cbbdff">
-                        <p class="p28-h2">SC&Eacute;NARISTE(S) :</p>
-                        <p></p>
+                        <p>SC&Eacute;NARISTE(S) :</p>
+                        <p><?php echo implode(", ", $post_scenariste); ?></p>
                     </div>
                     <div class="p28-infos-item p28-bg-cbbdff">
-                        <p class="p28-h2">PRODUCTRICE(S) :</p>
-                        <p></p>
+                        <p>PRODUCTRICE(S) :</h3>
+                        <p><?php echo implode(", ", $post_producteurice); ?></p>
                     </div>
                 </div>
                 <div class="p28-txt-cbbdff p28-txtjustify-left"><?php the_content(); ?></div>

@@ -8,9 +8,11 @@
 
 .p28-infos-item {
     border-radius: 10px;
-    width: 300px;
-    padding: 2%;
-    margin: 10px;
+    width: 350px;
+    padding: 1% 2%;
+    margin: 20px;
+    height: 100px;
+    text-transform: uppercase;
 }
 
 
@@ -48,4 +50,20 @@
     color: #cbbdff;
     font-weight: bold;
     border: 1px solid #cbbdff;
+}
+
+@media screen and (max-width:800px) {
+
+    .p28-comments,
+    .comment-form textarea {
+        padding: 5%;
+        width: 80%;
+    }
+
+    .p28-infos-item {
+        width: 200px;
+        height: 83px;
+        font-size: 12px;
+    }
+
 }

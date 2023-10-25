@@ -120,14 +120,17 @@
 }
 
 .p28-block {
-    width: 100%;
+    width: 900px;
     padding: 5% 2%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .p28-content {
-    width: 700px;
+    width: 900px;
     margin-left: auto;
     margin-right: auto;
+    padding: 5% 0;
 }
 
 /********************************
@@ -154,6 +157,11 @@
 
 .p28-h2 {
     font-size: 25px;
+}
+
+.p28-smalltxt {
+    font-size: 13px;
+    color: #96709c;
 }
 
 .p28-txtcenter {
@@ -255,6 +263,13 @@ svg.p28-fill-cbbdff,
     .p28-filmsreal-item,
     .p28-content {
         width: 100%;
+    }
+
+    .p28-block {
+        width: 96%;
+        padding: 5% 2%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }
