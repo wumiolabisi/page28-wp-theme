@@ -22,3 +22,8 @@ function stickyNav() {
         header.classList.remove("p28-nav--color");
     }
 }
+
+function overlay() {
+    console.log("IN");
+    document.getElementById("overlay").classList.toggle("p28-overlay");
+}

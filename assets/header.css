@@ -6,7 +6,7 @@
 nav.p28-navbar {
     width: 98%;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     padding: 1%;
 }
@@ -92,7 +92,24 @@ div#p28-sidemenu .p28-sideheader-menu li {
 
 }
 
-.p28-burger--is-opened div#p28-sidemenu .p28-sidemenu-item {}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #15071d;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.p28-overlay {
+    display: block !important;
+}
 
 @media screen and (max-width:800px) {
     /*

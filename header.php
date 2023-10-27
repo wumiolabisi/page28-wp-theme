@@ -12,7 +12,7 @@
 
     <nav class="p28-navbar" id="p28_nav_sticky">
         <ul class="p28-navbar-items">
-            <li class="p28-navbar-item">
+            <li class="p28-navbar-item" onclick="overlay()">
                 <svg id="p28-menu-icon" class="p28-50 p28-fill-cbbdff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 4H8V8H4V4Z" />
                     <path d="M4 10H8V14H4V10Z" />
@@ -46,4 +46,5 @@
                 -->
         </ul>
     </nav>
+    <div id="overlay" class=""></div>
     <?php wp_body_open(); ?>
