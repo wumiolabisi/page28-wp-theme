@@ -177,6 +177,11 @@
     text-align-last: left;
 }
 
+.must-log-in a,
+.logged-in-as a {
+    text-decoration: underline;
+}
+
 
 /********************************
 *******

@@ -1,7 +1,8 @@
 <?php
 // Get only the approved comments
 $args = array(
-	'status' => 'approve',
+	'post_id' => get_the_ID(),
+	'status'  => 'approve',
 );
 // The comment Query
 $comments_query = new WP_Comment_Query();
@@ -13,7 +14,8 @@ if ($comments) :
 		<div class="p28-approuved-comments">
 			<p class="p28-txt-cbbdff p28-boldtxt"><?php echo $comment->comment_author; ?></p>
 			<p class="p28-txt-cbbdff p28-smalltxt"><?php echo get_comment_date('D M j Y'); ?></p>
-			<p class="p28-txt-cbbdff p28-comment-item"><?php echo $comment->comment_content; ?></p>
+			<p class="p28-txt-cbbdff p28-comment-item">► <?php echo $comment->comment_content; ?>
+			</p>
 		</div>
 	<?php
 	endforeach;
