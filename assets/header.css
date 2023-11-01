@@ -123,3 +123,16 @@ div#p28-sidemenu .p28-sideheader-menu li {
     }*/
 
 }
+
+@media screen and (max-width:640px) {
+    nav.p28-navbar ul.p28-navbar-items {
+        height: 80px;
+    }
+
+    li.p28-navbar-item:first-child {
+        flex-grow: 4;
+    }
+
+
+
+}

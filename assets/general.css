@@ -133,6 +133,10 @@
     padding: 5% 0;
 }
 
+.p28-disappearmobile {
+    display: initial;
+}
+
 /********************************
 *******
 ** TEXT STYLES
@@ -182,6 +186,18 @@
     text-decoration: underline;
 }
 
+/*
+.p28-link::after {
+    display: block;
+    content: '';
+    border-bottom: solid 2px #15071d;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.p28-link:hover::after {
+    transform: scaleX(1);
+}*/
 
 /********************************
 *******
@@ -244,6 +260,10 @@ svg.p28-fill-cbbdff,
     width: 100%;
 }
 
+/*.p28-logo-item {
+    display: inline-block;
+}*/
+
 /********************************
 *******
 ** MARGINS AND PADDINGS
@@ -291,5 +311,15 @@ svg.p28-fill-cbbdff,
         height: auto !important;
         object-fit: contain !important;
     }
+
+    .p28-disappearmobile {
+        display: none;
+    }
+
+    /*
+    .p28-logo-item {
+        display: flex;
+        justify-content: end;
+    }*/
 
 }

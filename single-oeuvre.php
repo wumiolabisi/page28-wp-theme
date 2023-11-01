@@ -24,6 +24,7 @@ $post_producteurice = array();
             */
             $p28_post_taxonomies = get_post_taxonomies($post->ID);
             $p28_terms  = wp_get_post_terms($post->ID, $p28_post_taxonomies);
+
             /*
             *  Pour récupérer les infos dans les variables qu'on a créé
             *  On boucle sur les terms et on vérifie si le term correspond à ce qu'on recherche
@@ -34,10 +35,10 @@ $post_producteurice = array();
                 $current_taxonomy = $terms->taxonomy;
                 $current_name = $terms->name;
 
-                if ($current_taxonomy == 'scenario') : array_push($post_scenariste, $current_name);
-                elseif ($current_taxonomy == 'realisation') : array_push($post_realisateurice, $current_name);
-                elseif ($current_taxonomy == 'genre') : array_push($post_genre, $current_name);
-                elseif ($current_taxonomy == 'production') : array_push($post_producteurice, $current_name);
+                if ($current_taxonomy == 'scenario') : array_push($post_scenariste, '<a class="p28-link" href="' . get_term_link($terms) . '" title="Voir plus de ' . $current_name . '">' . $current_name . '</a>');
+                elseif ($current_taxonomy == 'realisation') : array_push($post_realisateurice, '<a class="p28-link" href="' . get_term_link($terms) . '" title="Voir plus de ' . $current_name . '">' . $current_name . '</a>');
+                elseif ($current_taxonomy == 'genre') : array_push($post_genre, '<a class="p28-link" href="' . get_term_link($terms) . '" title="Voir plus de ' . $current_name . '">' . $current_name . '</a>');
+                elseif ($current_taxonomy == 'production') : array_push($post_producteurice, '<a class="p28-link" href="' . get_term_link($terms) . '" title="Voir plus de ' . $current_name . '">' . $current_name . '</a>');
                 endif;
 
 
