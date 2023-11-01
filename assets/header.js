@@ -15,11 +15,22 @@ var sticky = header.offsetTop;
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function stickyNav() {
-    if (window.pageYOffset > sticky) {
+    var p28navlink = document.getElementsByClassName('p28-navlink');
+    var svgIconMenu = document.getElementById("p28-menu-icon");
+    console.log(p28navlink);
+    if (window.scrollY > sticky) {
         header.classList.add("p28-nav--color");
+        svgIconMenu.classList.add("p28-fill-fceeca");
+        for (var i = 0; i < p28navlink.length; i++) {
+            p28navlink[i].classList.add("p28-navtext--color");
+        }
 
     } else {
         header.classList.remove("p28-nav--color");
+        svgIconMenu.classList.remove("p28-fill-fceeca");
+        for (var i = 0; i < p28navlink.length; i++) {
+            p28navlink[i].classList.remove("p28-navtext--color");
+        }
     }
 }
 

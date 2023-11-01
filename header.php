@@ -8,12 +8,12 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('p28-bg-15071d'); ?> onscroll="stickyNav()">
+<body <?php body_class('p28-bg-fceeca'); ?> onscroll="stickyNav()">
 
     <nav class="p28-navbar" id="p28_nav_sticky">
         <ul class="p28-navbar-items">
             <li class="p28-navbar-item" onclick="overlay()">
-                <svg id="p28-menu-icon" class="p28-50 p28-fill-cbbdff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg id="p28-menu-icon" class="p28-50 p28-fill-15071d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 4H8V8H4V4Z" />
                     <path d="M4 10H8V14H4V10Z" />
                     <path d="M8 16H4V20H8V16Z" />
@@ -37,11 +37,11 @@
                     ?>
                 </div>
             </li>
-            <li class="p28-navbar-item p28-disappearmobile"><a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-navlink">D&Eacute;COUVREZ TOUTES LES OEUVRES</a></li>
+            <li class="p28-navbar-item p28-disappearmobile"><a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-navlink p28-link">D&Eacute;COUVREZ TOUTES LES OEUVRES</a></li>
             <li class="p28-navbar-item p28-logo-item"><a href="<?php echo home_url('/'); ?>">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/logo-page-28.png" alt="Logo Page 28" class="p28-30">
                 </a></li>
-            <li class="p28-navbar-item">A PROPOS</li>
+            <li class="p28-navbar-item p28-navlink p28-link">A PROPOS</li>
             <!--<li class="p28-navbar-item"><a class="p28-btn p28-btn-secondary">APPEL A PROJET</a></li>
                 -->
         </ul>

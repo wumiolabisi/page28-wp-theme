@@ -15,7 +15,7 @@ else : $taxonomy_thumbnail = get_template_directory_uri() . '/img/placeholder-ba
 endif;
 ?>
 <div class="p28-container">
-    <div class="p28-archive-banner">
+    <div class="p28-archive-banner p28-bg-15071d">
         <img class="p28-bannerbg-img" src="<?php echo $taxonomy_thumbnail; ?>" alt="">
         <div class="p28-bannerbg-item">
             <h1 class="p28-h1 p28-txt-cbbdff p28-txtcenter"><?php wp_title(''); ?></h1>

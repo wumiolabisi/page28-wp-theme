@@ -2,7 +2,7 @@
     position: relative;
     bottom: 0;
     height: 400px;
-    background: linear-gradient(#15071d, #3b183e);
+    background: linear-gradient(#fceeca, #f9dbac);
     width: 100%;
 }
 
@@ -23,7 +23,6 @@ footer ul.p28-footer-item {
 
 footer ul.p28-footer-item li {
     margin: 0 2%;
-    color: #96709c;
     font-size: 13px;
 }
 
@@ -32,7 +31,6 @@ footer ul {
 }
 
 .p28-bloginfo {
-    color: #96709c;
     font-size: 11px;
     text-align: center;
     margin-left: auto;

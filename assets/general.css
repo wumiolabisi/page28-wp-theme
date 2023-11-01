@@ -15,17 +15,21 @@
 *******
 **********************************/
 .p28-btn {
+    display: inline-block;
     width: 157px;
     padding: 5px 15px;
     border-radius: 10px;
     text-align: center;
     transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+    vertical-align: middle;
 }
 
 
 .p28-btn-primary {
-    background-color: #cbbdff;
-    color: #15071d;
+    background-color: #15071d;
+    color: #fceeca;
     padding: 10px 20px !important;
 }
 
@@ -37,10 +41,10 @@
 
 .p28-btn-primary:hover {
     cursor: pointer;
-    background-color: #15071d;
-    color: #cbbdff;
+    background-color: #fceeca;
+    color: #15071d;
     font-weight: bold;
-    border: 1px solid #cbbdff;
+    border: 1px solid #15071d;
 }
 
 .p28-btn-primary-fec32e:hover {
@@ -155,6 +159,22 @@
     color: #fec32e;
 }
 
+.p28-txt-fceeca {
+    color: #fceeca;
+}
+
+.p28-txt-d7ccff {
+    color: #d7ccff;
+}
+
+.p28-txt-b8d8e5 {
+    color: #b8d8e5;
+}
+
+.p28-txt-cafcdc {
+    color: #cafcdc;
+}
+
 .p28-h1 {
     font-size: 35px;
 }
@@ -186,18 +206,25 @@
     text-decoration: underline;
 }
 
-/*
-.p28-link::after {
-    display: block;
-    content: '';
-    border-bottom: solid 2px #15071d;
-    transform: scaleX(0);
-    transition: transform 250ms ease-in-out;
+
+.p28-link {
+    background:
+        linear-gradient(to right,
+            rgba(203, 189, 255, 0),
+            rgba(203, 189, 255, 0)),
+        linear-gradient(to right,
+            rgba(255, 0, 0, 1),
+            rgba(255, 0, 180, 1),
+            rgba(0, 100, 200, 1));
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
 }
 
-.p28-link:hover::after {
-    transform: scaleX(1);
-}*/
+.p28-link:hover {
+    background-size: 0 3px, 100% 3px;
+}
 
 /********************************
 *******
@@ -221,6 +248,22 @@
     background-color: #29ade6;
 }
 
+.p28-bg-fceeca {
+    background-color: #fceeca;
+}
+
+.p28-bg-d7ccff {
+    background-color: #d7ccff;
+}
+
+.p28-bg-b8d8e5 {
+    background-color: #b8d8e5;
+}
+
+.p28-bg-cafcdc {
+    background-color: #cafcdc;
+}
+
 /********************************
 *******
 ** SVG STYLES
@@ -231,7 +274,15 @@ svg.p28-fill-cbbdff,
     fill: #cbbdff;
 }
 
+svg.p28-fill-15071d,
+.p28-fill-15071d {
+    fill: #15071d;
+}
 
+svg.p28-fill-fceeca,
+.p28-fill-fceeca {
+    fill: #fceeca !important;
+}
 
 /********************************
 *******

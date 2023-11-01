@@ -27,14 +27,14 @@ get_header(); ?>
 
 
                     if ($query->current_post == 0) : ?>
-                        <div class="p28-pinnedpost p28-bg-15071d">
+                        <div class="p28-pinnedpost p28-bg-fceeca">
                             <div class="p28-pinnedpost-left p28-pad2025">
-                                <h1 class="p28-txt-cbbdff p28-h1"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-                                <div class="p28-bannerexcerpt p28-txt-cbbdff"><?php the_excerpt(); ?></div>
-                                <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">VOIR LA FICHE</a>
+                                <h1 class="p28-txt-15071d p28-h1"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+                                <div class="p28-bannerexcerpt p28-txt-15071d"><?php the_excerpt(); ?></div>
+                                <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">Découvrir l'analyse</a>
 
                             </div>
-                            <div class="p28-flexrowend p28-angled-right p28-bg-15071d">
+                            <div class="p28-flexrowend p28-angled-right p28-bg-fceeca">
                                 <div class="p28-bar p28-bg-fec32e"></div>
                                 <div class="p28-bar p28-bg-cbbdff"></div>
                             </div>
@@ -59,10 +59,10 @@ get_header(); ?>
             ?>
             <!-- BLOC SEO -->
             <div class="p28-txtbloc p28-txtcenter">
-                <h2 class="p28-h2 p28-txt-cbbdff">
+                <h2 class="p28-h2 p28-txt-15071d">
                     Découvrez notre sélection de films 100% réalisés par des femmes
                 </h2>
-                <p class="p28-txt-cbbdff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                <p class="p28-txt-15071d">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
             </div>
 
             <!-- DIV DEBUT CATALOGUE-->
@@ -137,9 +137,9 @@ get_header(); ?>
                     Focus sur <?php echo $terms[0]->name; ?>
                 </h2>
 
-                <div class="p28-focusreal-item p28-bg-15071d">
+                <div class="p28-focusreal-item p28-bg-fceeca">
 
-                    <p class="p28-txt-cbbdff"><?php echo $terms[0]->description; ?></p>
+                    <p class="p28-txt-15071d"><?php echo $terms[0]->description; ?></p>
                     <div class="p28-filmsreal">
                         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                 <div class="p28-filmsreal-item"><img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-catalogue-img" alt="affiche du film : <?php the_title(); ?>" />
@@ -155,18 +155,18 @@ get_header(); ?>
             </div>
             <!-- SECOND STICKY POST -->
 
-            <div class="p28-secondpinnedpost p28-bg-15071d">
+            <div class="p28-secondpinnedpost p28-bg-fceeca">
                 <div class="p28-pinnedpost-right">
                     <a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" title="<?php echo $p28_sticky_post['p28_title']; ?>"><?php echo $p28_sticky_post['p28_thumbnail']; ?></a>
                 </div>
-                <div class="p28-flexrowstart p28-angled-left p28-bg-15071d">
+                <div class="p28-flexrowstart p28-angled-left p28-bg-fceeca">
                     <div class="p28-bar p28-bg-fec32e"></div>
                     <div class="p28-bar p28-bg-29ade6"></div>
                 </div>
                 <div class="p28-pinnedpost-left p28-pad2520">
-                    <h2 class="p28-txt-fec32e p28-h1"><a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" title="<?php echo $p28_sticky_post['p28_title']; ?>"><?php echo $p28_sticky_post['p28_title']; ?></a></h2>
-                    <div class="p28-bannerexcerpt p28-txt-fec32e"><?php echo $p28_sticky_post['p28_excerpt']; ?></div>
-                    <a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" class="p28-btn p28-btn-primary-fec32e">VOIR LA FICHE</a>
+                    <h2 class="p28-txt-15071d p28-h1"><a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" title="<?php echo $p28_sticky_post['p28_title']; ?>"><?php echo $p28_sticky_post['p28_title']; ?></a></h2>
+                    <div class="p28-bannerexcerpt p28-txt-15071d"><?php echo $p28_sticky_post['p28_excerpt']; ?></div>
+                    <a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" class="p28-btn p28-btn-primary">Lire l'analyse</a>
 
                 </div>
 
@@ -175,10 +175,10 @@ get_header(); ?>
 
             <!-- BLOC SEO -->
             <div class="p28-txtbloc p28-txtcenter">
-                <h2 class="p28-h2 p28-txt-fec32e">
+                <h2 class="p28-h2 p28-txt-15071d">
                     Découvrez notre sélection de films 100% réalisés par des femmes
                 </h2>
-                <p class="p28-txt-fec32e">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                <p class="p28-txt-15071d">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
 
             </div>
 

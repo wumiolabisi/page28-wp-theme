@@ -45,7 +45,7 @@ $post_producteurice = array();
             endforeach;
 
             ?>
-            <div class="p28-archive-banner">
+            <div class="p28-archive-banner p28-bg-15071d">
 
                 <?php the_post_thumbnail('post-thumbnail', ['class' => 'p28-bannerbg-img']); ?>
                 <div class="p28-bannerbg-item">

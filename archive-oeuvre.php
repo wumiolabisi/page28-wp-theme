@@ -5,7 +5,7 @@
 get_header(); ?>
 
 <div class="p28-container">
-    <div class="p28-archive-banner">
+    <div class="p28-archive-banner p28-bg-15071d">
         <h1 class="p28-h1 p28-txt-cbbdff p28-txtcenter">&OElig;uvres cinématographiques réalisées par des femmes</h1>
         <p class="p28-txt-cbbdff p28-txtcenter">
             Découvrez notre sélection de films et séries réalisées par des femmes.
