@@ -8,6 +8,7 @@
     flex-direction: row;
     width: 100%;
     justify-content: center;
+    align-items: center;
 }
 
 .p28-filter {
@@ -16,6 +17,91 @@
     margin: 1%;
 }
 
+.p28-filter:last-child {
+    align-self: end;
+}
+
+.p28-filter:last-child button {
+    height: 40px !important;
+}
+
+.p28-filter>label {
+    font-size: 13px;
+    background-color: #d2afea;
+    width: 97px;
+    margin: 2% 0;
+}
+
+.p28-filter input[type=radio] {
+    appearance: none;
+    padding: 5px;
+    background-color: #fceeca;
+    border-radius: 50%;
+    border: 1.5px solid #15071d;
+    margin: 0;
+}
+
+.p28-filter input[type=radio]:checked {
+    background-color: #15071d;
+}
+
+.p28-filter-radio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.p28-filter-radio label {
+    margin: 0 5px;
+}
+
+:root {
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+}
+
 .p28-filter select {
     width: 200px;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em, linear-gradient(to left, rgba(185, 166, 132, 0.3) 3em, rgb(232, 216, 181) 3em);
+    color: #15071d;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+&::-ms-expand {
+    display: none;
+}
+
+/* Remove focus outline */
+&:focus {
+    outline: none;
+}
+
+
+@media screen and (max-width:640px) {
+    .p28-searchform-content {
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .p28-filter:last-child {
+        align-self: center;
+    }
+
+    .p28-filter>label {
+        width: 100%;
+        text-align: center;
+    }
+
+    .p28-filter:last-child button {
+        height: 47px !important;
+    }
+
+
 }

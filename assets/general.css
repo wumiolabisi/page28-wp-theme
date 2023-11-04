@@ -406,6 +406,10 @@ svg.p28-fill-fceeca,
         object-fit: contain !important;
     }
 
+    .p28-archive-banner {
+        height: auto;
+    }
+
     .p28-catalogue-item {
         width: 100%;
     }
