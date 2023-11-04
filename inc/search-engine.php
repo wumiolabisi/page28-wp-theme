@@ -31,7 +31,7 @@ function p28_search_oeuvre()
 
     $args_tax_query = [];
 
-    if (isset($format) && $format != 'null') :
+    if (isset($format) && $format != 'null' && $format != 'undefined') :
         $array_format = array(
             'taxonomy' => 'format',
             'field'    => 'slug',
