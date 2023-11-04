@@ -60,7 +60,8 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
-    background-color: #fec32e;
+    border: 1px solid #15071d;
+    /*background-color: #fec32e;*/
     width: 70%;
 }
 

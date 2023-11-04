@@ -14,6 +14,11 @@
 ** BUTTON STYLES
 *******
 **********************************/
+form button {
+    border: none;
+    outline: none;
+}
+
 .p28-btn {
     height: 30px;
     width: 200px;
@@ -78,6 +83,11 @@
 **********************************/
 .p28-container {
     width: 100%;
+}
+
+.p28-clicksvg {
+    width: 100%;
+    display: inline-block;
 }
 
 .p28-flexrowend {
@@ -153,6 +163,8 @@
 .p28-disappearmobile {
     display: initial;
 }
+
+
 
 /********************************
 *******
@@ -313,6 +325,9 @@ svg.p28-fill-fceeca,
     fill: #fceeca !important;
 }
 
+.p28-svginteract {
+    cursor: pointer;
+}
 
 
 /********************************
@@ -332,6 +347,12 @@ svg.p28-fill-fceeca,
 
 .p28-30 {
     width: 30px;
+    height: auto;
+
+}
+
+.p28-20 {
+    width: 20px;
     height: auto;
 
 }
