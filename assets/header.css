@@ -9,6 +9,10 @@ nav.p28-navbar {
     z-index: 2;
     top: 0;
     padding: 1%;
+    -webkit-transition: background-color 0.5s ease-out;
+    -moz-transition: background-color 0.5s ease-out;
+    -o-transition: background-color 0.5s ease-out;
+    transition: background-color 0.5s ease-out;
 }
 
 
@@ -49,12 +53,12 @@ nav.p28-navbar>ul li:nth-child(2) {
 .p28-sideheader-menu>li>a {
     background:
         linear-gradient(to right,
-            rgba(47, 26, 52, 0),
-            rgba(25, 7, 29, 0)),
+            rgba(203, 189, 255, 0),
+            rgba(203, 189, 255, 0)),
         linear-gradient(to right,
-            rgba(255, 0, 0, 1),
-            rgba(255, 0, 180, 1),
-            rgba(0, 100, 200, 1));
+            rgba(254, 195, 46, 1),
+            rgba(57, 251, 126, 1),
+            rgba(203, 189, 255, 1));
     background-size: 100% 3px, 0 3px;
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
@@ -105,9 +109,7 @@ div#p28-sidemenu .p28-sideheader-menu li {
     margin: 5% 0;
 }
 
-.p28-sideheader-menu li:hover {
-    font-weight: bold;
-}
+
 
 /* Modifier */
 .p28-burger--is-opened {

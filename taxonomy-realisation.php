@@ -13,16 +13,23 @@ else : $taxonomy_thumbnail = get_template_directory_uri() . '/img/placeholder-ba
 endif;
 ?>
 <div class="p28-container">
-    <div class="p28-archive-banner p28-bg-15071d">
-        <img class="p28-bannerbg-img" src="<?php echo $taxonomy_thumbnail; ?>" alt="">
-        <div class="p28-bannerbg-item">
-            <h1 class="p28-h1 p28-txt-cbbdff p28-txtcenter"><?php wp_title(''); ?></h1>
+
+    <div class="p28-block p28-flexrowcenter">
+        <div class="p28-flexrowcenter-item">
+            <img class="p28-img-100pc-300" alt="Pohto de <?php echo get_queried_object()->name ?>" src="<?php echo $taxonomy_thumbnail; ?>" alt="">
+        </div>
+        <div class="p28-flexrowcenter-item">
+            <h1 class="p28-h1 p28-txt-15071d p28-txtjustify-left"><?php echo get_queried_object()->name ?></h1>
             <?php if ($taxonomy_excerpt) : ?>
-                <div class="p28-txt-cbbdff p28-txtcenter"><?php echo $taxonomy_excerpt; ?></div>
+                <div class="p28-txt-15071d p28-txtjustify-left"><?php echo $taxonomy_excerpt; ?></div>
             <?php endif; ?>
         </div>
     </div>
-    <div class=" p28-catalogue">
+
+    <h2 class=" p28-txtcenter">Découvrez toutes les &oelig;uvres réalisées ou co-réalisées par <?php echo get_queried_object()->name ?></h2>
+
+    <div class="p28-catalogue">
+
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
@@ -34,8 +41,8 @@ endif;
 
 
             <?php endwhile;
-        else : ?><p class="p28-txt-cbbdff p28-txtcenter">Il n'y a pas encore d'&oelig;uvres référencées pour ce genre.</p><?php
-                                                                                                                        endif; ?>
+        else : ?><p class="p28-txt-15071d p28-txtcenter">Il n'y a pas encore d'&oelig;uvres référencées pour cette .</p><?php
+                                                                                                                    endif; ?>
     </div>
 </div><?php the_posts_pagination(); ?>
 <?php get_footer(); ?>

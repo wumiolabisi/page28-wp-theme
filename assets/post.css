@@ -30,37 +30,47 @@
 
 .p28-comments h3.comment-reply-title,
 .p28-comments p {
-    color: #cbbdff !important;
+    color: #15071d !important;
 }
 
 .p28-comments p.form-submit>input[type=submit] {
-    background-color: #cbbdff;
-    color: #15071d;
+    background-color: #15071d;
+    color: #fceeca;
     padding: 10px 20px !important;
-    outline: none;
+    outline: none !important;
     padding: 5px 15px;
     border-radius: 10px;
     text-align: center;
     transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    border: none;
 }
 
 .p28-comments p.form-submit>input[type=submit]:hover {
     cursor: pointer;
-    background-color: #15071d;
-    color: #cbbdff;
+    background-color: #fceeca;
+    color: #15071d;
     font-weight: bold;
-    border: 1px solid #cbbdff;
+    border: 1px solid #15071d;
 }
 
 .p28-approuved-comments {
     border-radius: 10px;
-    border: 1px solid #77567d;
     padding: 1%;
-    margin: 2% 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    background-color: #fec32e;
+    width: 70%;
 }
 
 .p28-comment-item {
     padding: 0 3%;
+}
+
+.required-field-message::before {
+    display: block;
+    content: '';
 }
 
 @media screen and (max-width:800px) {

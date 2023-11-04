@@ -5,11 +5,12 @@
 get_header(); ?>
 
 <div class="p28-container">
-    <div class="p28-archive-banner p28-bg-15071d">
-        <h1 class="p28-h1 p28-txt-cbbdff p28-txtcenter">&OElig;uvres cinématographiques réalisées par des femmes</h1>
-        <p class="p28-txt-cbbdff p28-txtcenter">
+    <div class="p28-archive-banner p28-bg-fceeca">
+        <h1 class="p28-h1 p28-txt-15071d p28-txtcenter">&OElig;uvres cinématographiques réalisées par des femmes</h1>
+        <p class="p28-txt-15071d p28-txtcenter">
             Découvrez notre sélection de films et séries réalisées par des femmes.
         </p>
+        <?php get_template_part('template-parts/search-form'); ?>
     </div>
     <div class="p28-catalogue">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

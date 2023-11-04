@@ -8,13 +8,19 @@ function page28_register_assets()
     // Déclarer le JS
     wp_enqueue_script(
         'header',
-        get_template_directory_uri() . '/assets/header.js',
+        get_template_directory_uri() . '/assets/js/header.js',
         array('jquery'),
         '1.0',
         true
     );
 
-
+    wp_enqueue_script(
+        'ajax',
+        get_template_directory_uri() . '/assets/js/ajax.js',
+        array('jquery'),
+        '1.0',
+        true
+    );
 
     // Déclarer le fichier CSS à un autre emplacement
     wp_enqueue_style(
@@ -50,6 +56,12 @@ function page28_register_assets()
     wp_enqueue_style(
         'post',
         get_template_directory_uri() . '/assets/post.css',
+        array(),
+        '1.0'
+    );
+    wp_enqueue_style(
+        'filter',
+        get_template_directory_uri() . '/assets/filter.css',
         array(),
         '1.0'
     );

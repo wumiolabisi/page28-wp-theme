@@ -27,14 +27,22 @@
                 </svg>
 
                 <div id="p28-sidemenu">
+                    <p class="p28-smalltxt">Vous recherchez ...</p>
 
-
+                    <?php wp_nav_menu(array(
+                        'menu'         => 'format_menu',
+                        'menu_class'   => 'p28-sideheader-menu'
+                    ));
+                    ?>
+                    <p class="p28-smalltxt">Recommandation par genre</p>
 
                     <?php wp_nav_menu(array(
                         'menu'         => 'header_menu',
                         'menu_class'   => 'p28-sideheader-menu'
                     ));
                     ?>
+
+
                 </div>
             </li>
             <li class="p28-navbar-item p28-disappearmobile"><a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-navlink p28-link">D&Eacute;COUVREZ TOUTES LES OEUVRES</a></li>

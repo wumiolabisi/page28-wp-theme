@@ -17,7 +17,7 @@ var sticky = header.offsetTop;
 function stickyNav() {
     var p28navlink = document.getElementsByClassName('p28-navlink');
     var svgIconMenu = document.getElementById("p28-menu-icon");
-    console.log(p28navlink);
+
     if (window.scrollY > sticky) {
         header.classList.add("p28-nav--color");
         svgIconMenu.classList.add("p28-fill-fceeca");
@@ -35,6 +35,5 @@ function stickyNav() {
 }
 
 function overlay() {
-    console.log("IN");
     document.getElementById("overlay").classList.toggle("p28-overlay");
 }

@@ -15,14 +15,16 @@
 *******
 **********************************/
 .p28-btn {
-    display: inline-block;
-    width: 157px;
-    padding: 5px 15px;
+    height: 30px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     text-align: center;
     transition: background-color 0.3s ease;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
     vertical-align: middle;
 }
 
@@ -88,6 +90,17 @@
     display: flex;
     flex-direction: row;
     justify-content: start;
+}
+
+.p28-flexrowcenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.p28-flexrowcenter-item {
+    width: 55%;
+    padding: 1%;
 }
 
 .p28-alginselfcenter {
@@ -185,7 +198,7 @@
 
 .p28-smalltxt {
     font-size: 13px;
-    color: #96709c;
+    color: #cead40;
 }
 
 .p28-boldtxt {
@@ -201,28 +214,37 @@
     text-align-last: left;
 }
 
-.must-log-in a,
+
 .logged-in-as a {
-    text-decoration: underline;
+    font-size: 12px;
 }
 
 
-.p28-link {
+.logged-in-as a::before {
+    content: '';
+    display: block;
+}
+
+.p28-link,
+.must-log-in a,
+.logged-in-as a {
     background:
         linear-gradient(to right,
             rgba(203, 189, 255, 0),
             rgba(203, 189, 255, 0)),
         linear-gradient(to right,
-            rgba(255, 0, 0, 1),
-            rgba(255, 0, 180, 1),
-            rgba(0, 100, 200, 1));
+            rgba(254, 195, 46, 1),
+            rgba(57, 251, 126, 1),
+            rgba(203, 189, 255, 1));
     background-size: 100% 3px, 0 3px;
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
     transition: background-size 400ms;
 }
 
-.p28-link:hover {
+.p28-link:hover,
+.must-log-in a:hover,
+.logged-in-as a:hover {
     background-size: 0 3px, 100% 3px;
 }
 
@@ -231,6 +253,9 @@
 ** BACKGROUND COLORS
 *******
 **********************************/
+.p28-bg-8b6c9d {
+    background-color: #8b6c9d;
+}
 
 .p28-bg-cbbdff {
     background-color: #cbbdff;
@@ -246,6 +271,10 @@
 
 .p28-bg-29ade6 {
     background-color: #29ade6;
+}
+
+.p28-bg-3afc7e {
+    background-color: #3afc7e;
 }
 
 .p28-bg-fceeca {
@@ -284,6 +313,8 @@ svg.p28-fill-fceeca,
     fill: #fceeca !important;
 }
 
+
+
 /********************************
 *******
 ** IMAGES WIDTH AND HEIGHT
@@ -308,6 +339,12 @@ svg.p28-fill-fceeca,
 .p28-imgfull {
     object-fit: cover;
     height: 100%;
+    width: 100%;
+}
+
+.p28-img-100pc-300 {
+    object-fit: cover;
+    height: 300px;
     width: 100%;
 }
 
@@ -336,10 +373,16 @@ svg.p28-fill-fceeca,
     margin: 20px 0;
 }
 
+@media screen and (max-width:940px) {
+    .p28-block {
+        width: 94%;
+    }
+}
 
 @media screen and (max-width:800px) {
 
-    .p28-catalogue-item,
+
+
     .p28-filmsreal-item,
     .p28-content {
         width: 100%;
@@ -363,14 +406,36 @@ svg.p28-fill-fceeca,
         object-fit: contain !important;
     }
 
+    .p28-catalogue-item {
+        width: 100%;
+    }
+
+    .p28-img-300 {
+        object-fit: cover;
+        height: 300px;
+        width: 100%;
+    }
+
+    .p28-btn {
+        height: 47px;
+        width: 320px;
+        font-size: 23px;
+        margin: 5% auto;
+    }
+
+    .p28-flexrowcenter-item {
+        width: 98%;
+    }
+
     .p28-disappearmobile {
         display: none;
     }
 
-    /*
-    .p28-logo-item {
+    .p28-flexrowcenter {
         display: flex;
-        justify-content: end;
-    }*/
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
 
 }

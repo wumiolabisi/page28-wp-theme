@@ -29,7 +29,7 @@ get_header(); ?>
                     if ($query->current_post == 0) : ?>
                         <div class="p28-pinnedpost p28-bg-fceeca">
                             <div class="p28-pinnedpost-left p28-pad2025">
-                                <h1 class="p28-txt-15071d p28-h1"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+                                <h1 class="p28-txt-15071d p28-h1"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Découvrez l'analyse de l'&oelig;uvre : <?php the_title(); ?></a></h1>
                                 <div class="p28-bannerexcerpt p28-txt-15071d"><?php the_excerpt(); ?></div>
                                 <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">Découvrir l'analyse</a>
 
@@ -118,7 +118,8 @@ get_header(); ?>
             $args = array(
                 'post_type'     => 'oeuvre',
                 'post_status'   => 'publish',
-                'post_per_page' => 3,
+                'posts_per_page' => 3,
+                'post_limits'   => 3,
                 'tax_query'     => array(
                     array(
                         'taxonomy' => $p28_taxonomy,
@@ -129,7 +130,6 @@ get_header(); ?>
             );
 
             $query = new WP_Query($args);
-
 
             ?>
             <div class="p28-focusreal" style="background-image: url(<?php echo esc_url($taxonomy_thumbnail['url']); ?>);">

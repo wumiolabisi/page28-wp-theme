@@ -12,14 +12,14 @@ $comments       = $comments_query->query($args);
 if ($comments) :
 	foreach ($comments as $comment) : ?>
 		<div class="p28-approuved-comments">
-			<p class="p28-txt-cbbdff p28-boldtxt"><?php echo $comment->comment_author; ?></p>
-			<p class="p28-txt-cbbdff p28-smalltxt"><?php echo get_comment_date('D M j Y'); ?></p>
-			<p class="p28-txt-cbbdff p28-comment-item">► <?php echo $comment->comment_content; ?>
+			<p class="p28-txt-15071d p28-boldtxt"><?php echo $comment->comment_author; ?></p>
+			<p class="p28-txt-15071d p28-smalltxt"><?php echo get_comment_date('D M j Y'); ?></p>
+			<p class="p28-txt-15071d p28-comment-item">► <?php echo $comment->comment_content; ?>
 			</p>
 		</div>
 	<?php
 	endforeach;
 else : ?>
-	<p class="p28-txt-cbbdff">Pas de commentaire pour le moment.</p>
+	<p class="p28-txt-15071d">Pas de commentaire pour le moment.</p>
 <?php
 endif;

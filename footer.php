@@ -2,7 +2,7 @@
 ?><div class="p28-footer">
 
     <footer>
-        <p class="p28-h2 p28-txt-15071d p28-txtcenter">Suivez les actualités cinéma de Page 28 sur les réseaux</p>
+        <p class="p28-h2 p28-txt-15071d p28-txtcenter p28-pad-2">Suivez les actualités cinéma de Page 28 sur les réseaux</p>
         <div class="p28-iconlist">
 
             <div class="p28-iconlist-item"><a href="" target="_blank"><svg class="p28-fill-15071d p28-30" height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">

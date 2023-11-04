@@ -1,0 +1,21 @@
+.p28-searcharea {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.p28-searchform-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.p28-filter {
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+}
+
+.p28-filter select {
+    width: 200px;
+}

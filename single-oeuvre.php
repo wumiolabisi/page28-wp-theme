@@ -49,10 +49,10 @@ $post_producteurice = array();
 
                 <?php the_post_thumbnail('post-thumbnail', ['class' => 'p28-bannerbg-img']); ?>
                 <div class="p28-bannerbg-item">
-                    <h1 class="p28-h1 p28-txt-cbbdff p28-txtcenter"><?php the_title(); ?></h1>
+                    <h1 class="p28-h1 p28-txt-fceeca p28-txtcenter"><?php the_title(); ?></h1>
                     <?php if (has_excerpt()) : ?>
                         <div class="p28-block">
-                            <p class="p28-txt-cbbdff p28-txtcenter"><?php echo get_the_excerpt(); ?></p>
+                            <p class="p28-txt-fceeca p28-txtcenter"><?php echo get_the_excerpt(); ?></p>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -60,24 +60,24 @@ $post_producteurice = array();
             <div class="p28-content">
                 <p class="p28-smalltxt p28-txtcenter"><?php echo implode(", ", $post_genre); ?></p>
                 <div class="p28-infos">
-                    <div class="p28-infos-item p28-bg-cbbdff">
+                    <div class="p28-infos-item p28-bg-d7ccff">
                         <p>DATE DE SORTIE :</p>
                         <p><?php echo $date_sortie; ?></p>
                     </div>
-                    <div class="p28-infos-item p28-bg-cbbdff">
+                    <div class="p28-infos-item p28-bg-b8d8e5">
                         <p>R&Eacute;ALISATRICE(S) :</p>
                         <p><?php echo implode(", ", $post_realisateurice); ?></p>
                     </div>
-                    <div class="p28-infos-item p28-bg-cbbdff">
+                    <div class="p28-infos-item p28-bg-3afc7e">
                         <p>SC&Eacute;NARISTE(S) :</p>
                         <p><?php echo implode(", ", $post_scenariste); ?></p>
                     </div>
-                    <div class="p28-infos-item p28-bg-cbbdff">
+                    <div class="p28-infos-item p28-bg-fec32e">
                         <p>PRODUCTRICE(S) :</h3>
                         <p><?php echo implode(", ", $post_producteurice); ?></p>
                     </div>
                 </div>
-                <div class="p28-txt-cbbdff p28-txtjustify-left"><?php the_content(); ?></div>
+                <div class="p28-txt-15071d p28-txtjustify-left"><?php the_content(); ?></div>
             </div>
 
     <?php
@@ -86,7 +86,7 @@ $post_producteurice = array();
 
     ?>
     <div class="p28-block">
-        <h2 class="p28-txt-cbbdff p28-h2 p28-txtcenter">Découvrez les avis des internautes sur cette &oelig;uvre</h2>
+        <h2 class="p28-txt-15071d p28-h2 p28-txtcenter">Découvrez les avis des internautes sur cette &oelig;uvre</h2>
         <?php
         if (comments_open() || get_comments_number()) :
             comments_template('/comments.php');

@@ -11,3 +11,4 @@ add_theme_support('menus');
 require_once get_template_directory() . '/inc/assets.php';
 // Déclaration des CPT
 require_once get_template_directory() . '/inc/post-types.php';
+include get_template_directory() . '/inc/search-engine.php';

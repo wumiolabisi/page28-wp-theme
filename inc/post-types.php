@@ -41,8 +41,10 @@ function p28_register_post_types()
     $args = array(
         'labels' => $labels,
         'public' => true,
+        'show_in_menu'  => true,
+        'show_in_nav_menus' => true,
         'show_in_rest' => true,
-        'hierarchical' => true,
+        'hierarchical' => false,
     );
 
     register_taxonomy('format', 'oeuvre', $args);

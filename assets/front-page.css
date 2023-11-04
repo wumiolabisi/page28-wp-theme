@@ -6,13 +6,16 @@
 .p28-catalogue {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 1000px;
     padding: 2% 0;
 }
+
+
 
 .p28-catalogue-item,
 .p28-filmsreal-item {
@@ -65,10 +68,14 @@ img.p28-filmsreal-img {
     flex-direction: row;
     justify-content: space-evenly;
     align-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin: auto;
     width: 100%;
     padding: 2% 0;
+}
+
+.p28-filmsreal-item .p28-btn {
+    margin: auto;
 }
 
 /********************************
@@ -165,6 +172,11 @@ img.p28-filmsreal-img {
     .p28-pinnedpost {
         flex-direction: column-reverse;
 
+    }
+
+    .p28-h1 {
+        text-align: center !important;
+        padding: 0 3%;
     }
 
     .p28-secondpinnedpost {
