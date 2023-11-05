@@ -6,7 +6,7 @@
 nav.p28-navbar {
     width: 98%;
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     top: 0;
     padding: 1%;
     -webkit-transition: background-color 0.5s ease-out;
@@ -39,13 +39,6 @@ nav.p28-navbar>ul li {
 nav.p28-navbar>ul li:nth-child(2) {
     flex-grow: 2;
 }
-
-/*
-.p28-navlink,
-.p28-navbar-item {
-    color: #cbbdff;
-    fill: #cbbdff;
-}*/
 
 
 
@@ -131,7 +124,7 @@ div#p28-sidemenu .p28-sideheader-menu li {
     bottom: 0;
     background-color: #15071d;
     opacity: 0.7;
-    z-index: 1;
+    z-index: 7;
 }
 
 .p28-overlay {

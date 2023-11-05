@@ -1,8 +1,106 @@
 /********************************
 *******
+** SLIDER FRONT PAGE
+*******
+**********************************/
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.slide {
+    position: absolute;
+}
+
+.p28-slide-img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+#p28-img1 {
+    z-index: 4;
+    animation: fadeSlides 15s -0s infinite;
+    -webkit-animation: fadeSlides 15s -0s infinite;
+}
+
+#p28-img2 {
+    z-index: 3;
+    animation: fadeSlides 15s -5s infinite;
+    -webkit-animation: fadeSlides 15s -5s infinite;
+}
+
+#p28-img3 {
+    z-index: 2;
+    animation: fadeSlides 15s -7s infinite;
+    -webkit-animation: fadeSlides 15s -7s infinite;
+}
+
+#p28-img4 {
+    z-index: 1;
+    animation: fadeSlides 15s -10s infinite;
+    -webkit-animation: fadeSlides 15s -10s infinite;
+}
+
+@keyframes fadeSlides {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    20% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    33% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    53% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+
+/********************************
+*******
 ** BLOCKS CATALOGUE & FOCUS REAL
 *******
 **********************************/
+.p28-slidercontent {
+    height: 600px !important;
+}
+
+.p28-secondpinnedpost {
+    justify-content: center;
+}
+
+.p28-bannerexcerpt {
+    margin-bottom: 2%;
+}
+
+.p28-slidercontent .p28-pinnedpost-right {
+    width: 25% !important;
+}
+
+.p28-slidercontent .p28-pinnedpost-left {
+    width: 50% !important;
+}
+
 .p28-catalogue {
     display: flex;
     flex-direction: row;
@@ -166,9 +264,40 @@ img.p28-filmsreal-img {
         font-size: 5.5vw !important;
     }
 
+
+
+
+
+    .p28-slidercontent .p28-pinnedpost-right {
+        width: 50% !important;
+    }
+
+    .p28-slidercontent .p28-pinnedpost-left {
+        width: 50% !important;
+    }
+
 }
 
 @media screen and (max-width:800px) {
+    .p28-slidercontent .p28-pinnedpost-right {
+        width: 100% !important;
+    }
+
+    .p28-slidercontent .p28-pinnedpost-left {
+        width: 100% !important;
+    }
+
+    .p28-slidercontent {
+        height: auto !important;
+    }
+
+    .slider {
+
+        height: 500px;
+        width: 100%;
+        position: relative;
+    }
+
     .p28-pinnedpost {
         flex-direction: column-reverse;
 
@@ -181,6 +310,7 @@ img.p28-filmsreal-img {
 
     .p28-secondpinnedpost {
         flex-direction: column;
+        justify-content: space-between;
     }
 
     .p28-pinnedpost-left,
@@ -196,6 +326,7 @@ img.p28-filmsreal-img {
     .p28-bannerexcerpt {
         padding: 0 4%;
         text-align: center;
+        margin: 1% 0;
     }
 
     .p28-imgfull {

@@ -50,7 +50,7 @@
             </li>
             <li class="p28-navbar-item p28-disappearmobile"><a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-navlink p28-link">D&Eacute;COUVREZ TOUTES LES OEUVRES</a></li>
             <li class="p28-navbar-item p28-logo-item"><a href="<?php echo home_url('/'); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo-page-28.png" alt="Logo Page 28" class="p28-50">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo-page-28.png" alt="Logo Page 28" class="p28-30">
                 </a></li>
             <li class="p28-navbar-item p28-navlink p28-link">A PROPOS</li>
             <!--<li class="p28-navbar-item"><a class="p28-btn p28-btn-secondary">APPEL A PROJET</a></li>

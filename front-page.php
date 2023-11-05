@@ -7,6 +7,48 @@ get_header(); ?>
 
 <div class="p28-container">
 
+    <div class="p28-secondpinnedpost p28-slidercontent p28-bg-fceeca">
+        <div class="p28-pinnedpost-right">
+            <div class="slider">
+
+                <?php
+                $i = 1;
+                $args  = array(
+                    'post_type'           => 'oeuvre',
+                    'posts_per_page'      => 4,
+                    'orderby'             => 'date',
+                    'order'               => 'DESC',
+
+
+                );
+                $query = new WP_Query($args);
+
+                if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+
+
+                        <div class="slide" id="p28-img<?php echo $i; ?>">
+                            <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-slide-img" /></a>
+
+                        </div>
+
+                <?php $i++;
+                    endwhile;
+                endif;
+                wp_reset_postdata(); ?>
+
+            </div>
+
+        </div>
+
+        <div class="p28-pinnedpost-left p28-pad2520">
+            <h1 class="p28-txt-15071d">Page 28, le catalogue de films et séries réalisés par des femmes</h1>
+            <div class="p28-bannerexcerpt p28-txt-15071d">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque fuga cupiditate quia veniam eius expedita aspernatur iusto, et nemo exercitationem quod ut ipsa similique voluptates magnam odio placeat minima perspiciatis.</div>
+            <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" title="Catalogue de films" class="p28-btn p28-btn-primary">Trouver un film</a>
+
+        </div>
+
+
+    </div>
 
     <?php
 
@@ -29,9 +71,9 @@ get_header(); ?>
                     if ($query->current_post == 0) : ?>
                         <div class="p28-pinnedpost p28-bg-fceeca">
                             <div class="p28-pinnedpost-left p28-pad2025">
-                                <h1 class="p28-txt-15071d p28-h1"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Découvrez l'analyse de l'&oelig;uvre : <?php the_title(); ?></a></h1>
-                                <div class="p28-bannerexcerpt p28-txt-15071d"><?php the_excerpt(); ?></div>
-                                <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">Découvrir l'analyse</a>
+                                <h2 class="p28-txt-15071d"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Découvrez l'analyse de l'&oelig;uvre : <?php the_title(); ?></a></h1>
+                                    <div class="p28-bannerexcerpt p28-txt-15071d"><?php the_excerpt(); ?></div>
+                                    <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">Découvrir l'analyse</a>
 
                             </div>
                             <div class="p28-flexrowend p28-angled-right p28-bg-fceeca">
@@ -60,7 +102,7 @@ get_header(); ?>
             <!-- BLOC SEO -->
             <div class="p28-txtbloc p28-txtcenter">
                 <h2 class="p28-h2 p28-txt-15071d">
-                    Découvrez notre sélection de films 100% réalisés par des femmes
+                    Découvrez notre sélection de films d'action réalisés par des femmes
                 </h2>
                 <p class="p28-txt-15071d">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
             </div>
@@ -72,6 +114,13 @@ get_header(); ?>
                     'posts_per_page'      => 8,
                     'orderby'             => 'date',
                     'order'               => 'DESC',
+                    'tax_query'           => array(
+                        array(
+                            'taxonomy'    => 'genre',
+                            'field'       => 'slug',
+                            'terms'       => 'action'
+                        )
+                    )
                 );
                 $query = new WP_Query($args);
 
@@ -164,7 +213,7 @@ get_header(); ?>
                     <div class="p28-bar p28-bg-29ade6"></div>
                 </div>
                 <div class="p28-pinnedpost-left p28-pad2520">
-                    <h2 class="p28-txt-15071d p28-h1"><a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" title="<?php echo $p28_sticky_post['p28_title']; ?>"><?php echo $p28_sticky_post['p28_title']; ?></a></h2>
+                    <h2 class="p28-txt-15071d"><a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" title="<?php echo $p28_sticky_post['p28_title']; ?>"><?php echo $p28_sticky_post['p28_title']; ?></a></h2>
                     <div class="p28-bannerexcerpt p28-txt-15071d"><?php echo $p28_sticky_post['p28_excerpt']; ?></div>
                     <a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" class="p28-btn p28-btn-primary">Lire l'analyse</a>
 
