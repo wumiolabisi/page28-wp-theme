@@ -4,8 +4,9 @@
 *******
 **********************************/
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap');
 
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap');
+*/
 * {
     font-family: 'Poppins', sans-serif;
 }
@@ -39,6 +40,22 @@ form button {
     background-color: #15071d;
     color: #fceeca;
     padding: 10px 20px !important;
+}
+
+.p28-btn-primarybis {
+    background-color: #fceeca;
+    color: #15071d;
+    padding: 10px 20px !important;
+    width: 300px;
+    margin: 5% 0;
+}
+
+.p28-btn-primarybis:hover {
+    cursor: pointer;
+    background-color: #15071d;
+    color: #fceeca;
+    font-weight: bold;
+    border: 1px solid #fceeca;
 }
 
 .p28-btn-primary-fec32e {
@@ -366,6 +383,11 @@ svg.p28-fill-fceeca,
 
 }
 
+.p28-100 {
+    width: 100px;
+    height: auto;
+}
+
 .p28-imgfull {
     object-fit: cover;
     height: 100%;
@@ -443,6 +465,9 @@ svg.p28-fill-fceeca,
 }
 
 @media screen and (max-width:640px) {
+    .p28-bannerbg-item {
+        top: initial;
+    }
 
     img.p28-catalogue-img,
     img.p28-filmsreal-img {

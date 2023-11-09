@@ -67,3 +67,13 @@ function page28_register_assets()
     );
 }
 add_action('wp_enqueue_scripts', 'page28_register_assets');
+
+function p28_login_logo()
+{
+    wp_enqueue_style(
+        'custom-login',
+        get_template_directory_uri() . '/assets/custom-login.css',
+        array('login')
+    );
+}
+add_action('login_enqueue_scripts', 'p28_login_logo');

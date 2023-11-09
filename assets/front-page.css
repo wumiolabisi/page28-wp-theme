@@ -3,6 +3,68 @@
 ** SLIDER FRONT PAGE
 *******
 **********************************/
+.p28-block-rounded {
+    border-radius: 10px;
+    margin: 5%;
+}
+
+.p28-h1accroche {
+    border-top: 5px solid #fceeca;
+    margin: 0;
+    padding: 1%;
+    width: 350px;
+    font-size: 30px;
+
+
+}
+
+.p28-logoanim>.p28-txt-fceeca {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-duration: 1.2s;
+    animation-duration: 1.2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.p28-logoanim {
+    display: flex;
+    flex-direction: row;
+}
+
+.p28-logoanim h1 {
+    font-size: 64px;
+}
+
+
 .slider {
     display: flex;
     align-items: center;
@@ -16,8 +78,8 @@
 }
 
 .p28-slide-img {
-    width: 300px;
-    height: 400px;
+    width: 45vw;
+    height: 509px;
     object-fit: cover;
     border-radius: 10px;
 
@@ -93,12 +155,13 @@
     margin-bottom: 2%;
 }
 
+
 .p28-slidercontent .p28-pinnedpost-right {
-    width: 25% !important;
+    width: 60% !important;
 }
 
 .p28-slidercontent .p28-pinnedpost-left {
-    width: 50% !important;
+    width: 40% !important;
 }
 
 .p28-catalogue {
@@ -242,6 +305,8 @@ img.p28-filmsreal-img {
 ** RESPONSIVENESS
 *******
 **********************************/
+
+
 @media screen and (max-width:1280px) {
     .p28-angled-right {
         transform: skewX(-7deg) !important;
@@ -269,11 +334,27 @@ img.p28-filmsreal-img {
 
 
     .p28-slidercontent .p28-pinnedpost-right {
-        width: 50% !important;
+        width: 60% !important;
     }
 
     .p28-slidercontent .p28-pinnedpost-left {
-        width: 50% !important;
+        width: 40% !important;
+    }
+
+    .p28-slide-img {
+        width: 47vw;
+    }
+
+
+
+    .p28-block-rounded {
+        margin: 5em 1em;
+    }
+
+    .p28-h1accroche {
+        padding: 1%;
+        width: 300px;
+        font-size: 25px;
     }
 
 }
@@ -350,5 +431,12 @@ img.p28-filmsreal-img {
         font-size: 5.5vw !important;
         top: 15px;
     }
+
+    .p28-slide-img {
+        width: 82vw;
+        height: 414px;
+    }
+
+
 
 }

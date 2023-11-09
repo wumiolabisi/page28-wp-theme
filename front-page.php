@@ -7,7 +7,7 @@ get_header(); ?>
 
 <div class="p28-container">
 
-    <div class="p28-secondpinnedpost p28-slidercontent p28-bg-fceeca">
+    <div class="p28-secondpinnedpost p28-slidercontent p28-bg-15071d p28-block-rounded">
         <div class="p28-pinnedpost-right">
             <div class="slider">
 
@@ -27,7 +27,7 @@ get_header(); ?>
 
 
                         <div class="slide" id="p28-img<?php echo $i; ?>">
-                            <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-slide-img" /></a>
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-thumbnail', ['class' => 'p28-slide-img']); ?></a>
 
                         </div>
 
@@ -39,11 +39,17 @@ get_header(); ?>
             </div>
 
         </div>
-
-        <div class="p28-pinnedpost-left p28-pad2520">
-            <h1 class="p28-txt-15071d">Page 28, le catalogue de films et séries réalisés par des femmes</h1>
-            <div class="p28-bannerexcerpt p28-txt-15071d">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque fuga cupiditate quia veniam eius expedita aspernatur iusto, et nemo exercitationem quod ut ipsa similique voluptates magnam odio placeat minima perspiciatis.</div>
-            <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" title="Catalogue de films" class="p28-btn p28-btn-primary">Trouver un film</a>
+        <div class="p28-flexrowstart p28-angled-left p28-bg-15071d" style="z-index: 5;">
+            <div class="p28-bar p28-bg-fec32e"></div>
+            <div class="p28-bar p28-bg-29ade6"></div>
+        </div>
+        <div class="p28-pinnedpost-left">
+            <div class="p28-logoanim">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/logo-page-28.png" alt="Logo Page 28" class="p28-100">
+                <h1 class="p28-txt-fceeca">Page 28</h1>
+            </div>
+            <p class="p28-txt-fceeca p28-h2 p28-h1accroche p28-txtjustify-left">Trouvez facilement un film ou série réalisé par une femme</p>
+            <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" title="Catalogue de films" class="p28-btn p28-btn-primarybis">CATALOGUE DES FILMS ET SÉRIES</a>
 
         </div>
 
@@ -71,9 +77,9 @@ get_header(); ?>
                     if ($query->current_post == 0) : ?>
                         <div class="p28-pinnedpost p28-bg-fceeca">
                             <div class="p28-pinnedpost-left p28-pad2025">
-                                <h2 class="p28-txt-15071d"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Découvrez l'analyse de l'&oelig;uvre : <?php the_title(); ?></a></h1>
-                                    <div class="p28-bannerexcerpt p28-txt-15071d"><?php the_excerpt(); ?></div>
-                                    <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">Découvrir l'analyse</a>
+                                <h2 class="p28-txt-15071d"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Découvrez l'analyse de l'&oelig;uvre : <?php the_title(); ?></a></h2>
+                                <div class="p28-bannerexcerpt p28-txt-15071d"><?php the_excerpt(); ?></div>
+                                <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">Découvrir l'analyse</a>
 
                             </div>
                             <div class="p28-flexrowend p28-angled-right p28-bg-fceeca">
