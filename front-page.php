@@ -110,7 +110,14 @@ get_header(); ?>
                 <h2 class="p28-h2 p28-txt-15071d">
                     Découvrez notre sélection de films d'action réalisés par des femmes
                 </h2>
-                <p class="p28-txt-15071d">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                <p class="p28-txt-15071d">Découvrez un univers cinématographique engagé sur notre site de <strong>catalogue de films et séries</strong>.
+                    Conçu pour les cinéphiles en quête de diversité et d'inclusivité, vous trouverez sur le catalogue Page 28 un choix de plus de 100 œuvres réalisées ou co-réalisées par des femmes.
+                    Explorez notre <strong>catalogue de films variés</strong>, allant du documentaire à la fiction, en passant par des genres et formats uniques. !
+                    Créez des listes personnalisées, donnez votre avis dans la zone de commentaires ou découvrez de nouvelles pépites cinématographique grâce à notre fonction "Un film au hasard ?" !
+                </p>
+                <p class="p28-txt-15071d">Plongez dans des critiques authentiques rédigées par notre fondatrice, Anne Roux, réalisatrice engagée en Master 2 de création documentaire !
+                    Rejoignez-nous dans cette expérience cinématographique unique, guidée par une vision anti-patriarcale et féministe.
+                </p>
             </div>
 
             <!-- DIV DEBUT CATALOGUE-->

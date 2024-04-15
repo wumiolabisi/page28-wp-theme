@@ -1,87 +1,116 @@
-/* Fond */
-body {
-    background: #fceeca;
-    font-family: 'Poppins', 'Arial';
-}
-
-.login form {
-    border: none !important;
-    background: transparent;
-    box-shadow: none;
-}
-
-/* Logo */
-#login h1 a,
-.login h1 a {
-    background-image: url('../img/logo-page-28.png');
-}
-
-/* Bouton */
-.wp-core-ui {
-    background: #fceeca;
-    border-color: #15071d;
-}
-
-.button-primary,
-#loginform input[type="submit"] {
-    height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    font-size: 16px;
-    vertical-align: middle;
-    background-color: #15071d;
-    color: #fceeca;
-    padding: 10px 20px !important;
-}
-
-.button-primary:hover,
-#loginform input[type="submit"]:hover {
-    cursor: pointer;
-    background-color: #fceeca;
-    color: #15071d;
-    font-weight: bold;
-    border: 1px solid #15071d;
-}
-
-input#user_login,
-input#user_pass {
-    border-bottom: 1px solid #15071d;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    border-radius: 0px;
-    background: transparent;
-
-}
-
-input#user_login:focus,
-input#user_pass:focus {
-    outline: none !important;
-
-}
-
-.login label {
-    margin-bottom: 5%;
-}
-
-/* Liens */
-.login #backtoblog a,
-.login #nav a,
-.privacy-policy-page-link a {
-    color: #15071d;
-}
-
-div#login-message {
-    background: transparent;
-    border-left: 4px solid #15071d;
-}
-
-form#language-switcher {
-    display: none;
+/* Fond */
+body {
+    background: #fceeca;
+    font-family: 'Poppins', 'Arial';
+}
+
+.login form {
+    border: none !important;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Logo */
+#login h1 a,
+.login h1 a {
+    background-image: url('../img/logo-page-28.png');
+}
+
+/* Bouton */
+.wp-core-ui {
+    background: #fceeca;
+    border-color: #15071d;
+}
+
+.button-primary,
+#loginform input[type="submit"],
+input#wp-submit {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 16px;
+    vertical-align: middle;
+    background-color: #15071d;
+    color: #fceeca;
+    padding: 10px 20px !important;
+}
+
+.button-primary:hover,
+#loginform input[type="submit"]:hover,
+input#wp-submit:hover {
+    cursor: pointer;
+    background-color: #fceeca;
+    color: #15071d;
+    font-weight: bold;
+    border: 1px solid #15071d;
+}
+
+input#user_login,
+input#user_pass,
+input#user_email {
+    border-bottom: 1px solid #15071d;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px;
+    background: transparent;
+
+}
+
+input#user_login:focus,
+input#user_pass:focus {
+    outline: none !important;
+
+}
+
+.login label {
+    margin-bottom: 5%;
+}
+
+/* Liens */
+.login #backtoblog a,
+.login #nav a,
+.privacy-policy-page-link a {
+    color: #15071d;
+}
+
+div#login-message,
+div#login .notice {
+    background: transparent;
+    border-left: 4px solid #15071d;
+}
+
+
+
+a:hover {
+    color: #15071d !important;
+}
+
+p#backtoblog a,
+p#nav>a.wp-login-lost-password,
+p#nav>a.wp-login-log-in {
+    background:
+        linear-gradient(to right,
+            rgba(203, 189, 255, 0),
+            rgba(203, 189, 255, 0)),
+        linear-gradient(to right,
+            rgba(254, 195, 46, 1),
+            rgba(57, 251, 126, 1),
+            rgba(203, 189, 255, 1));
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+p#backtoblog a:hover,
+p#nav>a.wp-login-lost-password:hover,
+p#nav>a.wp-login-log-in:hover {
+    background-size: 0 3px, 100% 3px;
 }

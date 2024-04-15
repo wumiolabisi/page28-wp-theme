@@ -1,94 +1,94 @@
-.p28-infos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.p28-infos-item {
-    border-radius: 10px;
-    width: 350px;
-    padding: 1% 2%;
-    margin: 20px;
-    height: 100px;
-    text-transform: uppercase;
-}
-
-.p28-content {
-    line-height: 2em;
-}
-
-/********************************
-*******
-** COMMENTS AREA
-*******
-**********************************/
-.p28-comments {
-    padding: 2%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-.p28-comments h3.comment-reply-title,
-.p28-comments p {
-    color: #15071d !important;
-}
-
-.p28-comments p.form-submit>input[type=submit] {
-    background-color: #15071d;
-    color: #fceeca;
-    padding: 10px 20px !important;
-    outline: none !important;
-    padding: 5px 15px;
-    border-radius: 10px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    border: none;
-}
-
-.p28-comments p.form-submit>input[type=submit]:hover {
-    cursor: pointer;
-    background-color: #fceeca;
-    color: #15071d;
-    font-weight: bold;
-    border: 1px solid #15071d;
-}
-
-.p28-approuved-comments {
-    border-radius: 10px;
-    padding: 1%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    border: 1px solid #15071d;
-    /*background-color: #fec32e;*/
-    width: 70%;
-}
-
-.p28-comment-item {
-    padding: 0 3%;
-}
-
-.required-field-message::before {
-    display: block;
-    content: '';
-}
-
-@media screen and (max-width:800px) {
-
-    .p28-comments,
-    .comment-form textarea {
-        padding: 5%;
-        width: 80%;
-    }
-
-    .p28-infos-item {
-        width: 200px;
-        height: 83px;
-        font-size: 12px;
-    }
-
+.p28-infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.p28-infos-item {
+    border-radius: 10px;
+    width: 350px;
+    padding: 1% 2%;
+    margin: 20px;
+    height: 100px;
+    text-transform: uppercase;
+}
+
+.p28-content {
+    line-height: 2em;
+}
+
+/********************************
+*******
+** COMMENTS AREA
+*******
+**********************************/
+.p28-comments {
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.p28-comments h3.comment-reply-title,
+.p28-comments p {
+    color: #15071d !important;
+}
+
+.p28-comments p.form-submit>input[type=submit] {
+    background-color: #15071d;
+    color: #fceeca;
+    padding: 10px 20px !important;
+    outline: none !important;
+    padding: 5px 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    border: none;
+}
+
+.p28-comments p.form-submit>input[type=submit]:hover {
+    cursor: pointer;
+    background-color: #fceeca;
+    color: #15071d;
+    font-weight: bold;
+    border: 1px solid #15071d;
+}
+
+.p28-approuved-comments {
+    border-radius: 10px;
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    border: 1px solid #15071d;
+    /*background-color: #fec32e;*/
+    width: 70%;
+}
+
+.p28-comment-item {
+    padding: 0 3%;
+}
+
+.required-field-message::before {
+    display: block;
+    content: '';
+}
+
+@media screen and (max-width:800px) {
+
+    .p28-comments,
+    .comment-form textarea {
+        padding: 5%;
+        width: 80%;
+    }
+
+    .p28-infos-item {
+        width: 200px;
+        height: 83px;
+        font-size: 12px;
+    }
+
 }
