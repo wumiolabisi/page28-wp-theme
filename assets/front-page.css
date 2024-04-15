@@ -24,11 +24,11 @@
 
     margin: 0;
 
-    padding: 1%;
+    padding: 5% 0;
 
     width: 350px;
 
-    font-size: 30px;
+    font-size: 20px;
 
 
 
@@ -120,13 +120,12 @@
 
 }
 
-
-
 .p28-logoanim h1 {
-
-    font-size: 64px;
-
+    line-height: 51px;
 }
+
+
+
 
 
 
@@ -574,7 +573,7 @@ img.p28-filmsreal-img {
 
     width: 700px;
 
-    height: 300px;
+    /*height: 300px;*/
 
     margin-top: 5%;
 
@@ -706,11 +705,11 @@ img.p28-filmsreal-img {
 
     .p28-h1accroche {
 
-        padding: 1%;
 
-        width: 300px;
 
-        font-size: 25px;
+        width: 80%;
+
+        font-size: 17px;
 
     }
 

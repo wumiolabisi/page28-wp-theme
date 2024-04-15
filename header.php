@@ -50,7 +50,7 @@
             </li>
             <li class="p28-navbar-item p28-disappearmobile"><a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-navlink p28-link">CONSULTER LE CATALOGUE</a></li>
             <li class="p28-navbar-item p28-logo-item"><a href="<?php echo home_url('/'); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo-page-28.png" alt="Logo Page 28" class="p28-30">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo-page-28.png" alt="Logo Page 28" class="p28-50">
                 </a></li>
             <!--<li class="p28-navbar-item p28-navlink p28-link p28-disappearmobile"><a href="<?php echo esc_url(wp_login_url(get_permalink())); ?>" title="Connectez-vous ou inscrivez-vous" alt="Connectez-vous ou inscrivez-vous">CONNEXION</a></li>
                 -->
