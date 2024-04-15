@@ -47,7 +47,7 @@ get_header(); ?>
             <div class="p28-logoanim">
                 <h1 class="p28-txt-fceeca">Page 28 met les réalisatrices à l'honneur !</h1>
             </div>
-            <p class="p28-txt-fceeca p28-h1accroche p28-txtjustify-left">Explorez des récits vibrants, des perspectives uniques et des réalisations cinématographiques saisissantes,
+            <p class="p28-txt-fceeca p28-h1accroche p28-txtjustify-center">Explorez des récits vibrants, des perspectives uniques et des réalisations cinématographiques saisissantes,
                 toutes portées par le talent et la vision des femmes derrière la caméra.</p>
             <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" title="Catalogue de films" class="p28-btn p28-btn-primary">EXPLORER LE CATALOGUE</a>
 
@@ -106,7 +106,7 @@ get_header(); ?>
             wp_reset_postdata();
             ?>
             <!-- BLOC SEO -->
-            <div class="p28-txtbloc p28-txtcenter">
+            <div class="p28-txtbloc p28-txtjustify-center">
                 <h2 class="p28-h2 p28-txt-15071d">
                     Découvrez notre sélection de films d'action réalisés par des femmes
                 </h2>
@@ -202,7 +202,7 @@ get_header(); ?>
                     <div class="p28-filmsreal">
                         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                 <div class="p28-filmsreal-item"><img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-catalogue-img" alt="affiche du film : <?php the_title(); ?>" />
-                                    <div class="p28-mar-20 p28-txtjustify-center"><a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary"><?php the_title(); ?></a></div>
+                                    <div class="p28-mar-20 p28-txtcenter"><a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary"><?php the_title(); ?></a></div>
                                 </div>
                         <?php endwhile;
                         endif; ?>
