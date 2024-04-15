@@ -47,7 +47,7 @@ get_header(); ?>
             <div class="p28-logoanim">
                 <h1 class="p28-txt-fceeca">Page 28 met les réalisatrices à l'honneur !</h1>
             </div>
-            <p class="p28-txt-fceeca p28-h1accroche p28-txtjustify-center">Explorez des récits vibrants, des perspectives uniques et des réalisations cinématographiques saisissantes,
+            <p class="p28-txt-fceeca p28-h1accroche p28-txtjustify-left">Explorez des récits vibrants, des perspectives uniques et des réalisations cinématographiques saisissantes,
                 toutes portées par le talent et la vision des femmes derrière la caméra.</p>
             <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" title="Catalogue de films" class="p28-btn p28-btn-primary">EXPLORER LE CATALOGUE</a>
 
@@ -79,7 +79,7 @@ get_header(); ?>
                             <div class="p28-pinnedpost-left p28-pad2025">
                                 <h2 class="p28-txt-15071d"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Ce mois-ci, nous souhaitons vous faire découvrir <em><?php the_title(); ?></em></a></h2>
                                 <div class="p28-bannerexcerpt p28-txt-15071d p28-txtjustify-left"><?php the_excerpt(); ?></div>
-                                <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">Découvrez l'&oelig;vre</a>
+                                <a href="<?php the_permalink(); ?>" class="p28-btn p28-btn-primary">Découvrez l'&oelig;uvre</a>
 
                             </div>
                             <div class="p28-flexrowend p28-angled-right p28-bg-fceeca">
@@ -198,7 +198,7 @@ get_header(); ?>
 
                 <div class="p28-focusreal-item p28-bg-fceeca">
 
-                    <p class="p28-txt-15071d"><?php echo $terms[0]->description; ?></p>
+                    <p class="p28-txt-15071d p28-txtjustify-left"><?php echo $terms[0]->description; ?></p>
                     <div class="p28-filmsreal">
                         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                 <div class="p28-filmsreal-item"><img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-catalogue-img" alt="affiche du film : <?php the_title(); ?>" />
@@ -225,7 +225,7 @@ get_header(); ?>
                 <div class="p28-pinnedpost-left p28-pad2520">
                     <h2 class="p28-txt-15071d"><a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" title="<?php echo $p28_sticky_post['p28_title']; ?>"><?php echo $p28_sticky_post['p28_title']; ?></a></h2>
                     <div class="p28-bannerexcerpt p28-txt-15071d p28-txtjustify-left"><?php echo $p28_sticky_post['p28_excerpt']; ?></div>
-                    <a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" class="p28-btn p28-btn-primary">Découvrez l'oeuvre en détail</a>
+                    <a href="<?php echo $p28_sticky_post['p28_permalink']; ?>" class="p28-btn p28-btn-primary">L'&oelig;uvre en détail</a>
 
                 </div>
 
