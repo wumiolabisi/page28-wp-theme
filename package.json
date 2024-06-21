@@ -1,0 +1,31 @@
+{
+  "name": "page28",
+  "version": "2.0.0",
+  "description": "Thème WordPress pour le site de partages d'oeuvres cinématographiques Page 28",
+  "main": "index.js",
+  "scripts": {
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wumiolabisi/page28-wp-theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wumiolabisi/page28-wp-theme/issues"
+  },
+  "homepage": "https://github.com/wumiolabisi/page28-wp-theme#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.49",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.77.6",
+    "sass-loader": "^12.1.0"
+  }
+}
