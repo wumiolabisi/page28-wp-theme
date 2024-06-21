@@ -11,7 +11,7 @@ function page28_register_assets()
         get_template_directory_uri() . '/dist/js/app.js',
         array('jquery'),
         '1.0',
-      true
+        true
 
     );
 
@@ -20,7 +20,7 @@ function page28_register_assets()
         get_template_directory_uri() . '/dist/js/ajax.js',
         array('jquery'),
         '1.0',
-      true
+        true
     );
 
     // Déclarer le fichier CSS à un autre emplacement
@@ -30,6 +30,7 @@ function page28_register_assets()
         array(),
         '1.0'
     );
+}
 
 add_action('wp_enqueue_scripts', 'page28_register_assets');
 
@@ -45,4 +46,3 @@ function p28_login_logo()
 }
 
 add_action('login_enqueue_scripts', 'p28_login_logo');
-

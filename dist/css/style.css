@@ -1,4 +1,78 @@
-body {
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap);
+/* Fonts */
+/* Colors */
+/* !!! Please pay attention to contrast AA value !!! */
+/* Breakpoints */
+/*
+** $breakpoint receive the breakpoint
+** the media query checks if min/max-width is equal or larger than the breakpoint
+** @content is all CSS property that has been sent when calling the mixin
+*/
+body,
+html {
   width: 100%;
-  background-color: black;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #2e2e2e;
+}
+
+.p28-bg-light {
+  background-color: #ffffff;
+}
+
+/* Texts and links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li.p28-navbar-item > a {
+  background: linear-gradient(to right, rgba(203, 189, 255, 0), rgba(203, 189, 255, 0)), linear-gradient(to right, rgb(254, 195, 46), rgb(57, 251, 126), rgb(203, 189, 255));
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+li.p28-navbar-item > a:hover {
+  background-size: 0 3px, 100% 3px;
+}
+
+/* images */
+.width-50 {
+  width: 50px;
+  height: auto;
+}
+
+/* Flex containers */
+.flex-row, nav.p28-navbar > ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main navbar */
+nav.p28-navbar {
+  width: 100%;
+  height: 150px;
+  position: fixed;
+  top: 0;
+}
+
+nav.p28-navbar > ul {
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+}
+
+nav.p28-navbar ul > li {
+  text-transform: uppercase;
+  font-weight: 600;
 }

@@ -1,0 +1,38 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap');
+$global-font-family: 'Poppins', sans-serif;
+
+@mixin fontWeight($val) {
+    font-weight: $val;
+}
+
+/* Colors */
+/* !!! Please pay attention to contrast AA value !!! */
+$main-light-colour: #ffffff;
+$main-dark-colour: #2e2e2e;
+$second-light-color: #e9e6e6;
+
+
+/* Breakpoints */
+$xl: 87.5em; // 4k and hi-res desktop
+$lg: 60em; // 1080 and hi-res laptops
+$md: 40em; // hi-res tablets and low-res laptops
+$sm: 28em; // mobile and low-res tablets
+$xs: 20em; // mobile only
+
+/*
+** $breakpoint receive the breakpoint
+** the media query checks if min/max-width is equal or larger than the breakpoint
+** @content is all CSS property that has been sent when calling the mixin
+*/
+@mixin min-responsive($breakpoint) {
+    @media (min-width: $breakpoint ) {
+        @content;
+    }
+}
+
+@mixin max-responsive($breakpoint) {
+    @media (max-width: $breakpoint ) {
+        @content;
+    }
+}
