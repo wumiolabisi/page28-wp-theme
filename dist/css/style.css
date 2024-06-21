@@ -64,12 +64,21 @@ nav.p28-navbar {
 }
 
 nav.p28-navbar > ul {
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   list-style-type: none;
   padding: 0;
   margin: 0;
   gap: 15px;
+}
+
+nav.p28-navbar ul > li:first-child {
+  margin-right: 0;
+}
+@media (min-width: 40em) {
+  nav.p28-navbar ul > li:first-child {
+    margin-right: 35%;
+  }
 }
 
 nav.p28-navbar ul > li {

@@ -25,13 +25,13 @@ $xs: 20em; // mobile only
 ** the media query checks if min/max-width is equal or larger than the breakpoint
 ** @content is all CSS property that has been sent when calling the mixin
 */
-@mixin min-responsive($breakpoint) {
+@mixin minScreenWidth($breakpoint) {
     @media (min-width: $breakpoint ) {
         @content;
     }
 }
 
-@mixin max-responsive($breakpoint) {
+@mixin maxScreenWidth($breakpoint) {
     @media (max-width: $breakpoint ) {
         @content;
     }
