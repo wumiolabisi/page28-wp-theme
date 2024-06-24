@@ -8,7 +8,7 @@
 /***/ (() => {
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function stickyNav() {
+stickyNav = function stickyNav() {
   var header = document.getElementById("p28_nav_sticky");
   var sticky = header.offsetTop;
   if (window.scrollY > sticky) {
@@ -16,7 +16,7 @@ function stickyNav() {
   } else {
     header.classList.remove("p28-bg-light");
   }
-}
+};
 
 /***/ }),
 

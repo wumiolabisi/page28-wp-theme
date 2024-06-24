@@ -1,6 +1,6 @@
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function stickyNav() {
+stickyNav = function () {
     let header = document.getElementById("p28_nav_sticky");
     let sticky = header.offsetTop;
 

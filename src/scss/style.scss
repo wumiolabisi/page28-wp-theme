@@ -8,6 +8,22 @@ html {
     color: $main-dark-colour;
 }
 
+/* Common stuff */
+.display-from-md {
+
+    @include maxScreenWidth($md) {
+        display: none;
+    }
+}
+
+.display-until-md {
+
+    @include minScreenWidth($md) {
+        display: none;
+    }
+}
+
+/* Colors */
 .p28-bg-light {
     background-color: $main-light-colour;
 }
@@ -58,14 +74,21 @@ li.p28-navbar-item>a:hover {
 /* Main navbar */
 nav.p28-navbar {
     width: 100%;
-    height: 150px;
+    height: auto;
     position: fixed;
-    top: 0;
+}
+
+.p28-navbar-top {
+    top: 0
+}
+
+.p28-navbar-bottom {
+    bottom: 0
 }
 
 nav.p28-navbar>ul {
     @extend .flex-row;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     list-style-type: none;
     padding: 0;
@@ -73,11 +96,14 @@ nav.p28-navbar>ul {
     gap: 15px
 }
 
-nav.p28-navbar ul>li:first-child {
-    margin-right: 0;
+nav.p28-navbar-top ul>li:first-child {
+
+    position: static;
+    left: 0;
 
     @include minScreenWidth($md) {
-        margin-right: 35%;
+        position: relative;
+        left: -35%;
     }
 }
 

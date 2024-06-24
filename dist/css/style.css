@@ -16,6 +16,20 @@ html {
   color: #2e2e2e;
 }
 
+/* Common stuff */
+@media (max-width: 40em) {
+  .display-from-md {
+    display: none;
+  }
+}
+
+@media (min-width: 40em) {
+  .display-until-md {
+    display: none;
+  }
+}
+
+/* Colors */
 .p28-bg-light {
   background-color: #ffffff;
 }
@@ -58,13 +72,20 @@ li.p28-navbar-item > a:hover {
 /* Main navbar */
 nav.p28-navbar {
   width: 100%;
-  height: 150px;
+  height: auto;
   position: fixed;
+}
+
+.p28-navbar-top {
   top: 0;
 }
 
+.p28-navbar-bottom {
+  bottom: 0;
+}
+
 nav.p28-navbar > ul {
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   list-style-type: none;
   padding: 0;
@@ -72,12 +93,14 @@ nav.p28-navbar > ul {
   gap: 15px;
 }
 
-nav.p28-navbar ul > li:first-child {
-  margin-right: 0;
+nav.p28-navbar-top ul > li:first-child {
+  position: static;
+  left: 0;
 }
 @media (min-width: 40em) {
-  nav.p28-navbar ul > li:first-child {
-    margin-right: 35%;
+  nav.p28-navbar-top ul > li:first-child {
+    position: relative;
+    left: -35%;
   }
 }
 
