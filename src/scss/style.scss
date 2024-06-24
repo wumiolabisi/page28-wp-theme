@@ -5,7 +5,7 @@ html {
     width: 100%;
     margin: 0;
     font-family: $global-font-family;
-    color: $main-dark-colour;
+    color: $main-dark-color;
 }
 
 /* Common stuff */
@@ -27,9 +27,15 @@ html {
     border-radius: 5px;
 }
 
+.margin-0-auto {
+    margin: 0 auto;
+}
+
+
+
 /* Colors */
 .p28-bg-light {
-    background-color: $main-light-colour;
+    background-color: $main-light-color;
 }
 
 /* Texts */
@@ -137,8 +143,10 @@ li.p28-navbar-item>a:hover {
 
     width: 100%;
 
+
     @include minScreenWidth($md) {
         width: 500px;
+        @include customMargin(20%, 0);
 
     }
 }
@@ -146,9 +154,10 @@ li.p28-navbar-item>a:hover {
 /* Main navbar */
 nav.p28-navbar {
     width: 100%;
-    height: auto;
+    height: 80px;
     position: fixed;
     z-index: 2;
+    transition-duration: 0.5s;
 
     &.p28-navbar-top {
         top: 0
@@ -166,17 +175,18 @@ nav.p28-navbar {
         list-style-type: none;
         padding: 0;
         margin: 0;
-        gap: 15px
+        gap: 15px;
+        height: 100%;
     }
 
     & ul>li:first-child {
 
         position: static;
-        left: 0;
 
         @include minScreenWidth($md) {
-            position: relative;
-            left: -35%;
+            position: absolute;
+            left: 10px;
+            top: 10px;
         }
     }
 
@@ -190,5 +200,22 @@ nav.p28-navbar {
     width: 250px;
     height: 55px;
     @extend .border-radius;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all ease 0.5s;
+    @include fontWeight(700);
+}
 
+.p28-btn-primary {
+    @extend .p28-btn;
+    color: $main-dark-color;
+    border: 2px solid $main-dark-color;
+
+    &:hover {
+        color: $main-light-color;
+        background-color: $main-dark-color;
+    }
 }

@@ -8,6 +8,7 @@
 ** the media query checks if min/max-width is equal or larger than the breakpoint
 ** @content is all CSS property that has been sent when calling the mixin
 */
+/* Paddings and margins */
 body,
 html {
   width: 100%;
@@ -29,8 +30,12 @@ html {
   }
 }
 
-.border-radius, .p28-btn {
+.border-radius, .p28-btn, .p28-btn-primary {
   border-radius: 5px;
+}
+
+.margin-0-auto {
+  margin: 0 auto;
 }
 
 /* Colors */
@@ -130,15 +135,17 @@ li.p28-navbar-item > a:hover {
 @media (min-width: 40em) {
   .p28-500w {
     width: 500px;
+    margin: 20% 0;
   }
 }
 
 /* Main navbar */
 nav.p28-navbar {
   width: 100%;
-  height: auto;
+  height: 80px;
   position: fixed;
   z-index: 2;
+  transition-duration: 0.5s;
 }
 nav.p28-navbar.p28-navbar-top {
   top: 0;
@@ -153,15 +160,16 @@ nav.p28-navbar > ul {
   padding: 0;
   margin: 0;
   gap: 15px;
+  height: 100%;
 }
 nav.p28-navbar ul > li:first-child {
   position: static;
-  left: 0;
 }
 @media (min-width: 40em) {
   nav.p28-navbar ul > li:first-child {
-    position: relative;
-    left: -35%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
   }
 }
 nav.p28-navbar ul > li {
@@ -169,7 +177,23 @@ nav.p28-navbar ul > li {
   font-weight: 600;
 }
 
-.p28-btn {
+.p28-btn, .p28-btn-primary {
   width: 250px;
   height: 55px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.5s;
+  font-weight: 700;
+}
+
+.p28-btn-primary {
+  color: #2e2e2e;
+  border: 2px solid #2e2e2e;
+}
+.p28-btn-primary:hover {
+  color: #ffffff;
+  background-color: #2e2e2e;
 }

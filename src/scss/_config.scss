@@ -8,8 +8,8 @@ $global-font-family: 'Poppins', sans-serif;
 
 /* Colors */
 /* !!! Please pay attention to contrast AA value !!! */
-$main-light-colour: #ffffff;
-$main-dark-colour: #2e2e2e;
+$main-light-color: #ffffff;
+$main-dark-color: #2e2e2e;
 $second-light-color: #e9e6e6;
 
 
@@ -35,4 +35,9 @@ $xs: 20em; // mobile only
     @media (max-width: $breakpoint ) {
         @content;
     }
+}
+
+/* Paddings and margins */
+@mixin customMargin($side, $ups) {
+    margin: $side $ups;
 }
