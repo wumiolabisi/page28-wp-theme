@@ -58,32 +58,52 @@ li.p28-navbar-item > a:hover {
   height: auto;
 }
 
+.p28-bg-2024 {
+  background-image: url(https://page28.fr/wp-content/uploads/2023/12/portrait-de-la-jeune-fille-en-feu-ou-comment-regarder-autrement1-759x500-1.jpg);
+  background-size: cover;
+}
+
 /* Flex containers */
-.flex-row, nav.p28-navbar > ul {
+.flex-row, nav.p28-navbar > ul, .p28-main .p28-container .p28-row {
   display: flex;
   flex-direction: row;
 }
 
-.flex-column {
+.flex-column, .p28-main .p28-container .p28-col {
   display: flex;
   flex-direction: column;
 }
 
+/* Containers */
+.p28-main {
+  width: 100%;
+}
+.p28-main .p28-container {
+  width: 96%;
+  padding: 2%;
+}
+@media (min-width: 40em) {
+  .p28-main .p28-container {
+    width: 1000px;
+  }
+}
+@media (min-width: 40em) {
+  .p28-main .p28-container .p28-row {
+    flex-direction: column;
+  }
+}
 /* Main navbar */
 nav.p28-navbar {
   width: 100%;
   height: auto;
   position: fixed;
 }
-
-.p28-navbar-top {
+nav.p28-navbar.p28-navbar-top {
   top: 0;
 }
-
-.p28-navbar-bottom {
+nav.p28-navbar.p28-navbar-bottom {
   bottom: 0;
 }
-
 nav.p28-navbar > ul {
   justify-content: center;
   align-items: center;
@@ -92,18 +112,16 @@ nav.p28-navbar > ul {
   margin: 0;
   gap: 15px;
 }
-
-nav.p28-navbar-top ul > li:first-child {
+nav.p28-navbar ul > li:first-child {
   position: static;
   left: 0;
 }
 @media (min-width: 40em) {
-  nav.p28-navbar-top ul > li:first-child {
+  nav.p28-navbar ul > li:first-child {
     position: relative;
     left: -35%;
   }
 }
-
 nav.p28-navbar ul > li {
   text-transform: uppercase;
   font-weight: 600;

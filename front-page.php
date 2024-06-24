@@ -6,8 +6,9 @@ get_header(); ?>
 
 
 
-
-
+<div class="p28-main p28-bg-2024">
+    <div class="p28-container"></div>
+</div>
 <div class="p28-container">
 
     <div class="p28-secondpinnedpost p28-slidercontent p28-bg-15071d p28-block-rounded">
