@@ -7,7 +7,15 @@ get_header(); ?>
 
 
 <div class="p28-main p28-bg-2024">
-    <div class="p28-container"></div>
+    <div class="p28-container">
+        <div class="p28-row p28-justify-center">
+            <div class="p28-col p28-500w">
+                <h1 class="p28-text-center">Les réalisatrices à l’honneur dans un catalogue de films et séries dédiées à leurs &oelig;vres</h1>
+                <p class="p28-text-center">Explorez des récits vibrants, des perspectives uniques et des réalisations cinématographiques saisissantes, toutes portées par le talent et la vision des femmes derrière la caméra.</p>
+                <div><a class="p28-btn-primary" target="_blank" alt="Aller au catalogue"></a></div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="p28-container">
 
