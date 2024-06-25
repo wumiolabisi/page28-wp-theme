@@ -31,7 +31,7 @@ html {
   }
 }
 
-.border-radius, .p28-btn, .p28-btn-primary {
+.border-radius, .p28-btn, .p28-btn-secondary, .p28-btn-primary {
   border-radius: 5px;
 }
 
@@ -42,6 +42,10 @@ html {
 /* Colors */
 .p28-bg-light {
   background-color: #ffffff;
+}
+
+.p28-text-light {
+  color: #ffffff;
 }
 
 /* Texts */
@@ -57,6 +61,14 @@ html {
 
 .p28-small-text {
   font-size: 13px;
+}
+
+.p28-big-text {
+  font-size: 30px;
+}
+
+h3.p28-big-text {
+  margin-bottom: 0px;
 }
 
 /* Links */
@@ -80,6 +92,11 @@ li.p28-navbar-item > a:hover {
 /* images */
 .width-50 {
   width: 50px;
+  height: auto;
+}
+
+.width-30 {
+  width: 30px;
   height: auto;
 }
 
@@ -111,7 +128,7 @@ li.p28-navbar-item > a:hover {
 }
 
 /* Flex containers */
-.flex-row, nav.p28-navbar > ul {
+.flex-row, nav.p28-navbar > ul, .p28-heart28 {
   display: flex;
   flex-direction: row;
 }
@@ -123,6 +140,22 @@ li.p28-navbar-item > a:hover {
 
 .p28-justify-center {
   justify-content: center;
+}
+
+.p28-space-evenly {
+  justify-content: space-evenly;
+}
+
+.p28-space-between {
+  justify-content: space-between;
+}
+
+.p28-align-self-center {
+  align-self: center;
+}
+
+.p28-align-self-end {
+  align-self: end;
 }
 
 /* grid containers */
@@ -212,10 +245,39 @@ li.p28-navbar-item > a:hover {
   }
 }
 
+.p28-180x250 {
+  width: 180px;
+  height: 250px;
+}
+
+.p28-40pc {
+  width: 100%;
+}
+@media (min-width: 40em) {
+  .p28-40pc {
+    width: 40%;
+  }
+}
+
 @media (min-width: 40em) {
   .margin-2side {
     margin: 20% 0;
   }
+}
+
+/* Etiquette */
+.p28-heart28 {
+  position: relative;
+  top: 200px;
+  left: -40px;
+  background-color: #ffffff;
+  box-shadow: -1px 1px 10px #2e2e2e;
+  padding: 5px 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  width: 130px;
+  align-items: center;
 }
 
 /* Main navbar */
@@ -256,7 +318,7 @@ nav.p28-navbar ul > li {
   font-weight: 600;
 }
 
-.p28-btn, .p28-btn-primary {
+.p28-btn, .p28-btn-secondary, .p28-btn-primary {
   width: 310px;
   height: 55px;
   cursor: pointer;
@@ -276,4 +338,24 @@ nav.p28-navbar ul > li {
 .p28-btn-primary:hover {
   color: #ffffff;
   background-color: #2e2e2e;
+}
+
+.p28-btn-secondary {
+  width: 150px;
+  height: auto;
+  color: #ffffff;
+  border-radius: 0px;
+  border-bottom: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  text-align: left;
+  background: linear-gradient(to right, rgba(203, 189, 255, 0), rgba(203, 189, 255, 0)), linear-gradient(to right, #ffffff, #ffffff, #ffffff);
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+.p28-btn-secondary:hover {
+  background-size: 0 3px, 100% 3px;
 }

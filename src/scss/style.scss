@@ -38,6 +38,10 @@ html {
     background-color: $main-light-color;
 }
 
+.p28-text-light {
+    color: $main-light-color;
+}
+
 /* Texts */
 .p28-text-center {
     text-align: center;
@@ -51,6 +55,14 @@ html {
 
 .p28-small-text {
     font-size: 13px;
+}
+
+.p28-big-text {
+    font-size: 30px;
+}
+
+h3.p28-big-text {
+    margin-bottom: 0px;
 }
 
 /* Links */
@@ -82,6 +94,11 @@ li.p28-navbar-item>a:hover {
 /* images */
 .width-50 {
     width: 50px;
+    height: auto;
+}
+
+.width-30 {
+    width: 30px;
     height: auto;
 }
 
@@ -125,6 +142,22 @@ li.p28-navbar-item>a:hover {
 
 .p28-justify-center {
     justify-content: center;
+}
+
+.p28-space-evenly {
+    justify-content: space-evenly;
+}
+
+.p28-space-between {
+    justify-content: space-between;
+}
+
+.p28-align-self-center {
+    align-self: center;
+}
+
+.p28-align-self-end {
+    align-self: end;
 }
 
 /* grid containers */
@@ -233,11 +266,42 @@ li.p28-navbar-item>a:hover {
     }
 }
 
+.p28-180x250 {
+    width: 180px;
+    height: 250px;
+}
+
+.p28-40pc {
+    width: 100%;
+
+    @include minScreenWidth($md) {
+        width: 40%;
+    }
+}
+
 .margin-2side {
     @include minScreenWidth($md) {
         @include customMargin(20%, 0);
 
     }
+}
+
+/* Etiquette */
+
+
+.p28-heart28 {
+    @extend .flex-row;
+    position: relative;
+    top: 200px;
+    left: -40px;
+    background-color: $main-light-color;
+    box-shadow: -1px 1px 10px $main-dark-color;
+    padding: 5px 10px;
+    @include fontWeight(700);
+    text-transform: uppercase;
+    font-size: 13px;
+    width: 130px;
+    align-items: center;
 }
 
 /* Main navbar */
@@ -307,5 +371,36 @@ nav.p28-navbar {
     &:hover {
         color: $main-light-color;
         background-color: $main-dark-color;
+    }
+}
+
+.p28-btn-secondary {
+    @extend .p28-btn;
+    width: 150px;
+    height: auto;
+    color: $main-light-color;
+    border-radius: 0px;
+    border-bottom: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    text-align: left;
+
+    background:
+        linear-gradient(to right,
+            rgba(203, 189, 255, 0),
+            rgba(203, 189, 255, 0)),
+        linear-gradient(to right,
+            $main-light-color,
+            $main-light-color,
+            $main-light-color);
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+
+    &:hover {
+        background-size: 0 3px, 100% 3px;
+
     }
 }
