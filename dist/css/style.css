@@ -55,6 +55,10 @@ html {
   font-weight: normal;
 }
 
+.p28-small-text {
+  font-size: 13px;
+}
+
 /* Links */
 a {
   text-decoration: none;
@@ -136,11 +140,12 @@ li.p28-navbar-item > a:hover {
 }
 .p28-grid .p28-grid-item {
   overflow: hidden;
-  padding: 1%;
+  padding: 0 10px;
   display: grid;
   place-content: center;
   transition-duration: 0.5s;
   position: relative;
+  text-align: center;
 }
 .p28-grid .p28-grid-item .p28-grid-item-content {
   z-index: 1;
@@ -204,6 +209,11 @@ li.p28-navbar-item > a:hover {
 @media (min-width: 40em) {
   .p28-500w {
     width: 500px;
+  }
+}
+
+@media (min-width: 40em) {
+  .margin-2side {
     margin: 20% 0;
   }
 }
@@ -247,7 +257,7 @@ nav.p28-navbar ul > li {
 }
 
 .p28-btn, .p28-btn-primary {
-  width: 250px;
+  width: 310px;
   height: 55px;
   cursor: pointer;
   display: flex;
@@ -256,6 +266,7 @@ nav.p28-navbar ul > li {
   align-items: center;
   transition: all ease 0.5s;
   font-weight: 700;
+  text-align: center;
 }
 
 .p28-btn-primary {

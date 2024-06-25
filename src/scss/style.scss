@@ -49,6 +49,10 @@ html {
     @include fontWeight(normal);
 }
 
+.p28-small-text {
+    font-size: 13px;
+}
+
 /* Links */
 a {
     text-decoration: none;
@@ -137,11 +141,13 @@ li.p28-navbar-item>a:hover {
 
     .p28-grid-item {
         overflow: hidden;
-        padding: 1%;
+        padding: 0 10px;
         display: grid;
         place-content: center;
         transition-duration: 0.5s;
         position: relative;
+        text-align: center;
+
 
         .p28-grid-item-content {
             z-index: 1;
@@ -223,6 +229,12 @@ li.p28-navbar-item>a:hover {
 
     @include minScreenWidth($md) {
         width: 500px;
+
+    }
+}
+
+.margin-2side {
+    @include minScreenWidth($md) {
         @include customMargin(20%, 0);
 
     }
@@ -274,7 +286,7 @@ nav.p28-navbar {
 }
 
 .p28-btn {
-    width: 250px;
+    width: 310px;
     height: 55px;
     @extend .border-radius;
     cursor: pointer;
@@ -284,6 +296,7 @@ nav.p28-navbar {
     align-items: center;
     transition: all ease 0.5s;
     @include fontWeight(700);
+    text-align: center;
 }
 
 .p28-btn-primary {
