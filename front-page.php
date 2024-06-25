@@ -139,6 +139,7 @@ get_header(); ?>
                 </div>
             </div>
             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+
                     <div class="p28-col">
                         <a class="p28-180x250" href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
                             <img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-thumbnail" alt="affiche du film : <?php the_title(); ?>" />
@@ -152,30 +153,43 @@ get_header(); ?>
 
 
     <!-- DIV CATALOGUE ETIQUETTE -->
-    <div class="p28-catalogue">
-        <?php $args  = array(
-            'post_type'           => 'oeuvre',
-            'posts_per_page'      => 8,
-            'orderby'             => 'date',
-            'order'               => 'DESC',
-            'tax_query'           => array(
-                array(
-                    'taxonomy'    => 'genre',
-                    'field'       => 'slug',
-                    'terms'       => 'action'
-                )
-            )
-        );
-        $query = new WP_Query($args);
+    <div class="p28-container">
+        <h2 class="p28-h2">Les films et séries pour les <em>badass</em></h2>
+        <div class="p28-row p28-justify-center">
+            <div class="p28-col">
+                <div class="p28-grid-4">
 
-        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+                    <?php $args  = array(
+                        'post_type'           => 'oeuvre',
+                        'posts_per_page'      => 4,
+                        'orderby'             => 'date',
+                        'order'               => 'DESC',
+                        'tax_query'           => array(
+                            array(
+                                'taxonomy'    => 'genre',
+                                'field'       => 'slug',
+                                'terms'       => 'action'
+                            )
+                        )
+                    );
+                    $query = new WP_Query($args);
 
-        ?>
-                <div class="p28-catalogue-item"><a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-catalogue-img" /></a></div>
-        <?php endwhile;
-        endif;
-        wp_reset_postdata(); ?>
-        <div class="p28-alginselfcenter"><a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-btn p28-btn-primary">VOIR LA SÉLECTION</a></div>
+                    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+
+                    ?>
+
+                            <div class="p28-grid-item" id="p28-grid-tag-item-<?php echo $i; ?>">
+                                <div class="p28-grid-item-content">
+                                    <a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
+                                        <img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-thumbnail" alt="affiche du film : <?php the_title(); ?>" />
+                                    </a>
+                                </div>
+                            </div>
+                    <?php endwhile;
+                    endif;
+                    wp_reset_postdata(); ?>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<?php get_footer(); ?>
+    <?php get_footer(); ?>
