@@ -9,6 +9,7 @@
 ** @content is all CSS property that has been sent when calling the mixin
 */
 /* Paddings and margins */
+/* Grids */
 body,
 html {
   width: 100%;
@@ -48,6 +49,12 @@ html {
   text-align: center;
 }
 
+.p28-h2 {
+  font-size: 13px;
+  border-bottom: 1px solid #2e2e2e;
+  font-weight: normal;
+}
+
 /* Links */
 a {
   text-decoration: none;
@@ -74,6 +81,13 @@ li.p28-navbar-item > a:hover {
 
 .p28-bg-2024 {
   position: relative;
+}
+
+.p28-thumbnail {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p28-bg-2024:before {
@@ -105,6 +119,61 @@ li.p28-navbar-item > a:hover {
 
 .p28-justify-center {
   justify-content: center;
+}
+
+/* grid containers */
+.p28-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto, 300px);
+}
+@media (min-width: 40em) {
+  .p28-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 5px;
+  }
+}
+.p28-grid .p28-grid-item {
+  overflow: hidden;
+  padding: 1%;
+  display: grid;
+  place-content: center;
+  transition-duration: 0.5s;
+  position: relative;
+}
+.p28-grid .p28-grid-item .p28-grid-item-content {
+  z-index: 1;
+}
+@media (min-width: 40em) {
+  .p28-grid .p28-grid-item .p28-grid-item-content {
+    opacity: 0;
+    transition-duration: 0.5s;
+  }
+  .p28-grid .p28-grid-item .p28-grid-item-content:hover {
+    opacity: 1;
+  }
+}
+.p28-grid .p28-grid-item::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #ffffff;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.p28-grid .p28-grid-item:hover::before {
+  opacity: 0.6;
+}
+.p28-grid div#p28-grid-item-1 {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+.p28-grid .p28-excerpt {
+  font-size: 13px;
 }
 
 /* Containers */

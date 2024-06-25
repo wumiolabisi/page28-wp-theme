@@ -41,3 +41,8 @@ $xs: 20em; // mobile only
 @mixin customMargin($side, $ups) {
     margin: $side $ups;
 }
+
+/* Grids */
+@mixin gridRows($num, $fraction) {
+    grid-template-rows: repeat($num, $fraction);
+}

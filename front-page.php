@@ -10,7 +10,7 @@ get_header(); ?>
     <div class="p28-container">
         <div class="p28-row p28-justify-center">
             <div class="p28-col p28-500w margin-2side">
-                <h1 class="p28-text-center">Les réalisatrices à l’honneur dans un catalogue de films et séries dédiées à leurs &oelig;vres</h1>
+                <h1 class="p28-text-center">Les réalisatrices à l’honneur dans un catalogue de films et séries dédié à leurs &oelig;vres</h1>
                 <p class="p28-text-center">Explorez des récits vibrants, des perspectives uniques et des réalisations cinématographiques saisissantes, toutes portées par le talent et la vision des femmes derrière la caméra.</p>
                 <div class="margin-0-auto">
                     <a class="p28-btn-primary" target="_blank" alt="Aller au catalogue">EXPLORER LE CATALOGUE</a>
@@ -19,56 +19,51 @@ get_header(); ?>
         </div>
     </div>
 </div>
+<div class="p28-main">
+    <div class="p28-container">
+        <h2 class="p28-h2">Découvrez les derniers ajouts au catalogue</h2>
+        <div class="p28-row p28-justify-center">
+            <div class="p28-col">
+                <div class="p28-grid">
+                    <?php
+                    $i = 1;
+                    $args  = array(
+                        'post_type'           => 'oeuvre',
+                        'posts_per_page'      => 5,
+                        'orderby'             => 'date',
+                        'order'               => 'DESC',
+
+
+                    );
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+
+
+                            <div class="p28-grid-item" id="p28-grid-item-<?php echo $i; ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);background-size:cover;background-position:center;background-repeat:no-repeat">
+                                <div class="p28-grid-item-content">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <h3><?php the_title(); ?></h3>
+                                        <p>Réalisatrice : <?php echo get_the_terms($post->ID, 'realisation')[0]->name; ?></p>
+                                        <p class="p28-excerpt"><?php echo  wp_trim_words(get_the_excerpt(), 20); ?></p>
+                                    </a>
+                                </div>
+                            </div>
+
+                    <?php $i++;
+                        endwhile;
+                    endif;
+                    wp_reset_postdata(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="p28-container">
 
-    <div class="p28-secondpinnedpost p28-slidercontent p28-bg-15071d p28-block-rounded">
-        <div class="p28-pinnedpost-right">
-            <div class="slider">
 
-                <?php
-                $i = 1;
-                $args  = array(
-                    'post_type'           => 'oeuvre',
-                    'posts_per_page'      => 4,
-                    'orderby'             => 'date',
-                    'order'               => 'DESC',
-
-
-                );
-                $query = new WP_Query($args);
-
-                if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-
-
-                        <div class="slide" id="p28-img<?php echo $i; ?>">
-                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-thumbnail', ['class' => 'p28-slide-img']); ?></a>
-
-                        </div>
-
-                <?php $i++;
-                    endwhile;
-                endif;
-                wp_reset_postdata(); ?>
-
-            </div>
-
-        </div>
-        <div class="p28-flexrowstart p28-angled-left p28-bg-15071d" style="z-index: 5;">
-            <div class="p28-bar p28-bg-fec32e"></div>
-            <div class="p28-bar p28-bg-29ade6"></div>
-        </div>
-        <div class="p28-pinnedpost-left">
-            <div class="p28-logoanim">
-                <h1 class="p28-txt-fceeca">Page 28 met les réalisatrices à l'honneur !</h1>
-            </div>
-            <p class="p28-txt-fceeca p28-h1accroche p28-txtjustify-left">Explorez des récits vibrants, des perspectives uniques et des réalisations cinématographiques saisissantes,
-                toutes portées par le talent et la vision des femmes derrière la caméra.</p>
-            <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" title="Catalogue de films" class="p28-btn p28-btn-primary">EXPLORER LE CATALOGUE</a>
-
-        </div>
-
-
-    </div>
 
     <?php
 
