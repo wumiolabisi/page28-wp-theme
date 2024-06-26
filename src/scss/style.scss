@@ -45,6 +45,10 @@ html {
     background-color: $main-light-color;
 }
 
+.p28-bg-dark {
+    background-color: $main-dark-color;
+}
+
 .p28-text-light {
     color: $main-light-color;
 }
@@ -52,6 +56,14 @@ html {
 /* Texts */
 .p28-text-center {
     text-align: center;
+}
+
+.p28-h1,
+h1 {
+    font-size: 30px;
+    @include fontWeight(700);
+
+
 }
 
 .p28-h2 {
@@ -118,9 +130,40 @@ li.p28-navbar-item>a {
     height: auto;
 }
 
-.p28-bg-2024 {
+.p28-bg-voile {
     position: relative;
 
+}
+
+.p28-bg-voile:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    z-index: -2;
+
+    @include minScreenWidth($md) {
+        background-attachment: fixed;
+
+    }
+}
+
+.p28-bg-2024:before {
+    background-image: url(https://page28.fr/wp-content/uploads/2023/12/portrait-de-la-jeune-fille-en-feu-ou-comment-regarder-autrement1-759x500-1.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+.p28-bg-image:before {
+    background-image: url(https://page28.fr/wp-content/uploads/2024/06/trouver-un-film-pour-ce-soir.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
 }
 
 .p28-thumbnail {
@@ -134,20 +177,13 @@ li.p28-navbar-item>a {
     }
 }
 
-.p28-bg-2024:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
-    background-image: url(https://page28.fr/wp-content/uploads/2023/12/portrait-de-la-jeune-fille-en-feu-ou-comment-regarder-autrement1-759x500-1.jpg);
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    background-size: cover;
-    z-index: -2;
+
+
+.p28-masque-logo {
+    -webkit-mask-image: url(../../img/logo-page-28.png);
+    mask-image: url(../../img/logo-page-28.png);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
 /* Flex containers */
@@ -163,6 +199,14 @@ li.p28-navbar-item>a {
 
 .p28-justify-center {
     justify-content: center;
+}
+
+.p28-justify-start {
+    justify-content: center;
+}
+
+.p28-align-items-center {
+    align-items: center;
 }
 
 .p28-space-evenly {
@@ -270,12 +314,10 @@ li.p28-navbar-item>a {
 .p28-grid-4 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    @include gridRows(auto, 300px);
     gap: 5px;
 
     @include minScreenWidth($md) {
         grid-template-columns: repeat(4, 1fr);
-        @include gridRows(2, 300px);
 
     }
 
@@ -345,6 +387,11 @@ li.p28-navbar-item>a {
         @include customMargin(20%, 0);
 
     }
+}
+
+.p28-margin {
+    @include customMargin(5%, 0);
+
 }
 
 div#p28-realisatrice-coeur {
@@ -428,6 +475,7 @@ nav.p28-navbar {
     &.p28-navbar-bottom {
         bottom: 0;
         padding: 2% 0 !important;
+        box-shadow: 1px 1px 5px $main-dark-color;
 
         ul {
             @extend .p28-space-around;
@@ -501,4 +549,33 @@ nav.p28-navbar {
     text-align: left;
 
     @extend .p28-link-effect;
+}
+
+/* Footer */
+div.p28-footer {
+    color: $main-light-color;
+    padding: 2%;
+    height: 100px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 10px;
+
+        li {
+            @extend .p28-small-text;
+            @include fontWeight(700);
+            text-transform: uppercase;
+        }
+    }
+
+    @extend .display-from-md;
+}
+
+.spacer {
+    @include maxScreenWidth($md) {
+        height: 11vh;
+
+    }
 }

@@ -6,7 +6,7 @@ get_header(); ?>
 
 
 
-<div class="p28-main p28-bg-2024">
+<div class="p28-main p28-bg-voile p28-bg-2024">
     <div class="p28-container">
         <div class="p28-row p28-justify-center">
             <div class="p28-col p28-500w margin-2side">
@@ -43,7 +43,7 @@ get_header(); ?>
                             <div class="p28-grid-item" id="p28-grid-item-<?php echo $i; ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);background-size:cover;background-position:center;background-repeat:no-repeat">
                                 <div class="p28-grid-item-content">
                                     <a href="<?php the_permalink(); ?>">
-                                        <h3><?php the_title(); ?></h3>
+                                        <h3 class="hide-from-md"><?php the_title(); ?></h3>
                                         <p class="hide-from-md">Réalisatrice : <?php echo get_the_terms($post->ID, 'realisation')[0]->name; ?></p>
                                         <p class="p28-small-text hide-from-md"><?php echo  wp_trim_words(get_the_excerpt(), 20); ?></p>
                                     </a>
@@ -192,4 +192,51 @@ get_header(); ?>
             </div>
         </div>
     </div>
-    <?php get_footer(); ?>
+
+    <div class="p28-container">
+        <div class="p28-row p28-justify-center">
+            <div class="p28-col p28-500w">
+                <h2 class="p28-text-center">Un catalogue collaboratif et acessible</h2>
+                <p class="p28-text-center">Parce que chaque film est une invitation au dialogue, à la réflexion et à l'empathie, Page 28 souhaite vous proposer un catalogue simple d'utilisation et collaboratif.</p>
+            </div>
+        </div>
+
+        <div class="p28-row p28-justify-center">
+            <div class="p28-col">
+                <div class="p28-masque-logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/9165800_movie_clapper_film_icon.png" class="width-50" />
+                </div>
+                <p class="p28-text-center">Une sélection de films et séries internationaux réalisés ou co-réalisés par des femmes.</p>
+            </div>
+            <div class="p28-col">
+                <div class="p28-masque-logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/9165687_bulb_light_icon.png" class="width-50" />
+                </div>
+                <p class="p28-text-center">Des dossiers de presse vulgarisés pour rendre la compréhension de l'&oelig;uvre accessible à tous·tes.</p>
+            </div>
+            <div class="p28-col">
+                <div class="p28-masque-logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/doodle_magnifier_magnifying.png" class="width-50" />
+                </div>
+                <p class="p28-text-center">Un catalogue simple d'utilisation pour que vous trouviez votre prochain film à regarder.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="p28-main p28-bg-voile p28-bg-image">
+    <div class="p28-container">
+        <div class="p28-row p28-justify-start p28-align-items-center">
+            <div class="p28-col p28-500w p28-margin">
+                <p class="p28-h1">Besoin d'aide pour utiliser le catalogue ? Envie de proposer un film ou une série réalisé par une femme ?</p>
+
+            </div>
+            <div class="p28-col">
+                <div class="margin-0-auto">
+                    <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-btn-primary" target="_blank" alt="Aller au catalogue">CONTACTEZ-NOUS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="spacer"></div>
+<?php get_footer(); ?>
