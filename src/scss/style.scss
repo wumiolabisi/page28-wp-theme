@@ -294,7 +294,9 @@ li.p28-navbar-item>a {
         width: 96%;
         padding: 2%;
 
-        @include minScreenWidth($md) {
+
+
+        @include minScreenWidth($lg) {
             width: 900px;
             margin: auto;
         }
@@ -347,11 +349,35 @@ li.p28-navbar-item>a {
 
 div#p28-realisatrice-coeur {
 
-
-
     @include maxScreenWidth($md) {
+
         background-image: none !important;
+        background-size: unset !important;
+        background-position: unset !important;
         background-color: $main-dark-color;
+
+        & div.p28-row {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .p28-col {
+            flex-basis: 100%;
+            align-items: center;
+
+            &:last-child,
+            &:nth-child(3) {
+                flex-basis: 50%;
+            }
+
+            &:nth-child(2) {
+                padding-bottom: 10px;
+            }
+
+
+        }
+
+
 
     }
 
@@ -363,8 +389,8 @@ div#p28-realisatrice-coeur {
 .p28-heart28 {
     @extend .flex-row;
     position: relative;
-    top: 200px;
-    left: -40px;
+    top: 10px;
+    left: -160px;
     background-color: $main-light-color;
     box-shadow: -1px 1px 10px $main-dark-color;
     padding: 5px 10px;
@@ -373,6 +399,11 @@ div#p28-realisatrice-coeur {
     font-size: 13px;
     width: 130px;
     align-items: center;
+
+    @include minScreenWidth($md) {
+        top: 200px;
+        left: -40px;
+    }
 }
 
 /* Main navbar */
@@ -383,8 +414,15 @@ nav.p28-navbar {
     z-index: 2;
     transition-duration: 0.5s;
 
+
     &.p28-navbar-top {
-        top: 0
+        top: 0;
+
+        @include maxScreenWidth($md) {
+            position: absolute;
+            background-color: transparent;
+        }
+
     }
 
     &.p28-navbar-bottom {
