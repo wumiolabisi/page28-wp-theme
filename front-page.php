@@ -44,8 +44,8 @@ get_header(); ?>
                                 <div class="p28-grid-item-content">
                                     <a href="<?php the_permalink(); ?>">
                                         <h3><?php the_title(); ?></h3>
-                                        <p>Réalisatrice : <?php echo get_the_terms($post->ID, 'realisation')[0]->name; ?></p>
-                                        <p class="p28-small-text"><?php echo  wp_trim_words(get_the_excerpt(), 20); ?></p>
+                                        <p class="hide-from-md">Réalisatrice : <?php echo get_the_terms($post->ID, 'realisation')[0]->name; ?></p>
+                                        <p class="p28-small-text hide-from-md"><?php echo  wp_trim_words(get_the_excerpt(), 20); ?></p>
                                     </a>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@ get_header(); ?>
     $query = new WP_Query($args);
 
     ?>
-    <div class="p28-container" style="background-image: url(<?php echo esc_url($taxonomy_thumbnail['url']); ?>);background-position:50% 50%;background-size:cover;background-repeat:no-repeat">
+    <div id="p28-realisatrice-coeur" class="p28-container" style="background-image: url(<?php echo esc_url($taxonomy_thumbnail['url']); ?>);background-position:50% 50%;background-size:cover;background-repeat:no-repeat">
         <div class="p28-row p28-space-between">
             <div class="p28-col">
                 <div class="p28-tag">
