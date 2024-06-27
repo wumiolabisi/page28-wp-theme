@@ -1,6 +1,7 @@
 <?php wp_footer();
 
-?><div class="p28-footer p28-bg-dark">
+?><div class="spacer"></div>
+<div class="p28-footer p28-bg-dark">
 
 
 

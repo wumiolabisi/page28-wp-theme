@@ -226,7 +226,6 @@ a {
 @media (min-width: 40em) {
   .p28-grid {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 300px);
   }
 }
 .p28-grid .p28-grid-item {

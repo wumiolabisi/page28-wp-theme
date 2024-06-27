@@ -238,7 +238,6 @@ li.p28-navbar-item>a {
 
     @include minScreenWidth($md) {
         grid-template-columns: repeat(3, 1fr);
-        @include gridRows(2, 300px);
 
     }
 

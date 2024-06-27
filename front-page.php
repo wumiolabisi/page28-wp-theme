@@ -155,48 +155,27 @@ get_header(); ?>
     <!-- DIV CATALOGUE ETIQUETTE -->
     <div class="p28-container">
         <h2 class="p28-h2">Les films et séries pour les <em>badass</em></h2>
-        <div class="p28-row p28-justify-center">
-            <div class="p28-col">
-                <div class="p28-grid-4">
+        <?php
+        $args_tag = array(
+            'p28_post_type' => 'oeuvre',
+            'p28_posts_per_page' => 4,
+            'p28_orderby' => 'date',
+            'p28_tax_query' => array(
+                array(
+                    'p28_taxonomy' => 'tag',
+                    'p28_field' => 'slug',
+                    'p28_terms' => 'BOOM BOOM PAN PAN'
+                )
+            )
+        );
 
-                    <?php $args  = array(
-                        'post_type'           => 'oeuvre',
-                        'posts_per_page'      => 4,
-                        'orderby'             => 'date',
-                        'order'               => 'DESC',
-                        'tax_query'           => array(
-                            array(
-                                'taxonomy'    => 'genre',
-                                'field'       => 'slug',
-                                'terms'       => 'action'
-                            )
-                        )
-                    );
-                    $query = new WP_Query($args);
-
-                    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
-
-                    ?>
-
-                            <div class="p28-grid-item" id="p28-grid-tag-item-<?php echo $i; ?>">
-                                <div class="p28-grid-item-content">
-                                    <a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
-                                        <img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-thumbnail" alt="affiche du film : <?php the_title(); ?>" />
-                                    </a>
-                                </div>
-                            </div>
-                    <?php endwhile;
-                    endif;
-                    wp_reset_postdata(); ?>
-                </div>
-            </div>
-        </div>
+        get_template_part('template-parts/gallery', null, $args_tag); ?>
     </div>
 
     <div class="p28-container">
         <div class="p28-row p28-justify-center">
             <div class="p28-col p28-500w">
-                <h2 class="p28-text-center">Un catalogue collaboratif et acessible</h2>
+                <h2 class="p28-text-center">Un catalogue collaboratif et accessible</h2>
                 <p class="p28-text-center">Parce que chaque film est une invitation au dialogue, à la réflexion et à l'empathie, Page 28 souhaite vous proposer un catalogue simple d'utilisation et collaboratif.</p>
             </div>
         </div>
@@ -223,20 +202,12 @@ get_header(); ?>
         </div>
     </div>
 </div>
-<div class="p28-main p28-bg-voile p28-bg-image">
-    <div class="p28-container">
-        <div class="p28-row p28-justify-start p28-align-items-center">
-            <div class="p28-col p28-500w p28-margin">
-                <p class="p28-h1">Besoin d'aide pour utiliser le catalogue ? Envie de proposer un film ou une série réalisé par une femme ?</p>
+<?php
+$args_banner = array(
+    'p28_text' => 'Besoin d&apos;aide pour utiliser le catalogue ? Envie de proposer un film ou une série réalisé par une femme ?',
+    'p28_button_text' => 'NOUS CONTACTER',
+    'p28_button_link' => ''
+);
+get_template_part('template-parts/banner', null, $args_banner); ?>
 
-            </div>
-            <div class="p28-col">
-                <div class="margin-0-auto">
-                    <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-btn-primary" target="_blank" alt="Aller au catalogue">CONTACTEZ-NOUS</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="spacer"></div>
 <?php get_footer(); ?>
