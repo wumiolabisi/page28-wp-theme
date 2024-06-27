@@ -53,6 +53,11 @@ html {
     color: $main-light-color;
 }
 
+.p28-svg-dark {
+    fill: $main-dark-color;
+
+}
+
 /* Texts */
 .p28-text-center {
     text-align: center;
@@ -125,9 +130,18 @@ li.p28-navbar-item>a {
     height: auto;
 }
 
+.width-20 {
+    width: 20px;
+    height: auto;
+}
+
 .width-7vw {
     width: 7vw;
     height: auto;
+}
+
+.width-100pc {
+    width: 100%;
 }
 
 .p28-bg-voile {
@@ -576,5 +590,75 @@ div.p28-footer {
     @include maxScreenWidth($md) {
         height: 11vh;
 
+    }
+}
+
+/* Search form */
+form.p28-search-form {
+    @extend .flex-row;
+    @extend .p28-justify-center;
+    border-bottom: 1px solid $main-dark-color;
+    padding: 2% 0;
+    gap: 10px;
+    width: 100%;
+
+
+    #p28-submit-form,
+    #p28-reload {
+        align-self: end;
+    }
+
+    #p28-reload {
+        cursor: pointer;
+    }
+
+    button.p28-btn-primary {
+        font-family: $global-font-family;
+        width: 100px;
+        height: 35px;
+        background-color: $main-light-color;
+        @extend .p28-small-text;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: $main-dark-color;
+        }
+    }
+
+    .p28-search-form-item select {
+        @extend .flex-column;
+    }
+
+    .p28-search-form-item>label:first-child {
+        @include fontWeight(700);
+        @extend .p28-small-text;
+        text-transform: uppercase;
+    }
+}
+
+.p28-radio-btn,
+.p28-select {
+    @extend .flex-column;
+}
+
+select.p28-select,
+select {
+    overflow: hidden;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    background: $arrow-icon no-repeat right 0.8em center / 1.4em, linear-gradient(to left, #e7e7e7 3em, #e7e7e7 3em);
+    color: #15071d;
+    @extend .border-radius;
+    cursor: pointer;
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    /* Remove focus outline */
+    &:focus {
+        outline: none;
     }
 }

@@ -37,7 +37,8 @@ html {
   }
 }
 
-.border-radius, .p28-btn, .p28-btn-secondary, .p28-btn-primary {
+.border-radius, select.p28-select,
+select, .p28-btn, .p28-btn-secondary, .p28-btn-primary {
   border-radius: 5px;
 }
 
@@ -58,6 +59,10 @@ html {
   color: #ffffff;
 }
 
+.p28-svg-dark {
+  fill: #2e2e2e;
+}
+
 /* Texts */
 .p28-text-center {
   text-align: center;
@@ -75,7 +80,7 @@ h1 {
   font-weight: normal;
 }
 
-.p28-small-text, div.p28-footer ul li, .p28-grid .p28-grid-item .p28-grid-item-content {
+.p28-small-text, form.p28-search-form .p28-search-form-item > label:first-child, form.p28-search-form button.p28-btn-primary, div.p28-footer ul li, .p28-grid .p28-grid-item .p28-grid-item-content {
   font-size: 13px;
 }
 
@@ -115,9 +120,18 @@ a {
   height: auto;
 }
 
+.width-20 {
+  width: 20px;
+  height: auto;
+}
+
 .width-7vw {
   width: 7vw;
   height: auto;
+}
+
+.width-100pc {
+  width: 100%;
 }
 
 .p28-bg-voile {
@@ -174,17 +188,18 @@ a {
 }
 
 /* Flex containers */
-.flex-row, nav.p28-navbar > ul, .p28-heart28 {
+.flex-row, form.p28-search-form, nav.p28-navbar > ul, .p28-heart28 {
   display: flex;
   flex-direction: row;
 }
 
-.flex-column, .p28-main .p28-container .p28-col, .p28-main .p28-container .p28-row {
+.flex-column, .p28-radio-btn,
+.p28-select, form.p28-search-form .p28-search-form-item select, .p28-main .p28-container .p28-col, .p28-main .p28-container .p28-row {
   display: flex;
   flex-direction: column;
 }
 
-.p28-justify-center {
+.p28-justify-center, form.p28-search-form {
   justify-content: center;
 }
 
@@ -497,4 +512,56 @@ div.p28-footer ul li {
   .spacer {
     height: 11vh;
   }
+}
+
+/* Search form */
+form.p28-search-form {
+  border-bottom: 1px solid #2e2e2e;
+  padding: 2% 0;
+  gap: 10px;
+  width: 100%;
+}
+form.p28-search-form #p28-submit-form,
+form.p28-search-form #p28-reload {
+  align-self: end;
+}
+form.p28-search-form #p28-reload {
+  cursor: pointer;
+}
+form.p28-search-form button.p28-btn-primary {
+  font-family: "Poppins", sans-serif;
+  width: 100px;
+  height: 35px;
+  background-color: #ffffff;
+  text-transform: uppercase;
+}
+form.p28-search-form button.p28-btn-primary:hover {
+  background-color: #2e2e2e;
+}
+form.p28-search-form .p28-search-form-item > label:first-child {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+select.p28-select,
+select {
+  overflow: hidden;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  outline: 0;
+  padding: 10px 20px;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, #e7e7e7 3em, #e7e7e7 3em);
+  color: #15071d;
+  cursor: pointer;
+  /* Remove focus outline */
+}
+select.p28-select::-ms-expand,
+select::-ms-expand {
+  display: none;
+}
+select.p28-select:focus,
+select:focus {
+  outline: none;
 }

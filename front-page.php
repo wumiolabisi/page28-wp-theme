@@ -154,7 +154,7 @@ get_header(); ?>
 
     <!-- DIV CATALOGUE ETIQUETTE -->
     <div class="p28-container">
-        <h2 class="p28-h2">Les films et séries pour les <em>badass</em></h2>
+        <h2 class="p28-h2">Sélection de films/séries BOOM BOOM PAN PAN</h2>
         <?php
         $args_tag = array(
             'p28_post_type' => 'oeuvre',
@@ -164,7 +164,7 @@ get_header(); ?>
                 array(
                     'p28_taxonomy' => 'tag',
                     'p28_field' => 'slug',
-                    'p28_terms' => 'BOOM BOOM PAN PAN'
+                    'p28_terms' => 'boom-boom-pan-pan'
                 )
             )
         );
