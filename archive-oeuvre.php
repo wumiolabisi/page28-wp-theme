@@ -22,8 +22,8 @@ get_header(); ?>
             </div>
         </div>
         <div class="p28-row p28-justify-center p28-margin">
-            <div class="p28-col p28-search-result">
-                <div class="p28-grid-4 ">
+            <div class="p28-col ">
+                <div class="p28-grid-4 p28-search-result">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 

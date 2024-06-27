@@ -93,11 +93,11 @@ function p28_search_oeuvre()
 
     if ($p28_posts->have_posts()) :
 
-        $p28_posts_html = '<div class="p28-row p28-justify-center"><div class="p28-col"><p class="p28-samll-text">Il y a ' . $p28_posts->post_count . ' résultats.</p></div></div>';
+        $p28_posts_html = '<p class="p28-small-text">Il y a ' . $p28_posts->post_count . ' résultats.</p>';
         ob_start();
 
         while ($p28_posts->have_posts()) : $p28_posts->the_post();
-            get_template_part('template-parts/catalogue');
+            get_template_part('template-parts/gallery');
         endwhile;
 
         $p28_posts_html .= ob_get_clean();

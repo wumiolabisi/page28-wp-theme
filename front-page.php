@@ -169,7 +169,7 @@ get_header(); ?>
             )
         );
 
-        get_template_part('template-parts/gallery', null, $args_tag); ?>
+        get_template_part('template-parts/gallery-query', null, $args_tag); ?>
     </div>
 
     <div class="p28-container">

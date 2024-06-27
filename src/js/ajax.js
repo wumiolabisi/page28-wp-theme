@@ -43,10 +43,9 @@
 
                     // En cas d'erreur
                     if (!response.success) {
-                        alert(response.data);
+                        console.log(response.data);
                         return;
                     }
-
                     // Et en cas de réussite : afficher le HTML
                     $('.p28-search-result').html(response.data);
                 });
