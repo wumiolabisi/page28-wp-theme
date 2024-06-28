@@ -13,8 +13,10 @@ stickyNav = function stickyNav() {
   var sticky = header.offsetTop;
   if (window.scrollY > sticky) {
     header.classList.add("p28-bg-light");
+    header.classList.add("p28-box-shadow");
   } else {
     header.classList.remove("p28-bg-light");
+    header.classList.remove("p28-box-shadow");
   }
 };
 

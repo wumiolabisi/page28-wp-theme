@@ -42,6 +42,10 @@ select, .p28-btn, .p28-btn-secondary, .p28-btn-primary {
   border-radius: 5px;
 }
 
+.p28-box-shadow, nav.p28-navbar.p28-navbar-bottom {
+  box-shadow: 1px 1px 5px #e9e6e6;
+}
+
 .margin-0-auto {
   margin: 0 auto;
 }
@@ -431,7 +435,6 @@ nav.p28-navbar.p28-navbar-top {
 nav.p28-navbar.p28-navbar-bottom {
   bottom: 0;
   padding: 2% 0 !important;
-  box-shadow: 1px 1px 5px #2e2e2e;
 }
 nav.p28-navbar > ul {
   justify-content: center;
@@ -552,8 +555,8 @@ select {
   border: 0;
   outline: 0;
   padding: 10px 20px;
-  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, #e7e7e7 3em, #e7e7e7 3em);
-  color: #15071d;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, #e9e6e6 3em, #e9e6e6 3em);
+  color: #2e2e2e;
   cursor: pointer;
   /* Remove focus outline */
 }

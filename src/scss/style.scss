@@ -34,6 +34,10 @@ html {
     border-radius: 5px;
 }
 
+.p28-box-shadow {
+    box-shadow: 1px 1px 5px $second-light-color;
+}
+
 .margin-0-auto {
     margin: 0 auto;
 }
@@ -488,7 +492,7 @@ nav.p28-navbar {
     &.p28-navbar-bottom {
         bottom: 0;
         padding: 2% 0 !important;
-        box-shadow: 1px 1px 5px $main-dark-color;
+        @extend .p28-box-shadow;
 
         ul {
             @extend .p28-space-around;
@@ -648,8 +652,8 @@ select {
     border: 0;
     outline: 0;
     padding: 10px 20px;
-    background: $arrow-icon no-repeat right 0.8em center / 1.4em, linear-gradient(to left, #e7e7e7 3em, #e7e7e7 3em);
-    color: #15071d;
+    background: $arrow-icon no-repeat right 0.8em center / 1.4em, linear-gradient(to left, $second-light-color 3em, $second-light-color 3em);
+    color: $main-dark-color;
     @extend .border-radius;
     cursor: pointer;
 
