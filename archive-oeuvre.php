@@ -1,11 +1,5 @@
 <?php
-
-
-
 /* Afficher la page d'archive des oeuvres */
-
-
-
 get_header(); ?>
 
 <div class="p28-main">
@@ -22,8 +16,8 @@ get_header(); ?>
             </div>
         </div>
         <div class="p28-row p28-justify-center p28-margin">
-            <div class="p28-col ">
-                <div class="p28-grid-4 p28-search-result">
+            <div class="p28-col">
+                <div class="p28-grid-4 p28-search-result p28-search-results2">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
@@ -33,13 +27,23 @@ get_header(); ?>
                     <?php endwhile;
 
                     endif; ?>
-                    <?php
-                    the_posts_pagination(array(
-                        'mid_size'  => 2,
-                        'prev_text' => 'Previous',
-                        'next_text' => 'Next',
-                    ));
-                    ?> </div>
+                </div>
+
+
+            </div>
+            <?php wp_reset_postdata(); ?>
+        </div>
+        <div class="p28-row p28-justify-center p28-margin p28-load-more-msg">
+            <p class="p28-small-text">
+                <?php echo $wp_query->post_count; ?> sur <?php echo $wp_query->found_posts; ?>
+            </p>
+        </div>
+        <div class="p28-row p28-justify-center p28-margin">
+            <div class="p28-col "> <?php if ($wp_query->max_num_pages > 1) : ?>
+                    <div class="p28-btn-primary" id="p28-load-more" data-ajaxurl="<?php echo admin_url('admin-ajax.php'); ?>" data-posts='<?php echo json_encode($wp_query->query_vars); ?>' data-foundposts="<?php echo $wp_query->found_posts; ?>" data-maxpages="<?php echo $wp_query->max_num_pages; ?>" data-currentpage="<?php echo $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1; ?>" data-totalposts="<?php echo $wp_query->post_count; ?>">
+                        CHARGER PLUS
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

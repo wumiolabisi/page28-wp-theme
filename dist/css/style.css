@@ -84,7 +84,7 @@ h1 {
   font-weight: normal;
 }
 
-.p28-small-text, form.p28-search-form .p28-search-form-item > label:first-child, form.p28-search-form button.p28-btn-primary, div.p28-footer ul li, .p28-grid .p28-grid-item .p28-grid-item-content {
+.p28-small-text, .p28-pagination, form.p28-search-form .p28-search-form-item > label:first-child, form.p28-search-form button.p28-btn-primary, div.p28-footer ul li, .p28-grid .p28-grid-item .p28-grid-item-content {
   font-size: 13px;
 }
 
@@ -567,4 +567,15 @@ select::-ms-expand {
 select.p28-select:focus,
 select:focus {
   outline: none;
+}
+
+/* Pagination */
+.p28-pagination {
+  margin: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+.p28-pagination div.nav-links .current {
+  font-weight: 700;
+  margin: 0 5px;
 }

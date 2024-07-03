@@ -7,6 +7,8 @@ $p28_taxonomies = get_taxonomies(array(
 
 <form class="p28-search-form" action="<?php echo admin_url('admin-ajax.php'); ?>" method="post">
     <?php
+
+
     foreach ($p28_taxonomies as $taxonomy) :
         $p28_search_terms = get_terms($taxonomy->name);
     ?>

@@ -1,4 +1,54 @@
 <?php
+
+add_action('wp_ajax_p28_load_more', 'p28_load_more');
+add_action('wp_ajax_nopriv_p28_load_more', 'p28_load_more');
+
+function p28_load_more()
+{
+
+    // prepare our arguments for the query
+    $params = json_decode(sanitize_text_field($_REQUEST['query']), true); // query_posts() takes care of the necessary sanitization 
+    $params['paged'] = $_REQUEST['page'] + 1; // we need next page to be loaded
+    $params['post_status'] = 'publish';
+    $params['post_type'] = 'oeuvre';
+    $params['posts_per_page'] = 8;
+
+    $query_posts = new WP_Query($params);
+    // it is always better to use WP_Query but not here
+    //query_posts($params);
+
+
+    $p28_posts_html2 = '';
+
+    if ($query_posts->have_posts()) :
+
+        ob_start();
+
+        while ($query_posts->have_posts()) : $query_posts->the_post();
+            get_template_part('template-parts/gallery', get_post_format());
+        endwhile;
+
+        $p28_posts_html2 .= ob_get_clean();
+
+    // else : $p28_posts_html2 = '<p class="p28-text-center">Fin.</p>';
+
+    endif;
+
+
+    echo json_encode(array(
+        'success' => true,
+        'posts' => json_encode($query_posts->query_vars),
+        'maxpages' => $query_posts->max_num_pages,
+        'found_posts' => $query_posts->found_posts,
+        'posts_count' => $query_posts->post_count,
+        'content' => $p28_posts_html2
+    ));
+
+    die();
+    //wp_send_json_success($p28_posts_html2);
+}
+
+
 add_action('wp_ajax_p28_search_oeuvre', 'p28_search_oeuvre');
 add_action('wp_ajax_nopriv_p28_search_oeuvre', 'p28_search_oeuvre');
 

@@ -666,3 +666,16 @@ select {
         outline: none;
     }
 }
+
+/* Pagination */
+.p28-pagination {
+    margin: 20px 0;
+    text-align: center;
+    @extend .p28-small-text;
+    width: 100%;
+
+    div.nav-links .current {
+        @include fontWeight(700);
+        margin: 0 5px;
+    }
+}
