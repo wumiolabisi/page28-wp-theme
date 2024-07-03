@@ -5,18 +5,26 @@ add_action('wp_ajax_nopriv_p28_load_more', 'p28_load_more');
 
 function p28_load_more()
 {
-
-    // prepare our arguments for the query
-    $params = json_decode(sanitize_text_field($_REQUEST['query']), true); // query_posts() takes care of the necessary sanitization 
-    $params['paged'] = $_REQUEST['page'] + 1; // we need next page to be loaded
+    $params = json_decode(stripslashes($_REQUEST['query']), true);
+    $params['paged'] = $_REQUEST['page'] + 1;
     $params['post_status'] = 'publish';
-    $params['post_type'] = 'oeuvre';
     $params['posts_per_page'] = 8;
+    $params['post_type'] = 'oeuvre';
+    $params['tax_query'] = [];
+    $params['relation'] = 'AND';
+
+    if (isset($params['format'])) {
+
+        $array_format = array(
+            'taxonomy' => 'format',
+            'field'    => 'slug',
+            'terms'    => $params['format']
+        );
+
+        $params['tax_query'] = $array_format;
+    }
 
     $query_posts = new WP_Query($params);
-    // it is always better to use WP_Query but not here
-    //query_posts($params);
-
 
     $p28_posts_html2 = '';
 
@@ -30,7 +38,6 @@ function p28_load_more()
 
         $p28_posts_html2 .= ob_get_clean();
 
-    // else : $p28_posts_html2 = '<p class="p28-text-center">Fin.</p>';
 
     endif;
 
@@ -38,14 +45,12 @@ function p28_load_more()
     echo json_encode(array(
         'success' => true,
         'posts' => json_encode($query_posts->query_vars),
-        'maxpages' => $query_posts->max_num_pages,
         'found_posts' => $query_posts->found_posts,
         'posts_count' => $query_posts->post_count,
         'content' => $p28_posts_html2
     ));
 
     die();
-    //wp_send_json_success($p28_posts_html2);
 }
 
 
@@ -132,7 +137,7 @@ function p28_search_oeuvre()
     $args['tax_query'] = $args_tax_query;
 
 
-
+    $args['posts_per_page'] = 8;
 
 
     // Requête puis mise en forme des posts
@@ -143,21 +148,26 @@ function p28_search_oeuvre()
 
     if ($p28_posts->have_posts()) :
 
-        $p28_posts_html = '<p class="p28-small-text">Il y a ' . $p28_posts->post_count . ' résultats.</p>';
         ob_start();
 
         while ($p28_posts->have_posts()) : $p28_posts->the_post();
-            get_template_part('template-parts/gallery');
+            get_template_part('template-parts/gallery', get_post_format());
         endwhile;
 
         $p28_posts_html .= ob_get_clean();
 
-    else : $p28_posts_html = '<p>Aucun résultat ne correspond à votre recherche.</p>';
 
     endif;
 
 
+    echo json_encode(array(
+        'success' => true,
+        'posts' => json_encode($p28_posts->query_vars),
+        'maxpages' => $p28_posts->max_num_pages,
+        'found_posts' => $p28_posts->found_posts,
+        'posts_count' => $p28_posts->post_count,
+        'content' => $p28_posts_html
+    ));
 
-    // Envoyer les données au navigateur
-    wp_send_json_success($p28_posts_html);
+    die();
 }

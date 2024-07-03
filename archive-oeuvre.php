@@ -15,6 +15,9 @@ get_header(); ?>
                 <?php get_template_part('template-parts/search-form'); ?>
             </div>
         </div>
+        <div class="p28-row p28-justify-center">
+            <div class="p28-col p28-filter-msg"></div>
+        </div>
         <div class="p28-row p28-justify-center p28-margin">
             <div class="p28-col">
                 <div class="p28-grid-4 p28-search-result p28-search-results2">

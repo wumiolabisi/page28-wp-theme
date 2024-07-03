@@ -41,14 +41,10 @@ var __webpack_exports__ = {};
           //localStorage.setItem("posts", response.data);
           data.page++;
           totalPosts += response.posts_count;
-          var params = new URLSearchParams(location.search);
-          //console.log("Pramas : " + params);
-          params.set('page', data.page);
           $('div#p28-load-more').attr("data-currentpage", data.page);
           $('div#p28-load-more').attr("data-totalposts", totalPosts);
           $('div.p28-load-more-msg').html('<p class="p28-small-text">' + totalPosts + ' sur ' + data.foundposts + '</p>');
-          window.history.replaceState({}, "", decodeURIComponent("".concat(location.pathname, "?").concat(params)));
-          if (response.posts_count == 0) {
+          if (totalPosts == data.foundposts) {
             $('div#p28-load-more').hide();
           }
         } else {
@@ -97,7 +93,21 @@ var __webpack_exports__ = {};
           return;
         }
         // Et en cas de réussite : afficher le HTML
-        $('.p28-search-result').html(response.data);
+        var params = new URLSearchParams(location.search);
+        //console.log("Pramas : " + params);
+        params.set('format', data.format);
+        window.history.replaceState({}, "", decodeURIComponent("".concat(location.pathname, "?").concat(params)));
+        $('div.p28-filter-msg').html('<p class="p28-small-text">' + response.found_posts + ' &oelig;uvres correspondent à votre recherche :</p>');
+        $('.p28-search-result').html(response.content);
+        $('div.p28-load-more-msg').html('<p class="p28-small-text">' + response.posts_count + ' sur ' + response.found_posts + '</p>');
+        $('div#p28-load-more').attr("data-posts", response.posts);
+        $('div#p28-load-more').attr("data-foundposts", response.found_posts);
+        $('div#p28-load-more').attr("data-maxpages", response.maxpages);
+        if (response.posts_count == 0 || Number(response.found_posts) <= 8) {
+          $('div#p28-load-more').hide();
+        } else {
+          $('div#p28-load-more').show();
+        }
       });
     });
   });
