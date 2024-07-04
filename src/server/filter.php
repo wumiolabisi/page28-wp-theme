@@ -1,58 +1,5 @@
+
 <?php
-
-add_action('wp_ajax_p28_load_more', 'p28_load_more');
-add_action('wp_ajax_nopriv_p28_load_more', 'p28_load_more');
-
-function p28_load_more()
-{
-    $params = json_decode(stripslashes($_REQUEST['query']), true);
-    $params['paged'] = $_REQUEST['page'] + 1;
-    $params['post_status'] = 'publish';
-    $params['posts_per_page'] = 8;
-    $params['post_type'] = 'oeuvre';
-    $params['tax_query'] = [];
-    $params['relation'] = 'AND';
-
-    if (isset($params['format'])) {
-
-        $array_format = array(
-            'taxonomy' => 'format',
-            'field'    => 'slug',
-            'terms'    => $params['format']
-        );
-
-        $params['tax_query'] = $array_format;
-    }
-
-    $query_posts = new WP_Query($params);
-
-    $p28_posts_html2 = '';
-
-    if ($query_posts->have_posts()) :
-
-        ob_start();
-
-        while ($query_posts->have_posts()) : $query_posts->the_post();
-            get_template_part('template-parts/gallery', get_post_format());
-        endwhile;
-
-        $p28_posts_html2 .= ob_get_clean();
-
-
-    endif;
-
-
-    echo json_encode(array(
-        'success' => true,
-        'posts' => json_encode($query_posts->query_vars),
-        'found_posts' => $query_posts->found_posts,
-        'posts_count' => $query_posts->post_count,
-        'content' => $p28_posts_html2
-    ));
-
-    die();
-}
-
 
 add_action('wp_ajax_p28_search_oeuvre', 'p28_search_oeuvre');
 add_action('wp_ajax_nopriv_p28_search_oeuvre', 'p28_search_oeuvre');
@@ -76,9 +23,6 @@ function p28_search_oeuvre()
     // Récupération des données du formulaire
 
     $format = sanitize_text_field($_POST['format']);
-    /* $realisation = sanitize_text_field($_POST['realisation']);
-    $production = sanitize_text_field($_POST['production']);
-    $scenario = sanitize_text_field($_POST['scenario']);*/
     $genre = sanitize_text_field($_POST['genre']);
     $tag = sanitize_text_field($_POST['tag']);
     $posttype = sanitize_text_field($_POST['posttype']);
@@ -162,11 +106,11 @@ function p28_search_oeuvre()
 
     echo json_encode(array(
         'success' => true,
-        'posts' => json_encode($p28_posts->query_vars),
-        'maxpages' => $p28_posts->max_num_pages,
-        'found_posts' => $p28_posts->found_posts,
-        'posts_count' => $p28_posts->post_count,
-        'content' => $p28_posts_html
+        'rp_posts' => json_encode($p28_posts->query_vars),
+        'rp_max_pages' => $p28_posts->max_num_pages,
+        'rp_found_posts' => $p28_posts->found_posts,
+        'rp_posts_count' => $p28_posts->post_count,
+        'rp_content' => $p28_posts_html
     ));
 
     die();

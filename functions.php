@@ -18,13 +18,15 @@ add_theme_support('menus');
 
 // Déclaration des styles et animations
 
-require_once get_template_directory() . '/inc/assets.php';
+require_once get_template_directory() . '/src/server/assets.php';
 
 // Déclaration des CPT
 
-require_once get_template_directory() . '/inc/post-types.php';
+require_once get_template_directory() . '/src/server/post-types.php';
 
-include get_template_directory() . '/inc/search-engine.php';
+include get_template_directory() . '/src/server/load-more.php';
+include get_template_directory() . '/src/server/filter.php';
+
 
 //Enlever le switcher de langage sur la page de login
 

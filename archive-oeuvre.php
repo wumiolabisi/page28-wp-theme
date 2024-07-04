@@ -20,7 +20,7 @@ get_header(); ?>
         </div>
         <div class="p28-row p28-justify-center p28-margin">
             <div class="p28-col">
-                <div class="p28-grid-4 p28-search-result p28-search-results2">
+                <div class="p28-grid-4 p28-search-result" id="p28-load-more-results">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
@@ -43,7 +43,7 @@ get_header(); ?>
         </div>
         <div class="p28-row p28-justify-center p28-margin">
             <div class="p28-col "> <?php if ($wp_query->max_num_pages > 1) : ?>
-                    <div class="p28-btn-primary" id="p28-load-more" data-ajaxurl="<?php echo admin_url('admin-ajax.php'); ?>" data-posts='<?php echo json_encode($wp_query->query_vars); ?>' data-foundposts="<?php echo $wp_query->found_posts; ?>" data-maxpages="<?php echo $wp_query->max_num_pages; ?>" data-currentpage="<?php echo $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1; ?>" data-totalposts="<?php echo $wp_query->post_count; ?>">
+                    <div class="p28-btn-primary" id="p28-load-more">
                         CHARGER PLUS
                     </div>
                 <?php endif; ?>
