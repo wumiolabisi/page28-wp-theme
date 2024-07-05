@@ -6,26 +6,26 @@
 
             const data = {
                 action: 'p28_load_more',
-                query: p28_query_params.query,
-                current_page: p28_query_params.current_page
+                current_page: p28_query_params.current_page,
+                query: p28_query_params.query
             };
-
 
             fetch(ajaxurl,
                 {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Content-Type': 'x-www-form-urlencoded',
                         'Cache-Control': 'no-cache'
                     },
                     body: new URLSearchParams(data)
                 }).then(response => response.json())
                 .then(response => {
                     if (!response.success) {
-                        console.log('Erreur : ' + response);
+                        console.log('Erreur dans la réponse : ' + response);
                         return;
                     }
                     if (response) {
+                        console.log("ici")
 
                         $('div#p28-load-more').text('CHARGER ENCORE');
 
@@ -43,7 +43,7 @@
                         $('div#p28-load-more').hide();
                     }
                 }).catch(function (err) {
-                    console.warn('Erreur', err);
+                    console.warn('Erreur lors de l&apos;envoi : ', err);
                 });
         });
 

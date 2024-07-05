@@ -37,7 +37,7 @@ add_filter('login_display_language_dropdown', '__return_false');
 add_action('pre_get_posts', 'post_type_oeuvre', 1, 1);
 function post_type_oeuvre($query)
 {
-    if (!is_admin() && is_post_type_archive('oeuvre') && $query->is_main_query()) {
+    if (is_post_type_archive('oeuvre') && $query->is_main_query()) {
         $query->set('posts_per_page', 8);
     }
 }
