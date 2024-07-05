@@ -18,7 +18,7 @@ get_header(); ?>
         <div class="p28-row p28-justify-center">
             <div class="p28-col p28-filter-msg"></div>
         </div>
-        <div class="p28-row p28-justify-center p28-margin">
+        <div class="p28-row p28-justify-center p28-margin p28-gap-row">
             <div class="p28-col">
                 <div class="p28-grid-4 p28-search-result" id="p28-load-more-results">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

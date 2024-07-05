@@ -67,6 +67,12 @@ html {
     text-align: center;
 }
 
+.p28-text-center-md {
+    @include maxScreenWidth($md) {
+        text-align: center;
+    }
+}
+
 .p28-h1,
 h1 {
     font-size: 30px;
@@ -91,6 +97,17 @@ h1 {
 
 h3.p28-big-text {
     margin-bottom: 0px;
+}
+
+span.p28-font-p1 {
+    text-transform: uppercase;
+    @extend .p28-small-text;
+}
+
+span.p28-font-p2 {
+    text-transform: uppercase;
+    @include fontWeight(700);
+    font-size: 18px;
 }
 
 /* Links */
@@ -367,10 +384,34 @@ li.p28-navbar-item>a {
             @include minScreenWidth($md) {
                 flex-direction: row;
             }
+
+            &.p28-gap-row {
+                gap: 10px;
+            }
+
+
         }
 
         .p28-col {
             @extend .flex-column;
+
+            &.p28-fr1 {
+                width: 100%;
+
+                @include minScreenWidth($md) {
+                    width: 70%;
+                }
+            }
+
+            &.p28-fr2 {
+                width: 100%;
+
+                @include minScreenWidth($md) {
+                    width: 27%;
+                    padding-left: 3%;
+                }
+            }
+
         }
     }
 }
@@ -409,6 +450,12 @@ li.p28-navbar-item>a {
 .p28-margin {
     @include customMargin(5%, 0);
 
+}
+
+#p28-real {
+    @include maxScreenWidth($md) {
+        padding-top: 5%;
+    }
 }
 
 div#p28-realisatrice-coeur {
