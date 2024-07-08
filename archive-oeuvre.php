@@ -42,11 +42,16 @@ get_header(); ?>
             </p>
         </div>
         <div class="p28-row p28-justify-center p28-margin">
-            <div class="p28-col "> <?php if ($wp_query->max_num_pages > 1) : ?>
-                    <div class="p28-btn-primary" id="p28-load-more">
+            <div class="p28-col ">
+                <?php get_template_part('template-parts/pagination'); ?>
+
+                <?php //if ($wp_query->max_num_pages > 1) : 
+                ?>
+                <!-- <div class="p28-btn-primary" id="p28-load-more">
                         CHARGER PLUS
-                    </div>
-                <?php endif; ?>
+                    </div>-->
+                <?php //endif; 
+                ?>
             </div>
         </div>
     </div>

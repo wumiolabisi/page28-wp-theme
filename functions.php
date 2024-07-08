@@ -24,7 +24,7 @@ require_once get_template_directory() . '/src/server/assets.php';
 
 require_once get_template_directory() . '/src/server/post-types.php';
 
-include get_template_directory() . '/src/server/load-more.php';
+//include get_template_directory() . '/src/server/load-more.php';
 include get_template_directory() . '/src/server/filter.php';
 
 
