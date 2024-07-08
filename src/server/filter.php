@@ -21,7 +21,7 @@ function p28_search_oeuvre()
 
 
     // Récupération des données du formulaire
-
+    $current_page = intval($_POST['paged']);
     $format = sanitize_text_field($_POST['format']);
     $genre = sanitize_text_field($_POST['genre']);
     $tag = sanitize_text_field($_POST['tag']);
@@ -81,7 +81,7 @@ function p28_search_oeuvre()
     $args['tax_query'] = $args_tax_query;
 
 
-    $args['posts_per_page'] = 8;
+    $args['posts_per_page'] = -1;
 
 
     // Requête puis mise en forme des posts
@@ -106,6 +106,7 @@ function p28_search_oeuvre()
 
     echo json_encode(array(
         'success' => true,
+        'rp_current_page' => $current_page,
         'rp_posts' => json_encode($p28_posts->query_vars),
         'rp_max_pages' => $p28_posts->max_num_pages,
         'rp_found_posts' => $p28_posts->found_posts,
