@@ -33,7 +33,7 @@ endif;
             </div>
             <div class="p28-col p28-fr2" id="p28-real">
                 <h2 class="p28-text-center-md display-until-md">Quelques mots concernant <?php echo get_queried_object()->name ?></h2>
-                <img class="" alt="Photo de <?php echo get_queried_object()->name ?>" src="<?php echo $taxonomy_thumbnail; ?>" alt="">
+                <img class="p28-img-real" alt="Photo de <?php echo get_queried_object()->name ?>" src="<?php echo $taxonomy_thumbnail; ?>" alt="">
                 <?php if ($taxonomy_excerpt) : ?>
 
                     <div class="p28-text-center-md p28-small-text"><?php echo $taxonomy_excerpt; ?></div>

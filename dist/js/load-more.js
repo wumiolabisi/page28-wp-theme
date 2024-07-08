@@ -26,24 +26,23 @@
       }).then(function (response) {
         return response.json();
       }).then(function (response) {
-        if (!response.success) {
-          console.log('Erreur dans la réponse : ' + response);
-          return;
-        }
-        if (response) {
-          console.log("ici");
-          $('div#p28-load-more').text('CHARGER ENCORE');
+        console.log("Done");
 
-          //$('div#p28-load-more-results').append(posts);
-          document.querySelector('div#p28-load-more-results').innerHTML += response;
-          p28_query_params.current_page++;
-          $('div.p28-load-more-msg').html('<p class="p28-small-text">' + p28_query_params.posts_count + ' sur ' + p28_query_params.found_posts + '</p>');
-          if (p28_query_params.current_page == p28_query_params.max_pages) {
-            $('div#p28-load-more').hide();
+        /* if (!response.success) {
+                  console.log('Erreur dans la réponse : ' + response);
+              return;
           }
-        } else {
-          $('div#p28-load-more').hide();
-        }
+          if (response) {
+              $('div#p28-load-more').text('CHARGER ENCORE');
+                  $('div#p28-load-more-results').append(response);
+                  p28_query_params.current_page++;
+                  $('div.p28-load-more-msg').html('<p class="p28-small-text">' + p28_query_params.posts_count + ' sur ' + p28_query_params.found_posts + '</p>');
+                  if (p28_query_params.current_page == p28_query_params.max_pages) {
+                  $('div#p28-load-more').hide();
+              }
+          } else {
+              $('div#p28-load-more').hide();
+          }*/
       })["catch"](function (err) {
         console.warn('Erreur lors de l&apos;envoi : ', err);
       });
