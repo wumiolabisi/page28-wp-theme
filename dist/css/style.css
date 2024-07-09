@@ -90,7 +90,7 @@ h1 {
   font-weight: normal;
 }
 
-.p28-small-text, .p28-pagination, form.p28-search-form .p28-search-form-item > label:first-child, form.p28-search-form button.p28-btn-primary, div.p28-footer ul li, .p28-grid .p28-grid-item .p28-grid-item-content, span.p28-font-p1 {
+.p28-small-text, .p28-pagination, form.p28-search-form .p28-search-form-item > label:first-child, form.p28-search-form button.p28-btn-primary, div.p28-footer ul li, #p28-infos-oeuvre p, .p28-grid .p28-grid-item .p28-grid-item-content, span.p28-font-p1 {
   font-size: 13px;
 }
 
@@ -113,14 +113,14 @@ span.p28-font-p2 {
 }
 
 /* Links */
-.p28-link-effect, .p28-btn-secondary, li.p28-navbar-item > a {
+.p28-link-effect, .p28-btn-secondary, #p28-infos-oeuvre p a, li.p28-navbar-item > a {
   background: linear-gradient(to right, rgba(203, 189, 255, 0), rgba(203, 189, 255, 0)), linear-gradient(to right, rgb(254, 195, 46), rgb(57, 251, 126), rgb(203, 189, 255));
   background-size: 100% 3px, 0 3px;
   background-position: 50% 100%, 50% 100%;
   background-repeat: no-repeat;
   transition: background-size 400ms;
 }
-.p28-link-effect:hover, .p28-btn-secondary:hover, li.p28-navbar-item > a:hover {
+.p28-link-effect:hover, .p28-btn-secondary:hover, #p28-infos-oeuvre p a:hover, li.p28-navbar-item > a:hover {
   background-size: 0 3px, 100% 3px;
 }
 
@@ -163,6 +163,31 @@ a {
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.p28-img-banner {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 40em) {
+  .p28-img-banner {
+    height: 400px;
+  }
+}
+
+.p28-thumbnail-small {
+  width: 150px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 40em) {
+  .p28-thumbnail-small {
+    width: 100%;
+    height: 300px;
+  }
 }
 
 .p28-bg-voile:before {
@@ -379,6 +404,26 @@ a {
   .p28-main .p28-container .p28-col.p28-fr2 {
     width: 27%;
     padding-left: 3%;
+  }
+}
+
+#p28-single-oeuvre p28-fr2 {
+  padding: 0;
+}
+
+#p28-infos-oeuvre p {
+  color: #2e2e2e;
+  text-transform: uppercase;
+}
+#p28-oeuvre-content {
+  max-height: 300px;
+  overflow: scroll;
+  padding: 0 2%;
+}
+@media (min-width: 40em) {
+  #p28-oeuvre-content {
+    max-height: 600px;
+    border-left: 1px solid #e9e6e6;
   }
 }
 
