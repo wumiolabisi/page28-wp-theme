@@ -445,32 +445,83 @@ li.p28-navbar-item>a {
 }
 
 #p28-single-oeuvre {
-    p28-fr2 {
-        padding: 0
+    .p28-fr2 {
+
+        @include minScreenWidth($md) {
+            padding-left: 0 !important;
+            padding-right: 5%;
+            width: 30% !important;
+        }
     }
+
+    div.p28-fr2:first-child {
+        flex-direction: row;
+        gap: 10px;
+
+        @include minScreenWidth($md) {
+            flex-direction: column;
+        }
+    }
+
 }
 
-#p28-infos-oeuvre p {
-    @extend .p28-small-text;
-    color: $main-dark-color;
-    text-transform: uppercase;
+/* Concernant Single Oeuvre */
+#p28-infos-oeuvre {
+    div {
+        padding: 0 5%;
+    }
 
-    a {
-        @extend .p28-link-effect;
+    p {
+        @extend .p28-small-text;
+        color: $main-dark-color;
+        text-transform: uppercase;
+
+        a {
+            @extend .p28-link-effect;
+        }
     }
 }
 
 #p28-oeuvre-content {
 
-    max-height: 300px;
-    overflow: scroll;
-    padding: 0 2%;
-
-
     @include minScreenWidth($md) {
-        max-height: 600px;
         border-left: 1px solid $second-light-color;
+        padding: 0 5%;
+
     }
+
+    #p28-oeuvre-content-scroll {
+        max-height: 300px;
+        overflow: scroll;
+
+        @include minScreenWidth($md) {
+            max-height: 300px;
+            padding-right: 20px;
+
+        }
+    }
+}
+
+.p28-badges {
+    @extend .flex-row;
+    gap: 10px;
+
+    div.p28-badge-item {
+        @extend .border-radius;
+        padding: 5px 10px;
+        border: 1px solid $main-dark-color;
+        background-color: $main-dark-color;
+        color: $main-light-color;
+        @extend .p28-small-text;
+        transition-duration: 0.5s;
+
+
+        &:hover {
+            background-color: $main-light-color;
+            color: $main-dark-color;
+        }
+    }
+
 }
 
 .p28-500w {

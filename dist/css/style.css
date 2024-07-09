@@ -38,7 +38,7 @@ html {
 }
 
 .border-radius, select.p28-select,
-select, .p28-btn, .p28-btn-secondary, .p28-btn-primary {
+select, .p28-btn, .p28-btn-secondary, .p28-btn-primary, .p28-badges div.p28-badge-item {
   border-radius: 5px;
 }
 
@@ -90,7 +90,7 @@ h1 {
   font-weight: normal;
 }
 
-.p28-small-text, .p28-pagination, form.p28-search-form .p28-search-form-item > label:first-child, form.p28-search-form button.p28-btn-primary, div.p28-footer ul li, #p28-infos-oeuvre p, .p28-grid .p28-grid-item .p28-grid-item-content, span.p28-font-p1 {
+.p28-small-text, .p28-pagination, form.p28-search-form .p28-search-form-item > label:first-child, form.p28-search-form button.p28-btn-primary, div.p28-footer ul li, .p28-badges div.p28-badge-item, #p28-infos-oeuvre p, .p28-grid .p28-grid-item .p28-grid-item-content, span.p28-font-p1 {
   font-size: 13px;
 }
 
@@ -240,7 +240,7 @@ a {
 }
 
 /* Flex containers */
-.flex-row, form.p28-search-form, nav.p28-navbar > ul, .p28-heart28 {
+.flex-row, form.p28-search-form, nav.p28-navbar > ul, .p28-heart28, .p28-badges {
   display: flex;
   flex-direction: row;
 }
@@ -407,24 +407,61 @@ a {
   }
 }
 
-#p28-single-oeuvre p28-fr2 {
-  padding: 0;
+@media (min-width: 40em) {
+  #p28-single-oeuvre .p28-fr2 {
+    padding-left: 0 !important;
+    padding-right: 5%;
+    width: 30% !important;
+  }
+}
+#p28-single-oeuvre div.p28-fr2:first-child {
+  flex-direction: row;
+  gap: 10px;
+}
+@media (min-width: 40em) {
+  #p28-single-oeuvre div.p28-fr2:first-child {
+    flex-direction: column;
+  }
 }
 
+/* Concernant Single Oeuvre */
+#p28-infos-oeuvre div {
+  padding: 0 5%;
+}
 #p28-infos-oeuvre p {
   color: #2e2e2e;
   text-transform: uppercase;
 }
-#p28-oeuvre-content {
-  max-height: 300px;
-  overflow: scroll;
-  padding: 0 2%;
-}
 @media (min-width: 40em) {
   #p28-oeuvre-content {
-    max-height: 600px;
     border-left: 1px solid #e9e6e6;
+    padding: 0 5%;
   }
+}
+#p28-oeuvre-content #p28-oeuvre-content-scroll {
+  max-height: 300px;
+  overflow: scroll;
+}
+@media (min-width: 40em) {
+  #p28-oeuvre-content #p28-oeuvre-content-scroll {
+    max-height: 300px;
+    padding-right: 20px;
+  }
+}
+
+.p28-badges {
+  gap: 10px;
+}
+.p28-badges div.p28-badge-item {
+  padding: 5px 10px;
+  border: 1px solid #2e2e2e;
+  background-color: #2e2e2e;
+  color: #ffffff;
+  transition-duration: 0.5s;
+}
+.p28-badges div.p28-badge-item:hover {
+  background-color: #ffffff;
+  color: #2e2e2e;
 }
 
 .p28-500w {
