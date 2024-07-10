@@ -49,7 +49,7 @@ get_header();
                                 "term" => $current_name,
                                 "term_link" => get_term_link($terms)
                             );
-                        elseif ($current_taxonomy == 'etiquette') :
+                        elseif ($current_taxonomy == 'tag') :
                             $etiquette = array(
                                 "term" => $current_name,
                                 "term_link" => get_term_link($terms)
@@ -99,7 +99,7 @@ get_header();
                     <?php endif; ?>
                 </div>
                 <div>
-                    <h2 class="p28-text-center-md">RÉSUMÉ</h2>
+                    <h2>RÉSUMÉ</h2>
                     <?php the_excerpt(); ?>
                 </div>
                 <p class="p28-h2">En savoir plus sur l'&oelig;uvre</p>
@@ -121,7 +121,7 @@ get_header();
             </div>
         </div>
         <div class="p28-row">
-            <div class="p28-col">
+            <div class="p28-col width-100pc">
                 <?php
                 if (comments_open() || get_comments_number()) :
                     comments_template('/comments.php');
@@ -129,7 +129,7 @@ get_header();
             </div>
         </div>
         <div class="p28-row">
-            <div class="p28-col">
+            <div class="p28-col width-100pc">
                 <div class="p28-comments">
                     <?php
                     comment_form();

@@ -2,17 +2,25 @@
 /* Afficher une page */
 
 get_header(); ?>
+<div class="p28-main">
+        <div class="p28-container">
+                <div class="p28-row">
+                        <div class="p28-col">
+                                <h1><?php the_title(); ?></h1>
+                        </div>
+                </div>
+                <div class="p28-row p28-justify-center p28-gap-row p28-margin" id="p28-single-oeuvre">
+                        <div class="p28-col">
+                                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div class="p28-container">
+                                                <h2><?php the_title(); ?></h1>
 
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                                                        <div> <?php the_content(); ?></div>
 
-                        <h1 class="p28-txtcenter"><?php the_title(); ?></h1>
-
-                        <div class="p28-block"> <?php the_content(); ?></div>
-
-        <?php endwhile;
-        endif; ?>
-
+                                        <?php endwhile;
+                                endif; ?>
+                        </div>
+                </div>
+        </div>
 </div>
 <?php get_footer(); ?>

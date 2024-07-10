@@ -1,11 +1,5 @@
 <?php
-
-
-
 /* Afficher la page d'archive des oeuvres */
-
-
-
 get_header(); ?>
 
 <div class="p28-main">
@@ -21,24 +15,43 @@ get_header(); ?>
                 <?php get_template_part('template-parts/search-form'); ?>
             </div>
         </div>
-        <div class="p28-row p28-justify-center p28-margin">
-            <div class="p28-col ">
-                <div class="p28-grid-4 p28-search-result">
+        <div class="p28-row p28-justify-center">
+            <div class="p28-col p28-filter-msg"></div>
+        </div>
+        <div class="p28-row p28-justify-center p28-margin p28-gap-row">
+            <div class="p28-col">
+                <div class="p28-grid-4 p28-search-result" id="p28-load-more-results">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
                             <?php get_template_part('template-parts/gallery'); ?>
 
 
-
-                            <?php the_posts_pagination(); ?>
-
-
                     <?php endwhile;
 
                     endif; ?>
-
                 </div>
+
+
+            </div>
+            <?php wp_reset_postdata(); ?>
+        </div>
+        <div class="p28-row p28-justify-center p28-margin p28-load-more-msg">
+            <p class="p28-small-text">
+                <?php echo $wp_query->post_count; ?> sur <?php echo $wp_query->found_posts; ?>
+            </p>
+        </div>
+        <div class="p28-row p28-justify-center p28-margin">
+            <div class="p28-col ">
+                <?php get_template_part('template-parts/pagination'); ?>
+
+                <?php //if ($wp_query->max_num_pages > 1) : 
+                ?>
+                <!-- <div class="p28-btn-primary" id="p28-load-more">
+                        CHARGER PLUS
+                    </div>-->
+                <?php //endif; 
+                ?>
             </div>
         </div>
     </div>

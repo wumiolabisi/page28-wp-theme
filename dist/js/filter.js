@@ -50,6 +50,8 @@
           $('div.p28-filter-msg').html('<p class="p28-small-text">' + response.rp_found_posts + ' &oelig;uvre correspond à votre recherche :</p>');
         } else if (response.rp_found_posts > 1) {
           $('div.p28-filter-msg').html('<p class="p28-small-text">' + response.rp_found_posts + ' &oelig;uvres correspondent à votre recherche :</p>');
+        } else if (response.rp_found_posts == 0) {
+          $('div.p28-filter-msg').html('<p class="p28-small-text">Pas de correspondance</p>');
         }
         $('.p28-search-result').html(response.rp_content);
         $('div.p28-load-more-msg').html('<p class="p28-small-text">' + response.rp_posts_count + ' sur ' + response.rp_found_posts + '</p>');

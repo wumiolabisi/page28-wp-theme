@@ -25,7 +25,7 @@
                 <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>">FILMS & SÉRIES</a>
             </li>
             <li class="p28-navbar-item display-from-md">
-                <a href="<?php echo get_post_type_archive_link('realisation'); ?>">RÉALISATRICES</a>
+                <a href="<?php echo get_permalink(get_page_by_path('realisation')); ?>">RÉALISATRICES</a>
             </li>
         </ul>
     </nav>
