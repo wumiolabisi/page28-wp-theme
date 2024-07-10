@@ -46,7 +46,7 @@ function p28_load_and_filter()
 
     global $wp_query;
 
-    wp_register_script('p28_load_more_filter', get_stylesheet_directory_uri() . '/dist/js/load-more.js', array('jquery'));
+    wp_register_script('p28_load_more_filter', get_stylesheet_directory_uri() . '/dist/js/filter.js', array('jquery'));
 
     wp_localize_script('p28_load_more_filter', 'p28_query_params', array(
         'ajaxurl' => admin_url('admin-ajax.php'),

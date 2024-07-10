@@ -170,6 +170,32 @@ li.p28-navbar-item>a {
 
 }
 
+.p28-img-real {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.p28-img-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+    @include minScreenWidth($md) {
+        height: 400px;
+    }
+}
+
+.p28-thumbnail-small {
+    width: 200px;
+    object-fit: cover;
+
+    @include minScreenWidth($md) {
+        height: 300px;
+    }
+
+}
+
 .p28-bg-voile:before {
     content: ' ';
     display: block;
@@ -203,7 +229,7 @@ li.p28-navbar-item>a {
 
 .p28-thumbnail {
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: cover;
 
     &:hover {
@@ -414,6 +440,89 @@ li.p28-navbar-item>a {
 
         }
     }
+}
+
+#p28-single-oeuvre {
+    .p28-fr2 {
+
+        @include minScreenWidth($md) {
+            padding-left: 0 !important;
+            padding-right: 5%;
+            width: 20% !important;
+        }
+    }
+
+    div.p28-fr2:first-child {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+
+        @include minScreenWidth($md) {
+            flex-direction: column;
+            align-items: start;
+
+        }
+    }
+
+}
+
+/* Concernant Single Oeuvre */
+#p28-infos-oeuvre {
+    div {
+        padding: 0 5%;
+    }
+
+    p {
+        @extend .p28-small-text;
+        color: $main-dark-color;
+        text-transform: uppercase;
+
+        a {
+            @extend .p28-link-effect;
+        }
+    }
+}
+
+#p28-oeuvre-content {
+
+    @include minScreenWidth($md) {
+        border-left: 1px solid $second-light-color;
+        padding: 0 5%;
+
+    }
+
+    #p28-oeuvre-content-scroll {
+        max-height: 300px;
+        overflow: scroll;
+
+        @include minScreenWidth($md) {
+            max-height: 300px;
+            padding-right: 20px;
+
+        }
+    }
+}
+
+.p28-badges {
+    @extend .flex-row;
+    gap: 10px;
+
+    div.p28-badge-item {
+        @extend .border-radius;
+        padding: 5px 10px;
+        border: 1px solid $main-dark-color;
+        background-color: $main-dark-color;
+        color: $main-light-color;
+        @extend .p28-small-text;
+        transition-duration: 0.5s;
+
+
+        &:hover {
+            background-color: $main-light-color;
+            color: $main-dark-color;
+        }
+    }
+
 }
 
 .p28-500w {
@@ -725,4 +834,44 @@ select {
         @include fontWeight(700);
         margin: 0 5px;
     }
+}
+
+/* Comment area */
+.p28-comments {
+    p {
+        @extend .p28-small-text;
+    }
+
+    form {
+        @extend .flex-column;
+
+        /* Phrase before textarea*/
+        & p:first-child {
+            a {
+                @extend .p28-link-effect;
+            }
+        }
+
+        /*Comment textarea */
+        label[for=comment] {
+            display: block;
+
+            &:after {
+                content: ' :'
+            }
+        }
+
+        input#submit {
+            @extend .p28-btn-primary;
+            background-color: $main-light-color;
+            text-transform: uppercase;
+            font-family: $global-font-family;
+        }
+    }
+}
+
+.p28-badge-info {
+    padding: 2% 5%;
+    background-color: $second-light-color;
+    @extend .border-radius;
 }
