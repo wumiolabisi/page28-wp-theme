@@ -15,7 +15,7 @@
         <ul>
             <li>
                 <a href="<?php echo home_url('/'); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo-page-28.png" alt="Logo Page 28" class="width-50">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo-page-28.png" alt="Logo Page 28" class="width-40">
                 </a>
             </li>
             <li class="p28-navbar-item">

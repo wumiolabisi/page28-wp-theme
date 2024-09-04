@@ -146,6 +146,11 @@ li.p28-navbar-item>a {
     height: auto;
 }
 
+.width-40 {
+    width: 40px;
+    height: auto;
+}
+
 .width-30 {
     width: 30px;
     height: auto;
@@ -395,8 +400,6 @@ li.p28-navbar-item>a {
     .p28-container {
         width: 96%;
         padding: 2%;
-
-
 
         @include minScreenWidth($lg) {
             width: 900px;

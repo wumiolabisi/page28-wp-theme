@@ -40,6 +40,8 @@ function p28_register_post_types()
 
         'show_in_rest' => true,
 
+        'rest_base' => 'oeuvres',
+
         'has_archive' => true,
 
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
