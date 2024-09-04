@@ -8,7 +8,7 @@ get_header(); ?>
 
 <div class="p28-main p28-bg-voile p28-bg-2024">
     <div class="p28-container">
-        <div class="p28-row p28-justify-center">
+        <div class="p28-row p28-justify-center p28-margin-mobile">
             <div class="p28-col p28-500w margin-2side">
                 <h1 class="p28-text-center">Les réalisatrices à l’honneur dans un catalogue de films et séries dédié à leurs &oelig;vres</h1>
                 <p class="p28-text-center">Explorez des récits vibrants, des perspectives uniques et des réalisations cinématographiques saisissantes, toutes portées par le talent et la vision des femmes derrière la caméra.</p>
@@ -61,7 +61,7 @@ get_header(); ?>
 
 
     <div class="p28-container">
-        <div class="p28-row p28-justify-center">
+        <div class="p28-row p28-justify-center p28-margin-mobile">
             <div class="p28-col p28-500w">
                 <h2 class="p28-text-center">Explorez un catalogue de films variés, allant du documentaire à la fiction</h2>
                 <p class="p28-text-center">Découvrez des films et séries engagés, tout ça dans le catalogue Page 28 ! Conçu pour les cinéphiles en herbes ou expérimentés, vous retrouverez dans ce catalogue libre d'accès plus de 100 &oelig;uvres réalisées ou co-réalisées par des femmes.</p>
@@ -154,7 +154,7 @@ get_header(); ?>
 
     <!-- DIV CATALOGUE ETIQUETTE -->
     <div class="p28-container">
-        <h2 class="p28-h2">Sélection de films/séries BOOM BOOM PAN PAN</h2>
+        <h2 class="p28-h2">Sélection de films/séries qui mettent la banlieue à l'honneur</h2>
         <?php
         $args_tag = array(
             'p28_post_type' => 'oeuvre',
@@ -164,7 +164,7 @@ get_header(); ?>
                 array(
                     'p28_taxonomy' => 'tag',
                     'p28_field' => 'slug',
-                    'p28_terms' => 'boom-boom-pan-pan'
+                    'p28_terms' => 'la-banlieue-a-lhonneur'
                 )
             )
         );
@@ -173,28 +173,28 @@ get_header(); ?>
     </div>
 
     <div class="p28-container">
-        <div class="p28-row p28-justify-center">
+        <div class="p28-row p28-justify-center p28-margin-mobile">
             <div class="p28-col p28-500w">
                 <h2 class="p28-text-center">Un catalogue collaboratif et accessible</h2>
                 <p class="p28-text-center">Parce que chaque film est une invitation au dialogue, à la réflexion et à l'empathie, Page 28 souhaite vous proposer un catalogue simple d'utilisation et collaboratif.</p>
             </div>
         </div>
 
-        <div class="p28-row p28-justify-center">
-            <div class="p28-col">
-                <div class="p28-masque-logo">
+        <div class="p28-row p28-justify-center p28-margin">
+            <div class="p28-col p28-align-items-center">
+                <div class="">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/9165800_movie_clapper_film_icon.png" class="width-50" />
                 </div>
                 <p class="p28-text-center">Une sélection de films et séries internationaux réalisés ou co-réalisés par des femmes.</p>
             </div>
-            <div class="p28-col">
-                <div class="p28-masque-logo">
+            <div class="p28-col p28-align-items-center">
+                <div class="">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/9165687_bulb_light_icon.png" class="width-50" />
                 </div>
                 <p class="p28-text-center">Des dossiers de presse vulgarisés pour rendre la compréhension de l'&oelig;uvre accessible à tous·tes.</p>
             </div>
-            <div class="p28-col">
-                <div class="p28-masque-logo">
+            <div class="p28-col p28-align-items-center">
+                <div class="">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/doodle_magnifier_magnifying.png" class="width-50" />
                 </div>
                 <p class="p28-text-center">Un catalogue simple d'utilisation pour que vous trouviez votre prochain film à regarder.</p>

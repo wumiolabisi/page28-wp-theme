@@ -561,6 +561,13 @@ li.p28-navbar-item>a {
 
 }
 
+.p28-margin-mobile {
+    @include maxScreenWidth($md) {
+        padding: 10% 5%;
+        width: 90% !important;
+    }
+}
+
 #p28-real {
     @include maxScreenWidth($md) {
         padding-top: 5%;
@@ -761,12 +768,18 @@ form.p28-search-form {
     padding: 2% 0;
     gap: 10px;
     width: 100%;
+    flex-wrap: wrap;
+    align-items: start;
 
+    @include minScreenWidth($md) {
 
-    #p28-submit-form,
-    #p28-reload {
-        align-self: end;
+        #p28-submit-form,
+        #p28-reload {
+            align-self: end;
+        }
     }
+
+
 
     #p28-reload {
         cursor: pointer;

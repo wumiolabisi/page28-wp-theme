@@ -6,15 +6,10 @@ get_header(); ?>
     <div class="p28-container">
         <div class="p28-row p28-justify-center">
             <div class="p28-col">
-                <h1 class="p28-text-center">Trouvez votre film pour ce soir dans notre catalogue d'&oelig;uvres cinématographiques</h1>
-                <p class="p28-text-center p28-small-text">Vous pouvez trier les films et séries du catalogue par format, genre, pays de la réalisatrice ou encore par date.</p>
+                <h1 class="p28-text-center">Parcourez toutes les oeuvres correspondant au <?php the_archive_title(); ?></h1>
             </div>
         </div>
-        <div class="p28-row p28-justify-center">
-            <div class="p28-col width-100pc ">
-                <?php get_template_part('template-parts/search-form'); ?>
-            </div>
-        </div>
+
         <div class="p28-row p28-justify-center">
             <div class="p28-col p28-filter-msg"></div>
         </div>
@@ -36,11 +31,7 @@ get_header(); ?>
             </div>
             <?php wp_reset_postdata(); ?>
         </div>
-        <div class="p28-row p28-justify-center p28-margin p28-load-more-msg">
-            <p class="p28-small-text">
-                <?php echo $wp_query->post_count; ?> sur <?php echo $wp_query->found_posts; ?>
-            </p>
-        </div>
+
         <div class="p28-row p28-justify-center p28-margin">
             <div class="p28-col ">
                 <?php get_template_part('template-parts/pagination'); ?>

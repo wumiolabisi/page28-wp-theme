@@ -24,11 +24,21 @@ get_header(); ?>
                         'hide_empty' => false,
                     ]);
 
+
+
                     foreach ($terms as $realisatrice) : ?>
+                        <?php
+
+                        $director_thumbnail;
+                        if (!empty(get_field('taxonomy_thumbnail', $taxonomy . '_' . $realisatrice->term_id)['url'])) {
+                            $director_thumbnail = get_field('taxonomy_thumbnail', $taxonomy . '_' . $realisatrice->term_id)['url'];
+                        } else {
+                            $director_thumbnail = get_template_directory_uri() . '/img/pexels-alinevianafoto-3491697.jpg';;
+                        } ?>
                         <div class="p28-grid-item" id="p28-grid-tag-item-<?php echo $realisatrice->term_id; ?>">
                             <div class="p28-grid-item-content">
                                 <a href="<?php echo get_term_link($realisatrice); ?>" alt="<?php echo $realisatrice->name; ?>" title="<?php echo $realisatrice->name; ?>">
-                                    <img src="<?php echo esc_url(get_field('taxonomy_thumbnail', $taxonomy . '_' . $realisatrice->term_id)['url']); ?>" class="p28-thumbnail" alt="Découvrez les oeuvres de la réalisatrice <?php echo $realisatrice->name; ?>" />
+                                    <img src="<?php echo esc_url($director_thumbnail); ?>" class="p28-thumbnail" alt="Découvrez les oeuvres de la réalisatrice <?php echo $realisatrice->name; ?>" />
                                 </a>
                             </div>
                         </div>

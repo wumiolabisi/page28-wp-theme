@@ -102,10 +102,15 @@ get_header();
                     <h2>RÉSUMÉ</h2>
                     <?php the_excerpt(); ?>
                 </div>
-                <p class="p28-h2">En savoir plus sur l'&oelig;uvre</p>
-                <div id="p28-oeuvre-content-scroll">
-                    <?php the_content(); ?>
-                </div>
+                <?php if (!empty(the_content())) : ?>
+
+                    <p class="p28-h2">En savoir plus sur l'&oelig;uvre</p>
+                    <div id="p28-oeuvre-content-scroll">
+                        <?php the_content(); ?>
+                    </div>
+
+                <?php endif; ?>
+
             </div>
         </div>
     </div>

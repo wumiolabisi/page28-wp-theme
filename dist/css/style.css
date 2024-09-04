@@ -498,6 +498,13 @@ a {
 }
 
 @media (max-width: 40em) {
+  .p28-margin-mobile {
+    padding: 10% 5%;
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 40em) {
   #p28-real {
     padding-top: 5%;
   }
@@ -655,10 +662,14 @@ form.p28-search-form {
   padding: 2% 0;
   gap: 10px;
   width: 100%;
+  flex-wrap: wrap;
+  align-items: start;
 }
-form.p28-search-form #p28-submit-form,
-form.p28-search-form #p28-reload {
-  align-self: end;
+@media (min-width: 40em) {
+  form.p28-search-form #p28-submit-form,
+  form.p28-search-form #p28-reload {
+    align-self: end;
+  }
 }
 form.p28-search-form #p28-reload {
   cursor: pointer;

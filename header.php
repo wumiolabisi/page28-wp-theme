@@ -41,7 +41,7 @@
                 </a>
             </li>
             <li class="p28-text-center">
-                <a href="<?php echo home_url('/'); ?>" alt="Aller au catalogue" title="Aller au catalogue">
+                <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" alt="Aller au catalogue" title="Aller au catalogue">
                     <div>
                         <img src="<?php echo get_template_directory_uri(); ?>/img/search.png" alt="Icône qui représente une loupe" class="width-7vw">
                     </div>
@@ -50,7 +50,7 @@
             </li>
 
             <li class="p28-text-center">
-                <a href="<?php echo home_url('/'); ?>" alt="A propos de Page 28" title="A propos de Page 28">
+                <a href="<?php echo get_permalink(get_page_by_path('a-propos')); ?>" alt="A propos de Page 28" title="A propos de Page 28">
                     <div>
                         <img src="<?php echo get_template_directory_uri(); ?>/img/info.png" alt="Icône d'information" class="width-7vw">
                     </div>
