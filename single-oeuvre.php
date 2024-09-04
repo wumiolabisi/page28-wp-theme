@@ -25,6 +25,11 @@ get_header();
                 <img src="<?php echo esc_url(get_field('affiche')['url']); ?>" class="p28-thumbnail-small" alt="affiche du film : <?php the_title(); ?>" />
                 <div id="p28-infos-oeuvre">
                     <?php
+                    /* On récupère le champ ACF duree pour cette oeuvre */
+                    if (get_field('duree') != null) :
+                        echo '<p>Durée<br>' . get_field('duree') . '</p>';
+                    endif; ?>
+                    <?php
                     /* On récupère le champ ACF date_de_sortie pour cette oeuvre */
                     if (get_field('date_de_sortie') != null) :
                         echo '<p>Année<br>' . get_field('date_de_sortie') . '</p>';
@@ -64,6 +69,7 @@ get_header();
                         endif;
 
                     endforeach; ?>
+
                     <?php
                     /* On récupère le champ ACF pays pour cette oeuvre */
                     $acf_pays = get_field('pays', $post->ID);
