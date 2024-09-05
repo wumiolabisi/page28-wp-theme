@@ -158,7 +158,7 @@ get_header(); ?>
         <?php
         $args_tag = array(
             'p28_post_type' => 'oeuvre',
-            'p28_posts_per_page' => 4,
+            'p28_posts_per_page' => 5,
             'p28_orderby' => 'date',
             'p28_tax_query' => array(
                 array(

@@ -393,6 +393,23 @@ li.p28-navbar-item>a {
     }
 }
 
+.p28-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+
+    @include minScreenWidth($md) {
+        grid-template-columns: repeat(5, 1fr);
+
+    }
+
+
+    .p28-grid-item-content {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 /* Containers */
 .p28-main {
     width: 100%;
