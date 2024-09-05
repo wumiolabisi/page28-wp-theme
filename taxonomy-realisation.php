@@ -22,14 +22,14 @@ endif;
                 <h1 class="p28-h2 p28-text-center-md"><span class="p28-font-p1">Films et séries réalisés par</span><br>
                     <span class="p28-font-p2"><a href="#p28-real"><?php echo get_queried_object()->name ?></a></span>
                 </h1>
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <div class="p28-grid-4 p28-search-result" id="p28-load-more-results">
+                <div class="p28-grid-4 p28-search-result">
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                             <?php get_template_part('template-parts/gallery'); ?>
                         <?php endwhile; ?>
-                        </div>
                     <?php else : ?>
                         <p class="p28-text-center">Oups ! Il n'y a pas encore d'&oelig;uvres référencées pour <?php echo get_queried_object()->name ?>.</p>
                     <?php endif; ?>
+                </div>
             </div>
             <div class="p28-col p28-fr2" id="p28-real">
                 <h2 class="p28-text-center-md display-until-md">Quelques mots concernant <?php echo get_queried_object()->name ?></h2>
