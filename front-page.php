@@ -44,8 +44,16 @@ get_header(); ?>
                                 <div class="p28-grid-item-content">
                                     <a href="<?php the_permalink(); ?>">
                                         <h3 class="hide-from-md"><?php the_title(); ?></h3>
-                                        <p class="hide-from-md">Réalisatrice : <?php echo get_the_terms($post->ID, 'realisation')[0]->name; ?></p>
-                                        <p class="p28-small-text hide-from-md"><?php echo  wp_trim_words(get_the_excerpt(), 20); ?></p>
+                                        <?php if (has_term('', 'realisation')) : ?>
+                                            <p class="hide-from-md">Réalisatrice : <?php echo get_the_terms($post->ID, 'realisation')[0]->name; ?></p>
+                                        <?php else : ?>
+                                            <p class="hide-from-md">Réalisée par une femme</p>
+                                        <?php endif; ?>
+                                        <?php if (has_excerpt($post->ID)) : ?>
+                                            <p class="p28-small-text hide-from-md"><?php echo  wp_trim_words(get_the_excerpt(), 20); ?></p>
+                                        <?php else : ?>
+                                            <p class="p28-small-text hide-from-md">Découvrez une nouvelle oeuvre cinématographique.</p>
+                                        <?php endif; ?>
                                     </a>
                                 </div>
                             </div>
@@ -135,7 +143,7 @@ get_header(); ?>
             <div class="p28-col p28-align-self-end p28-40pc">
                 <h3 class="p28-big-text p28-text-light"><?php echo $terms[0]->name; ?></h3>
                 <div>
-                    <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-btn-secondary" target="_blank" alt="Aller au catalogue">VOIR SES &OElig;UVRES</a>
+                    <a href="<?php echo get_term_link($terms[0]->term_id); ?>" class="p28-btn-secondary" target="_blank" alt="Aller au catalogue">VOIR SES &OElig;UVRES</a>
                 </div>
             </div>
             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>

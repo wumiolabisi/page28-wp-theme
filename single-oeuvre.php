@@ -5,6 +5,8 @@
 */
 
 get_header();
+
+
 ?>
 
 
@@ -34,43 +36,43 @@ get_header();
                     if (get_field('date_de_sortie') != null) :
                         echo '<p>Année<br>' . get_field('date_de_sortie') . '</p>';
                     endif; ?>
+
                     <?php
+                    $formats = [];
+                    $genres = [];
+                    $tags = [];
                     $p28_post_taxonomies = get_post_taxonomies($post->ID);
-                    $p28_terms  = wp_get_post_terms($post->ID, $p28_post_taxonomies);
 
-                    /*
-                   *  Pour récupérer les infos dans les variables qu'on a créé
-                   *  On boucle sur les terms et on vérifie si le term correspond à ce qu'on recherche
-                   *  On range chaque term dans le tableau associé
-                   */
+                    foreach ($p28_post_taxonomies as $tax) :
 
-                    foreach ($p28_terms as $terms) :
+                        $p28_terms = get_the_terms($post->ID, $tax);
 
-                        $current_taxonomy = $terms->taxonomy;
-                        $current_name = $terms->name;
+                        if ($p28_terms != false) :
 
-                        if ($current_taxonomy == 'format') :
-                            $format = array(
-                                "term" => $current_name,
-                                "term_link" => get_term_link($terms)
-                            );
-                        elseif ($current_taxonomy == 'tag') :
-                            $etiquette = array(
-                                "term" => $current_name,
-                                "term_link" => get_term_link($terms)
-                            );
-                        elseif ($current_taxonomy == 'genre') :
-                            $genre = array(
-                                "term" => $current_name,
-                                "term_link" => get_term_link($terms)
-                            );
-                        else :
-                            echo '<p>' . get_taxonomy($current_taxonomy)->labels->name . '<br><a href="' . get_term_link($terms) . '" title="Voir plus de ' . $current_name . '">' . $current_name . '</a></p>';
+                            if ($tax != 'format' && $tax != 'genre' && $tax != 'tag') :
+                                echo '<p>' . $tax . '<br>';
+                                foreach ($p28_terms as $terms) :
+                                    echo '<a href="' . get_term_link($terms->term_id) . '" title="Voir plus de ' . $terms->name . '">' . $terms->name . '</a>';
+                                    if ($terms != end($p28_terms)) :
+                                        echo ', ';
+                                    endif;
+                                endforeach;
+                                echo '</p>';
+                            else:
+                                foreach ($p28_terms as $terms) :
+                                    if ($tax == 'format'):
+                                        array_push($formats, $terms->name);
+                                    elseif ($tax == 'tag'):
+                                        array_push($tags, $terms->name);
+                                    elseif ($tax == 'genre'):
+                                        array_push($genres, $terms->name);
+                                    endif;
+                                endforeach;
+                            endif;
+
                         endif;
 
-                    endforeach; ?>
-
-                    <?php
+                    endforeach;
                     /* On récupère le champ ACF pays pour cette oeuvre */
                     $acf_pays = get_field('pays', $post->ID);
 
@@ -88,20 +90,26 @@ get_header();
             </div>
             <div class="p28-col p28-fr1" id="p28-oeuvre-content">
                 <div class="p28-badges">
-                    <?php if (isset($format)) : ?>
-                        <div class="p28-badge-item">
-                            <a href="<?php echo $format['term_link']; ?>" title="Voir plus d'oeuvres correspondant à <?php echo $format['term']; ?>" alt="Voir plus d'oeuvres correspondant à <?php echo $format['term']; ?>"><?php echo $format['term']; ?></a>
-                        </div>
+                    <?php if ($formats != null) : ?>
+                        <?php foreach ($formats as $f) : ?>
+                            <div class="p28-badge-item">
+                                <a href="<?php echo get_term_link(get_term(get_term_by('name', $f, 'format')->term_id)); ?>" title="Voir plus d'oeuvres correspondant à <?php echo $f; ?>" alt="Voir plus d'oeuvres correspondant à <?php echo $f; ?>"><?php echo $f; ?></a>
+                            </div>
+                        <?php endforeach; ?>
                     <?php endif; ?>
-                    <?php if (isset($genre)) : ?>
-                        <div class="p28-badge-item">
-                            <a href="<?php echo $genre['term_link']; ?>" title="Voir plus d'oeuvres correspondant à <?php echo $genre['term']; ?>" alt="Voir plus d'oeuvres correspondant à <?php echo $genre['term']; ?>"><?php echo $genre['term']; ?></a>
-                        </div>
+                    <?php if ($genres != null) : ?>
+                        <?php foreach ($genres as $g) : ?>
+                            <div class="p28-badge-item">
+                                <a href="<?php echo get_term_link(get_term_by('name', $g, 'genre')->term_id); ?>" title="Voir plus d'oeuvres correspondant à <?php echo $g; ?>" alt="Voir plus d'oeuvres correspondant à <?php echo $g; ?>"><?php echo $g; ?></a>
+                            </div>
+                        <?php endforeach; ?>
                     <?php endif; ?>
-                    <?php if (isset($etiquette)) : ?>
-                        <div class="p28-badge-item">
-                            <a href="<?php echo $etiquette['term_link']; ?>" title="Voir plus d'oeuvres correspondant à <?php echo $etiquette['term']; ?>" alt="Voir plus d'oeuvres correspondant à <?php echo $etiquette['term']; ?>"><?php echo $etiquette['term']; ?></a>
-                        </div>
+                    <?php if ($tags != null) : ?>
+                        <?php foreach ($tags as $t) : ?>
+                            <div class="p28-badge-item">
+                                <a href="<?php echo get_term_link(get_term_by('name', $t, 'tag')->term_id); ?>" title="Voir plus d'oeuvres correspondant à <?php echo $t; ?>" alt="Voir plus d'oeuvres correspondant à <?php echo $t; ?>"><?php echo $t; ?></a>
+                            </div>
+                        <?php endforeach; ?>
                     <?php endif; ?>
                 </div>
                 <div>

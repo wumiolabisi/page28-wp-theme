@@ -209,7 +209,7 @@ li.p28-navbar-item>a {
     top: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.6;
+    opacity: 0.36;
     z-index: -2;
 
     @include minScreenWidth($md) {
@@ -238,8 +238,8 @@ li.p28-navbar-item>a {
     object-fit: cover;
 
     &:hover {
-        border: 3px solid $main-dark-color;
-        width: calc(100% - 3px);
+        width: calc(100% - 6px);
+        transition-duration: 0.05s;
     }
 }
 
@@ -421,6 +421,7 @@ li.p28-navbar-item>a {
         @include minScreenWidth($lg) {
             width: 900px;
             margin: auto;
+            padding: 2% 0;
         }
 
         .p28-row {
@@ -576,6 +577,10 @@ li.p28-navbar-item>a {
     }
 }
 
+.p28-pad10px {
+    padding: 10px
+}
+
 .p28-margin {
     @include customMargin(5%, 0);
 
@@ -596,7 +601,15 @@ li.p28-navbar-item>a {
 
 div#p28-realisatrice-coeur {
 
+
+
     @include maxScreenWidth($md) {
+        width: 80% !important;
+        margin: auto;
+
+        .p28-180x250 {
+            width: 100%;
+        }
 
         background-image: none !important;
         background-size: unset !important;
@@ -636,20 +649,21 @@ div#p28-realisatrice-coeur {
 .p28-heart28 {
     @extend .flex-row;
     position: relative;
-    top: 10px;
-    left: -160px;
-    background-color: $main-light-color;
-    box-shadow: -1px 1px 10px $main-dark-color;
+    top: -5vw;
+    left: -20vw;
+    background-color: #ffffff;
+    box-shadow: -1px 1px 10px #2e2e2e;
     padding: 5px 10px;
-    @include fontWeight(700);
+    font-weight: 700;
     text-transform: uppercase;
     font-size: 13px;
-    width: 130px;
+    width: 100%;
     align-items: center;
 
     @include minScreenWidth($md) {
         top: 200px;
         left: -40px;
+        width: 130px;
     }
 }
 
