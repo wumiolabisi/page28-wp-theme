@@ -27,7 +27,7 @@
             <li class="p28-navbar-item">
                 <a href="<?php echo get_permalink(get_page_by_path('realisation')); ?>">RÉALISATRICES</a>
             </li>
-            <li><?php echo do_shortcode('[get_random_oeuvre]'); ?></li>
+            <li id="random-btn-container"><?php echo do_shortcode('[get_random_oeuvre]'); ?></li>
         </ul>
     </nav>
 
