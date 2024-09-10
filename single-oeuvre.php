@@ -40,7 +40,7 @@ get_header();
                     <?php
                     $formats = [];
                     $genres = [];
-                    $tags = [];
+                    $etiquettes = [];
                     $p28_post_taxonomies = get_post_taxonomies($post->ID);
 
                     foreach ($p28_post_taxonomies as $tax) :
@@ -49,7 +49,7 @@ get_header();
 
                         if ($p28_terms != false) :
 
-                            if ($tax != 'format' && $tax != 'genre' && $tax != 'tag') :
+                            if ($tax != 'format' && $tax != 'genre' && $tax != 'etiquette') :
                                 echo '<p>' . $tax . '<br>';
                                 foreach ($p28_terms as $terms) :
                                     echo '<a href="' . get_term_link($terms->term_id) . '" title="Voir plus de ' . $terms->name . '">' . $terms->name . '</a>';
@@ -62,8 +62,8 @@ get_header();
                                 foreach ($p28_terms as $terms) :
                                     if ($tax == 'format'):
                                         array_push($formats, $terms->name);
-                                    elseif ($tax == 'tag'):
-                                        array_push($tags, $terms->name);
+                                    elseif ($tax == 'etiquette'):
+                                        array_push($etiquettes, $terms->name);
                                     elseif ($tax == 'genre'):
                                         array_push($genres, $terms->name);
                                     endif;
@@ -104,10 +104,10 @@ get_header();
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
-                    <?php if ($tags != null) : ?>
-                        <?php foreach ($tags as $t) : ?>
+                    <?php if ($etiquettes != null) : ?>
+                        <?php foreach ($etiquettes as $t) : ?>
                             <div class="p28-badge-item">
-                                <a href="<?php echo get_term_link(get_term_by('name', $t, 'tag')->term_id); ?>" title="Voir plus d'oeuvres correspondant à <?php echo $t; ?>" alt="Voir plus d'oeuvres correspondant à <?php echo $t; ?>"><?php echo $t; ?></a>
+                                <a href="<?php echo get_term_link(get_term_by('name', $t, 'etiquette')->term_id); ?>" title="Voir plus d'oeuvres correspondant à <?php echo $t; ?>" alt="Voir plus d'oeuvres correspondant à <?php echo $t; ?>"><?php echo $t; ?></a>
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
@@ -131,31 +131,31 @@ get_header();
 </div>
 
 
-
-<div class="p28-main">
-    <div class="p28-container">
-        <div class="p28-row">
-            <div class="p28-col width-100pc">
-                <h2 class="p28-txt-15071d p28-h2 p28-txtcenter">Découvrez les avis des internautes sur cette &oelig;uvre</h2>
+<?php if (comments_open() || get_comments_number()) : ?>
+    <div class="p28-main">
+        <div class="p28-container">
+            <div class="p28-row">
+                <div class="p28-col width-100pc">
+                    <h2 class="p28-txt-15071d p28-h2 p28-txtcenter">Découvrez les avis des internautes sur cette &oelig;uvre</h2>
+                </div>
             </div>
-        </div>
-        <div class="p28-row">
-            <div class="p28-col width-100pc">
-                <?php
-                if (comments_open() || get_comments_number()) :
-                    comments_template('/comments.php');
-                endif; ?>
-            </div>
-        </div>
-        <div class="p28-row">
-            <div class="p28-col width-100pc">
-                <div class="p28-comments">
+            <div class="p28-row">
+                <div class="p28-col width-100pc">
                     <?php
-                    comment_form();
+                    comments_template('/comments.php');
                     ?>
+                </div>
+            </div>
+            <div class="p28-row">
+                <div class="p28-col width-100pc">
+                    <div class="p28-comments">
+                        <?php
+                        comment_form();
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+<?php endif; ?>
 <?php get_footer(); ?>

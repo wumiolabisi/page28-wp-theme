@@ -295,7 +295,7 @@ function p28_register_post_types()
 
 
 
-    register_taxonomy('tag', 'oeuvre', $args);
+    register_taxonomy('etiquette', 'oeuvre', $args);
 }
 
 add_action('init', 'p28_register_post_types');

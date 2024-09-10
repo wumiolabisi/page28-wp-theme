@@ -6,10 +6,11 @@
             $args_to_pass = array();
             if ($args['p28_tax_query']) :
                 $args_tax = array(
-                    'taxonomy' => $args['p28_tax_query'][0]['p28_taxonomy'],
-                    'field' => $args['p28_tax_query'][0]['p28_field'],
-                    'terms' => $args['p28_tax_query'][0]['p28_terms'],
-
+                    array(
+                        'taxonomy' => $args['p28_tax_query'][0]['p28_taxonomy'],
+                        'field' => $args['p28_tax_query'][0]['p28_field'],
+                        'terms' => $args['p28_tax_query'][0]['p28_terms'],
+                    )
                 );
                 $args_to_pass['tax_query'] = $args_tax;
             endif;

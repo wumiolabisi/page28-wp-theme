@@ -170,7 +170,7 @@ get_header(); ?>
             'p28_orderby' => 'date',
             'p28_tax_query' => array(
                 array(
-                    'p28_taxonomy' => 'tag',
+                    'p28_taxonomy' => 'etiquette',
                     'p28_field' => 'slug',
                     'p28_terms' => 'la-banlieue-a-lhonneur'
                 )

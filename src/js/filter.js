@@ -17,7 +17,7 @@
                 paged: 1,
                 format: $(this).find('input[name=format-oeuvre]:checked').val(),
                 genre: $(this).find('select[name=genre]').val(),
-                tag: $(this).find('select[name=tag]').val(),
+                etiquette: $(this).find('select[name=etiquette]').val(),
                 action: $(this).find('input[name=action]').val(),
                 nonce: $(this).find('input[name=nonce]').val(),
                 posttype: $(this).find('input[name=posttype]').val()

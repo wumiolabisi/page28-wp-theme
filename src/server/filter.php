@@ -15,7 +15,7 @@ function p28_search_oeuvre()
     }
 
     // On vérifie que l'identifiant a bien été envoyé
-    if (!isset($_POST['format']) || !isset($_POST['genre']) || !isset($_POST['tag'])) {
+    if (!isset($_POST['format']) || !isset($_POST['genre']) || !isset($_POST['etiquette'])) {
         wp_send_json_error("Il manque des paramètres.", 400);
     }
 
@@ -24,7 +24,7 @@ function p28_search_oeuvre()
     $current_page = intval($_POST['paged']);
     $format = sanitize_text_field($_POST['format']);
     $genre = sanitize_text_field($_POST['genre']);
-    $tag = sanitize_text_field($_POST['tag']);
+    $etiquette = sanitize_text_field($_POST['etiquette']);
     $posttype = sanitize_text_field($_POST['posttype']);
 
     $args_tax_query = [];
@@ -58,15 +58,15 @@ function p28_search_oeuvre()
 
 
 
-    if (isset($tag) && $tag != 'null') :
+    if (isset($etiquette) && $etiquette != 'null') :
 
-        $array_tag = array(
-            'taxonomy' => 'tag',
+        $array_etiquette = array(
+            'taxonomy' => 'etiquette',
             'field'    => 'slug',
-            'terms'    => $tag
+            'terms'    => $etiquette
         );
 
-        array_push($args_tax_query, $array_tag);
+        array_push($args_tax_query, $array_etiquette);
 
     endif;
 

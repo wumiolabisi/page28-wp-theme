@@ -1,7 +1,6 @@
 <?php
 
 // Get only the approved comments
-
 $args = array(
 
 	'post_id' => get_the_ID(),
