@@ -1,6 +1,6 @@
 <div class="p28-row p28-justify-center">
     <div class="p28-col">
-        <div class="p28-grid-5">
+        <div class="p28-grid-4">
 
             <?php
             $args_to_pass = array();

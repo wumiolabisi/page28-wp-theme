@@ -130,7 +130,7 @@ get_header(); ?>
     $query = new WP_Query($args);
 
     ?>
-    <div id="p28-realisatrice-coeur" class="p28-container" style="background-image: url(<?php echo esc_url($taxonomy_thumbnail['url']); ?>);background-position:50% 50%;background-size:cover;background-repeat:no-repeat">
+    <div id="p28-realisatrice-coeur" class="p28-container" style="background-image: url(<?php echo esc_url($taxonomy_thumbnail['url']); ?>);background-position:center left;background-size:cover;background-repeat:no-repeat">
         <div class="p28-row p28-space-between">
             <div class="p28-col">
                 <div class="p28-tag">
@@ -167,7 +167,7 @@ get_header(); ?>
         <?php
         $args_tag = array(
             'p28_post_type' => 'oeuvre',
-            'p28_posts_per_page' => 5,
+            'p28_posts_per_page' => 4,
             'p28_orderby' => 'date',
             'p28_tax_query' => array(
                 array(
@@ -180,14 +180,16 @@ get_header(); ?>
 
         get_template_part('template-parts/gallery-query', null, $args_tag); ?>
     </div>
+
     <div class="p28-container">
-        <div class="p28-row p28-justify-center p28-margin-mobile">
+        <div class="p28-row p28-justify-center">
             <div class="p28-col p28-500w">
-                <?php echo do_shortcode('[get_random_oeuvre]'); ?>
+                <div class="margin-0-auto">
+                    <?php echo do_shortcode('[get_random_oeuvre]'); ?>
+                </div>
             </div>
         </div>
     </div>
-
     <div class="p28-container">
         <div class="p28-row p28-justify-center p28-margin-mobile">
             <div class="p28-col p28-500w">
