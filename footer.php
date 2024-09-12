@@ -1,6 +1,8 @@
 <?php wp_footer();
 
-?><div class="spacer"></div>
+?>
+
+
 <div class="p28-footer p28-bg-dark">
 
 
@@ -19,3 +21,4 @@
     </footer>
 
 </div>
+<div class="spacer"></div>

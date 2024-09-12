@@ -14,6 +14,7 @@ get_header(); ?>
                 <p class="p28-text-center">Explorez des récits vibrants, des perspectives uniques et des réalisations cinématographiques saisissantes, toutes portées par le talent et la vision des femmes derrière la caméra.</p>
                 <div class="margin-0-auto">
                     <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" class="p28-btn-primary" target="_blank" alt="Aller au catalogue">EXPLORER LE CATALOGUE</a>
+                    <?php echo do_shortcode('[get_random_oeuvre]'); ?>
                 </div>
             </div>
         </div>
@@ -178,6 +179,13 @@ get_header(); ?>
         );
 
         get_template_part('template-parts/gallery-query', null, $args_tag); ?>
+    </div>
+    <div class="p28-container">
+        <div class="p28-row p28-justify-center p28-margin-mobile">
+            <div class="p28-col p28-500w">
+                <?php echo do_shortcode('[get_random_oeuvre]'); ?>
+            </div>
+        </div>
     </div>
 
     <div class="p28-container">
