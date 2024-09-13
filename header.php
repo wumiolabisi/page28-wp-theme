@@ -40,7 +40,7 @@
                     </div>
                 </a>
                 <a href="<?php echo home_url('/'); ?>" alt="Aller à la page d'accueil" title="Aller à la page d'accueil">
-                    <span class="p28-xs-text">Accueil</span>
+                    <span class="p28-2vw-text">Accueil</span>
                 </a>
             </li>
             <li class="p28-text-center">
@@ -50,17 +50,17 @@
                     </div>
                 </a>
                 <a href="<?php echo get_post_type_archive_link('oeuvre'); ?>" alt="Aller au catalogue" title="Aller au catalogue">
-                    <span class="p28-xs-text">Rechercher une &oelig;uvre</span>
+                    <span class="p28-2vw-text">Rechercher</span>
                 </a>
             </li>
             <li class="p28-text-center">
-                <a href="<?php echo get_post_type_archive_link('realisation'); ?>" alt="Aller au catalogue des réalisatrices" title="Aller au catalogue des réalisatrices">
+                <a href="<?php echo get_permalink(get_page_by_path('realisation')); ?>" alt="Aller au catalogue des réalisatrices" title="Aller au catalogue des réalisatrices">
                     <div>
                         <img src="<?php echo get_template_directory_uri(); ?>/img/director.png" alt="Icône qui représente une loupe" class="width-5vw">
                     </div>
                 </a>
-                <a href="<?php echo get_post_type_archive_link('realisation'); ?>" alt="Aller au catalogue des réalisatrices" title="Aller au catalogue des réalisatrices">
-                    <span class="p28-xs-text">Les Réalisatrices</span>
+                <a href="<?php echo get_permalink(get_page_by_path('realisation')); ?>" alt="Aller au catalogue des réalisatrices" title="Aller au catalogue des réalisatrices">
+                    <span class="p28-2vw-text">Réalisatrices</span>
                 </a>
             </li>
 

@@ -95,6 +95,10 @@ h1 {
     font-size: 10px;
 }
 
+.p28-2vw-text {
+    font-size: 2.5vw;
+}
+
 .p28-big-text {
     font-size: 30px;
 }
@@ -201,11 +205,13 @@ li.p28-navbar-item>a {
 }
 
 .p28-thumbnail-small {
-    width: 200px;
+    width: 100%;
+    max-width: 250px;
     object-fit: cover;
 
-    @include minScreenWidth($md) {
+    @include minScreenWidth($lg) {
         height: 300px;
+        width: 200px;
     }
 
 }
@@ -535,6 +541,7 @@ li.p28-navbar-item>a {
 
 .p28-badges {
     @extend .flex-row;
+    flex-wrap: wrap;
     gap: 10px;
 
     div.p28-badge-item {
@@ -704,6 +711,11 @@ nav.p28-navbar {
 
         ul {
             @extend .p28-space-around;
+            gap: 0px;
+
+            & li {
+                width: 33%;
+            }
         }
     }
 
